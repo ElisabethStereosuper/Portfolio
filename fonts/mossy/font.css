@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'Mossy';
+	src: url('./Mossy.eot');
+	src: local('Mossy'), url('./Mossy.woff') format('woff'), url('./Mossy.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_1421">Text with this font applied</p> */
+.fontsforweb_fontid_1421 {
+	font-family: 'Mossy' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

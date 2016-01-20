@@ -1,0 +1,34 @@
+@font-face{
+    font-family:'Lane';
+    src:url(../fonts/lanenar.eot);
+    src:url(../fonts/lanenar.eot) format("embedded-opentype"),
+        url(../fonts/lanenar.woff) format("woff"),
+        url(../fonts/lanenar.ttf) format("truetype"),
+        url(../fonts/lanenar.svg#LaneNarrowRegular) format("svg")
+}
+
+@font-face{
+    font-family:'MoonFlower';
+    src:url(../fonts/moonflower.eot);
+    src:url(../fonts/moonflower.eot) format("embedded-opentype"),
+        url(../fonts/moonflower.woff) format("woff"),
+        url(../fonts/moonflower.ttf) format("truetype"),
+        url(../fonts/moonflower.svg#MoonFlowerRegular) format("svg")
+}
+
+@font-face{
+    font-family:'Mossy';
+    src:url(../fonts/mossy.eot?) format("eot"),
+        url(../fonts/mossy.woff) format("woff"),
+        url(../fonts/mossy.ttf) format("truetype"),
+        url(../fonts/mossy.svg#Mossy) format("svg")
+}
+
+.font(@size){
+    font-family: 'font', sans-serif;
+    font-weight: normal;
+    font-size: @size;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,820 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	text-decoration: none;
+	list-style: none;
+	font-family: 'Cabin';
+	font-size: 14px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'Cabin';
+	src: url('fonts/Cabin-Regular.eot?') format('eot'), 
+	     url('fonts/Cabin-Regular.otf')  format('opentype'),
+	     url('fonts/Cabin-Regular.woff') format('woff'), 
+	     url('fonts/Cabin-Regular.ttf')  format('truetype'),
+	     url('fonts/Cabin-Regular.svg#Cabin-Regular') format('svg');
+}
+
+@font-face {
+	font-family: 'CabinBold';
+	src: url('fonts/Cabin-Bold.eot?') format('eot'), 
+	     url('fonts/Cabin-Bold.otf')  format('opentype'),
+	     url('fonts/Cabin-Bold.woff') format('woff'), 
+	     url('fonts/Cabin-Bold.ttf')  format('truetype'),
+	     url('fonts/Cabin-Bold.svg#Cabin-Bold') format('svg');
+}
+
+html, body, #left, #nav, #menu-hotel, #menu-thalasso, .sub-nav, #wrapper{
+	height: 100%;
+}
+
+#logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	width: 146px;
+	height: 190px;
+	background: #fff;
+}
+#logo img{
+	margin-left: 68px;
+}
+
+#tabThalasso{
+	float: left;
+	width: 74px;
+	height: 47px;
+	background: url(images/thalasso.png) no-repeat;
+}
+
+#tabHotel{
+	float: left;
+	width: 72px;
+	height: 47px;
+	background: url(images/hotel2.png) no-repeat;
+}
+
+.hotel #tabThalasso{
+	background: url(images/thalasso2.png) no-repeat;
+}
+
+.hotel #tabHotel{
+	background: url(images/hotel.png) no-repeat;
+}
+
+#left{
+	position: fixed;
+	z-index: 2;
+}
+
+#nav{
+	top: 0;
+	padding-top: 190px;
+	position: fixed;
+	background: #458b96;
+	width: 146px;
+	z-index: 1;
+}
+#nav.hotel{
+	background: #cca56d;
+}
+#nav.hotel #aide{
+	background: #bf9259;
+}
+#nav.hotel #b a{
+	background: url(images/boutique2.jpg) no-repeat;
+}
+#nav.hotel #b a:hover{
+	background: url(images/boutique2-hover.jpg) no-repeat;
+}
+#nav.hotel #fb{
+	background: url(images/fb.jpg) no-repeat;
+}
+#nav.hotel #tw{
+	background: url(images/tw.jpg) no-repeat;
+}
+#nav.hotel #ps{
+	background: url(images/pn.jpg) no-repeat;
+}
+#nav.hotel #yt{
+	background: url(images/yt.jpg) no-repeat;
+}
+#nav.hotel #fb:hover{
+	background: url(images/fb-hover.jpg) no-repeat;
+}
+#nav.hotel #tw:hover{
+	background: url(images/tw-hover.jpg) no-repeat;
+}
+#nav.hotel #ps:hover{
+	background: url(images/pn-hover.jpg) no-repeat;
+}
+#nav.hotel #yt:hover{
+	background: url(images/yt-hover.jpg) no-repeat;
+}
+#nav li{
+	padding: 15px 8px;
+	background: url(images/ligne.jpg) no-repeat center bottom;
+}
+.subNav li{
+	padding: 15px 8px;
+	background: url(images/ligne2.jpg) no-repeat center bottom;
+}
+#nav.hotel li{
+	background: url(images/ligne3.jpg) no-repeat center bottom;
+}
+.navHotel li{
+	background: url(images/ligne3.jpg) no-repeat center bottom;
+}
+#nav #aide{
+	background: #5bb0bc url(images/ligne.jpg) no-repeat center bottom;
+}
+
+.subNav{
+	background: #366d76;
+	width: 155px;
+	height: 100%;
+	position: fixed;
+	top: 0;	
+	left: -10px;
+	transition: left 0.3s ease-out;
+	-webkit-transition: left 0.3s ease-out;
+	-moz-transition: left 0.3s ease-out;
+	-o-transition: left 0.3s ease-out;
+	-ms-transition: left 0.3s ease-out;
+	padding-top: 229px;
+}
+.navHotel{
+	background: #a27843;
+}
+#nav li:hover, .subNav li:hover{
+	background: #fff;
+}
+#nav li:hover > a, .subNav li:hover >a{
+	color: #366d76;
+	font-family: 'CabinBold';
+}
+#nav.hotel li:hover > a, .navHotel li:hover >a{
+	color: #a27843;
+}
+
+#menuThalasso, #menuHotel{
+	margin-top: 39px;
+}
+.reseaux{
+	overflow: hidden;
+	bottom: 0;
+	position: absolute;
+}
+#nav .reseaux li{
+	float:left;
+	background: none;
+	padding: 15px 3px;
+}
+.reseaux a{
+	width: 30px;
+	height: 30px;
+	display: block;
+}
+#fb{
+	background: url(images/fb.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#tw{
+	background: url(images/tw.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#ps{
+	background: url(images/ps.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#yt{
+	background: url(images/yt.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#fb:hover{
+	background: url(images/fb-hover.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#tw:hover{
+	background: url(images/tw-hover.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#ps:hover{
+	background: url(images/ps-hover.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#yt:hover{
+	background: url(images/yt-hover.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+
+#wrapper{
+	width: 100%;
+	padding-left: 146px;
+	position: relative;
+}
+#fond-fiche{
+	height: 1180px;
+	width: 100%;
+	overflow:hidden;
+	position:absolute;
+	top: 0;
+	z-index: -2;
+	right: 0;
+}
+#fond-fiche img{
+	width: 100%;
+}
+#fond-liste{
+	height: 351px;
+	width: 100%;
+	overflow:hidden;
+	position:absolute;
+	top: 0;
+	z-index: -2;
+	right: 0;
+}
+#fond-liste img{
+	width: 100%;
+}
+
+#photo{
+	height: 585px;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	right: 0;
+}
+#photo img{
+	width: 100%;
+	min-width: 1054px;
+}
+#photo li{
+	width: 100%;
+}
+
+#content{
+	width: 1045px;
+	padding: 375px 35px 0;
+    margin: 0 auto;
+}
+#content.fiche{
+	padding: 80px 35px 0;
+}
+
+#form{
+	margin-bottom: 95px;
+}
+
+.right{
+	float: right;
+}
+.left{
+	float: left;
+}
+
+.ligne{
+	overflow: hidden;
+	position: relative;
+}
+
+.ligne a{
+	width: 234px;
+	height: 233px;
+	display: block;
+}
+.ligne #spa{
+	width: 481px;
+	background: url(images/spa.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+	float: left;
+}
+.ligne #spa:hover{
+	background: url(images/spa-hover.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #act{
+	width: 481px;
+	background: url(images/act.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #act:hover{
+	background: url(images/act-hover.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #canard{
+	background: url(images/canard.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+	margin-bottom: 13px;
+}
+.ligne #canard:hover{
+	background: url(images/canard-hover.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #valise{
+	background: url(images/valise.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #valise:hover{
+	background: url(images/valise-hover.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #acces{
+	background: url(images/acces.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #acces:hover{
+	background: url(images/acces-hover.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #journee{
+	background: url(images/journee.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne #journee:hover{
+	background: url(images/journee-hover.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+
+#equipe, #carnac{
+	width: 481px; 
+	height: 479px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+#carnac img, #equipe img{
+	display: block;
+	margin: 125px auto;
+}
+#equipe #eq, #carnac #ca{
+	margin: 0;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	display: block;
+	width: 100%;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+#equipe:hover > #eq, #carnac:hover > #ca{
+	-webkit-transform: scale(1.10);
+	-moz-transform: scale(1.10);
+	-o-transform: scale(1.10);
+	-ms-transform: scale(1.10);
+	transform: scale(1.10);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#form-container{
+	position: relative;
+}
+#temps, #activite{
+	background: url(images/fond-form.png) no-repeat;
+	position:absolute;
+	width: 195px;
+	top: 82px;
+	cursor: pointer;
+}
+#temps li, #activite li{
+	color: #f7931d;
+	font-size: 22px;
+	padding: 6px 7px;
+	display: none;
+	height: 42px;
+	width: 155px;
+	-webkit-transition: color 0.3s linear;
+	-moz-transition: color 0.3s linear;
+	-o-transition: color 0.3s linear;
+	-ms-transition: color 0.3s linear;
+	transition: color 0.3s linear;
+}
+#temps li:hover, #activite li:hover{
+	color: #0098ab;
+	-webkit-transition: color 0.3s linear;
+	-moz-transition: color 0.3s linear;
+	-o-transition: color 0.3s linear;
+	-ms-transition: color 0.3s linear;
+	transition: color 0.3s linear;
+}
+#temps .li-active, #activite .li-active{
+	display: block;
+}
+#activite{
+	right: 379px;
+}
+#temps{
+	left: 125px;
+}
+#btn-form{
+	display: block;
+	width: 60px;
+	height: 42px;
+	background: url(images/ok.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+	position: absolute;
+	top: 82px;
+	right: 292px;
+}
+#btn-form:hover{
+	background: url(images/ok-hover.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+
+.none{
+	display: none;
+	position: fixed;
+	width: 100%;
+	right: 0;
+	height: 100%;
+	overflow: hidden;
+}
+.none img{
+	width: 100%;
+}
+.none #truc{
+	width: auto;
+	position: absolute;
+	top: 200px;
+	left: 400px;
+}
+.slider-wrapper{
+	width: 450px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 5px;
+	left: 15px;
+}
+
+#top{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding-right: 20px;
+}
+
+#footer{
+	background: url(images/footer.jpg) no-repeat;
+	background-size: 100%;
+	padding: 20px 20px 10px;
+}
+#footer img{
+	display: block;
+	margin: 0 auto;
+}
+#footer2{
+	background: url(images/footer2.jpg) no-repeat;
+	background-size: 100%;
+	padding: 20px 20px 10px;
+}
+#footer2 img{
+	display: block;
+	margin: 0 auto;
+}
+
+.promo{
+	width: 481px;
+	height: 232px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	float: left;
+}
+.roll{
+	position: absolute;
+	top: 0;
+	right: -307px;
+	height: 225px;
+	overflow: hidden;
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+
+.promo:hover > .roll{
+	right: 0;
+	height: auto;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.rond{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	-ms-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+
+.promo:hover > .rond{
+	opacity: 0;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	-ms-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+
+.rond2{
+	position: absolute;
+	top: 110px;
+	margin-left: 90px;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	-ms-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+.promo:hover > .roll > .rond2{
+	opacity: 1;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	-ms-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+
+.ligne .plus{
+	width: 128px;
+	height: 39px;
+	display: block;
+	background: url(images/plus.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+	position: absolute;
+	top: 166px;
+	margin-left: 266px;
+}
+.ligne .plus:hover{
+	background: url(images/plus-hover.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne .plus2{
+	width: 128px;
+	height: 39px;
+	display: block;
+	background: url(images/plus2.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+	position: absolute;
+	top: 166px;
+	margin-left: 266px;
+}
+.ligne .plus2:hover{
+	background: url(images/plus-hover2.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne .ajout, .ligne .ajout2{
+	position: absolute;
+	width: 119px;
+	height: 17px;
+	display: block;
+	top: 210px;
+	margin-left: 272px;
+	background: url(images/ajout.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne .ajout:hover{
+	background: url(images/ajout-hover.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+.ligne .ajout2:hover{
+	background: url(images/ajout-hover2.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+
+.pright{
+	float: right;
+}
+
+#nav #b{
+	background: none;
+	padding: 20px 5px;
+}
+
+#offres{
+	display: block;
+	width: 307px;
+	height: 33px;
+	margin: 0 auto 40px;
+	background: url(images/offres.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#offres:hover{
+	background: url(images/offres-hover.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+
+#bp{
+	display: block;
+	width: 105px;
+	height: 30px;
+	background: url(images/bp.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#bp:hover{
+	background: url(images/bp-hover.png) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+
+#b a{
+	display: block;
+	width: 133px;
+	height: 31px;
+	background: url(images/boutique.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+#b a:hover{
+	background: url(images/boutique-hover.jpg) no-repeat;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+
+@media screen and (max-height: 780px){
+	#nav{
+	padding-top: 180px
+	}
+
+	#logo{
+	height: 180px
+	}
+
+	#logo img{
+	width: 80%;
+	margin-left:74px
+	}
+
+	#nav li{
+	padding: 10px 8px
+	}
+
+	#nav #b{
+	padding: 10px 5px
+	}
+
+	#nav .reseaux li{
+		padding: 5px 3px;
+	}
+}

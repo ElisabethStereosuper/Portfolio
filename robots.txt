@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /old/
+Disallow: /thalasso/
+Disallow: /baludik/
+Sitemap: http://www.e-hamel.com/sitemap.xml 

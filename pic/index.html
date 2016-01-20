@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>SurprisePic.</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<script type="text/javascript" src="ImageData.js"></script>
+
+		<style>
+
+			*{
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-family: Verdana, Arial, sans-serif;
+	            font-weight: normal;
+			}
+
+			body{
+				background: url(pol.jpg) no-repeat;
+	            -webkit-background-size: cover; 
+	            -moz-background-size: cover; 
+	            -o-background-size: cover;
+	            background-size: cover;
+			}
+
+			h1{
+				font-size: 4em;
+	            padding: 2%;
+			}
+
+			.menu{
+				padding: 20px;
+				margin: 0 0 2% 2%;
+				background: rgba(255, 255, 255, 0.8);
+				float: left;
+			}
+
+			.pic{
+				margin-bottom: 10px;
+			}
+
+			#menu{
+				width: 75%;
+				max-width: 710px;	                       
+			}
+	                
+	       	#canvas2, #shot{
+	       		width: 45%;
+				max-width: 750px;
+				min-width: 510px;
+	            margin: 0 0 2% 2%;
+	            float: left;
+	        }
+
+			#btn{
+				display: block;
+				margin: 0 auto;
+				cursor: pointer;
+			}
+
+			.e{
+				height: 30px;
+				width: 30px;
+				margin: 0 2px 2px 0;
+				display: inline-block;
+				cursor: pointer;
+			}
+			.e:hover, #btn:hover{
+				opacity: 0.8;
+			}
+
+			#e1{background: #008B8B}
+
+			#e2{background: #FF8C08}
+
+			#e3{background: #2F4F4F}
+
+			#e4{background: #CD5C5C}
+
+			#e5{background: #2E8B57}
+
+			#e6{background: #20B2AA}
+
+			#e7{background: #F08080}
+
+			#e8{background: #483D8B}
+
+			#e9{background: #8B008B}
+
+			#e10{background: #FEA522}
+
+			#e11{background: #66CDAA}
+
+			#e12{background: #36CDBA}
+
+			#t1{background: blue}
+
+			#t2{background: red}
+
+			#t3{background: green}
+
+			#t4{background: orange}
+
+			#t5{background: purple}
+
+			#t6{background: yellow}
+
+			#t7{background: black}
+
+			@media screen and (max-width: 1220px){
+				#shot{
+					float: none;
+				}
+				#canvas2, #shot{
+					width: 80%;
+					min-width: 0;
+				}
+			}
+
+		</style>
+	</head>
+
+	<body>
+		
+		<h1>SurprisePic.</h1>
+			<div id="menu" class="menu">
+				<p class="pic">Click on as much squares as you want...</p>
+				<div id="e1" class="e"></div>
+				<div id="e2" class="e"></div>
+				<div id="e3" class="e"></div>
+				<div id="e4" class="e"></div>
+				<div id="e5" class="e"></div>
+				<div id="e6" class="e"></div>
+				<div id="e7" class="e"></div>
+				<div id="e8" class="e"></div>
+				<div id="e9" class="e"></div>
+				<div id="e10" class="e"></div>
+				<div id="e11" class="e"></div>
+				<div id="e12" class="e"></div>
+				<div id="t1" class="e"></div>
+				<div id="t2" class="e"></div>
+				<div id="t3" class="e"></div>
+				<div id="t4" class="e"></div>
+				<div id="t5" class="e"></div>
+				<div id="t6" class="e"></div>
+				<div id="t7" class="e"></div>
+			</div>
+			<div id="menu2" class="menu">
+            	<p class="pic">... then take a picture !</p>
+			   	<img id="btn" height="36px" src="photo.png"></img>
+            </div>
+			<video style="display:none" id="video" autoplay></video>
+			<canvas id="canvas" style="display:none"></canvas>
+			<canvas id="canvas2"></canvas>
+            <img id="shot"></img>
+			<canvas id="scratch" style="display:none" ></canvas>
+
+		<script>
+
+		// Fonction pour récupérer les couleurs d'un pixel
+		ImageData.prototype.getRGB = function( ligne, colonne ){
+		 	rgb = new Object();
+
+		 	rgb.r = this.data[((ligne)*(this.width*4)+(colonne)*4)];
+		 	rgb.g = this.data[((ligne)*(this.width*4)+(colonne)*4)+1];
+		 	rgb.b = this.data[((ligne)*(this.width*4)+(colonne)*4)+2];
+		 	rgb.alpha = this.data[((ligne)*(this.width*4)+(colonne)*4)+3];
+
+		 	return rgb;
+		 };
+
+
+		// Tranformations de la vidéo
+		CanvasRenderingContext2D.prototype.pixellisation = function(pixelH, pixelW){
+			var imageData = this.getImageData(0, 0, this.canvas.width, this.canvas.height);
+
+			for(var i=0; i<this.canvas.width; i=i+pixelW){
+				for(var j=0; j<this.canvas.height; j=j+pixelH){
+					var pixel = imageData.getRGB(j, i);
+					this.beginPath();
+					this.fillStyle = "rgb("+pixel.r+","+pixel.g+","+pixel.b+")";
+					this.rect(i, j, pixelH, pixelW);
+					this.closePath();
+					this.fill();
+				}
+			}
+
+		}
+
+		CanvasRenderingContext2D.prototype.pixellisation2 = function(pixelH, pixelW){
+			var imageData = this.getImageData(0, 0, this.canvas.width, this.canvas.height);
+			
+			this.beginPath();
+			this.rect(0, 0, this.canvas.width, this.canvas.height);
+			this.closePath();
+			this.fill();
+			
+			for(var i=0; i<=this.canvas.width; i=i+pixelW){
+				for(var j=0; j<=this.canvas.height; j=j+pixelH){
+					var pixel = imageData.getRGB(j, i);
+					this.beginPath();
+					this.fillStyle = "rgb("+pixel.r+","+pixel.g+","+pixel.b+")";
+					var grayscale = pixel.r*0.22 + pixel.g*0.707 + pixel.b*0.071;
+					rayon = Math.round(grayscale/255*(pixelW/2));
+					this.arc(i, j, rayon, 0, Math.PI*2, false);
+					this.closePath();
+					this.fill();
+				}
+			}
+
+		}
+
+		CanvasRenderingContext2D.prototype.trans_flip = function(){
+			var scratch = document.getElementById("scratch");
+			scratch.width = this.canvas.width;
+			scratch.height = this.canvas.height;
+			var cts = scratch.getContext('2d');
+
+			cts.translate(this.canvas.width, 0);
+			cts.scale(-1, 1);
+			cts.drawImage(this.canvas, 0, 0);
+			this.drawImage(scratch, 0, 0);
+
+		}
+
+		CanvasRenderingContext2D.prototype.trans_flip2 = function(){
+			var scratch = document.getElementById("scratch");
+			scratch.width = this.canvas.width;
+			scratch.height = this.canvas.height;
+			var cts = scratch.getContext('2d');
+
+			cts.translate(0, this.canvas.height);
+			cts.scale(1, -1);
+			cts.drawImage(this.canvas, 0, 0);
+			this.drawImage(scratch, 0, 0);
+		}
+
+		CanvasRenderingContext2D.prototype.symetrie = function(){
+			var scratch = document.getElementById("scratch");
+			scratch.width = this.canvas.width;
+			scratch.height = this.canvas.height;
+			var cts = scratch.getContext('2d');
+
+			cts.translate(this.canvas.width/2, 0);
+			cts.scale(-1, 1);
+			cts.drawImage(this.canvas, 0, 0);
+			this.drawImage(scratch, this.canvas.width/2, 0);
+
+		}
+
+		CanvasRenderingContext2D.prototype.symetrie2  = function(){
+			var scratch = document.getElementById("scratch");
+			scratch.width = this.canvas.width;
+			scratch.height = this.canvas.height;
+			var cts = scratch.getContext('2d');
+
+			cts.translate(0, this.canvas.height/2);
+			cts.scale(1, -1);
+			cts.drawImage(this.canvas, 0, 0);
+			this.drawImage(scratch, 0, this.canvas.height/2);
+
+		}
+
+		CanvasRenderingContext2D.prototype.symetrie3 = function(){
+			this.symetrie();
+			this.symetrie2();
+		}
+
+		CanvasRenderingContext2D.prototype.trans_pattern = function(nb, nb2){
+			var scratch = document.getElementById("scratch");
+			scratch.width = this.canvas.width/nb;
+			scratch.height = this.canvas.height/nb2;
+			var cts = scratch.getContext('2d');
+
+			cts.drawImage(this.canvas, 0, 0, scratch.width, scratch.height);
+
+			var pattern = this.createPattern(scratch, 'repeat');
+			this.fillStyle = pattern;
+			this.fillRect(0, 0, this.canvas.width, this.canvas.height);
+		}
+
+
+		// Classe PhotoBoothApp (canvas caché)
+ 		function PhotoBoothApp( idcanvas ){
+		 	this.canvas = document.getElementById( idcanvas );
+		 	this.video  = document.getElementById("video");
+		 	
+		 	var btn = document.getElementById("btn");
+		 	
+		 	var e1 = document.getElementById("e1");
+		 	var e2 = document.getElementById("e2");
+		 	var e3 = document.getElementById("e3");
+		 	var e4 = document.getElementById("e4");
+		 	var e5 = document.getElementById("e5");
+		 	var e6 = document.getElementById("e6");
+		 	var e7 = document.getElementById("e7");
+		 	var e8 = document.getElementById("e8");
+		 	var e9 = document.getElementById("e9");
+		 	var e10 = document.getElementById("e10");
+		 	var e11 = document.getElementById("e11");
+		 	var e12 = document.getElementById("e12");
+		 	
+		 	var t1 = document.getElementById("t1");
+		 	var t2 = document.getElementById("t2");
+		 	var t3 = document.getElementById("t3");
+		 	var t4 = document.getElementById("t4");
+		 	var t5 = document.getElementById("t5");
+		 	var t6 = document.getElementById("t6");
+		 	var t7 = document.getElementById("t7");
+			
+			var self = this;
+
+			navigator.getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+
+			if (navigator.getUserMedia) {
+			  	navigator.getUserMedia(
+			  		{video: true, audio: false}, 
+
+			  		function(localMediaStream) {
+			    	self.video.src = window.webkitURL.createObjectURL(localMediaStream);
+			    	self.video.addEventListener( "loadedmetadata", function(e) {
+			 			window.setInterval( function(){ 
+			  				self.canvas.width = video.videoWidth;
+			  				self.canvas.height = video.videoHeight;
+			  				self.canvas.getContext("2d").drawImage( video, 0, 0 ); 
+			  				self.applyTransform();
+			  				self.applyFilter();
+			  			}, 50);
+			    	});
+			  		},
+			  		
+			  		function(err) {
+		        		console.log("The following error occured: " + err);
+		      		}
+		      	);
+			}
+
+		  	PhotoBoothApp.prototype.screenShot = function(){
+		  		var photo = document.getElementById("shot");
+		  		//photo.width = video.videoWidth;
+		  		//photo.height = video.videoHeight;
+		  		photo.src = self.canvas.toDataURL("image/png");
+			}
+		  	
+		};
+
+		// Classe PhotoBoothApp2 (canvas à l'écran)
+		function PhotoBoothApp2( idcanvas ){
+		 	this.canvas2 = document.getElementById( idcanvas );
+		 	this.video  = document.getElementById("video");
+			var self = this;
+
+			if (navigator.getUserMedia) {
+			  	navigator.getUserMedia(
+			  		{video: true, audio: false}, 
+
+			  		function(localMediaStream) {
+			    		self.video.src = window.webkitURL.createObjectURL(localMediaStream);
+			    		self.video.addEventListener( "loadedmetadata", function(e) {
+				 			window.setInterval( function() { 
+				  				self.canvas2.width = video.videoWidth;
+				  				self.canvas2.height = video.videoHeight;
+				  				self.canvas2.getContext("2d").drawImage( video, 0, 0 ); 
+				  				self.applyTransFlip();
+				  			}, 50);
+			    		});
+					},
+
+					function(err) {
+			        	console.log("The following error occured: " + err);
+			      	}
+				);
+			}
+		  	
+		};
+
+		//Appliquer les transformations à l'objet PhotoBoothApp
+		PhotoBoothApp.prototype.applyTransform = function(){
+			var ctx = this.canvas.getContext('2d');
+			
+			ctx.trans_flip();
+			if (t1 == 1)
+				ctx.trans_flip2();
+			if (t2 == 1)
+				ctx.symetrie();
+			if (t3 == 1)
+				ctx.symetrie2();
+			if (t4 == 1)
+				ctx.symetrie3();
+			if (t5 == 1)
+				ctx.trans_pattern(5, 4);
+			if (t6 == 1)
+				ctx.pixellisation(10, 10);
+			if (t7 == 1)
+				ctx.pixellisation2(10, 10);
+
+		}
+
+		//Appliquer les effets à l'objet PhotoBoothApp
+		PhotoBoothApp.prototype.applyFilter = function(){ 	
+		 	
+		 	var pixels = this.canvas.getContext("2d").getImageData( 0, 0, this.canvas.width, this.canvas.height );
+			
+			if(e1 == 1)
+		 		pixels.filter_RGB2GBR();
+		 	if (e2 == 1)
+				pixels.filter_luminosity(1);
+			if (e3 == 1)
+		 		pixels.filter_contraste(1);
+		 	if (e4 == 1)
+		 		pixels.filter_gray();
+		 	if (e5 == 1)
+		 		pixels.filter_sepia();
+		 	if (e6 == 1)
+		 		pixels.filter_negative();
+		 	if (e7 == 1)
+		 		pixels.filter_minmax();
+		 	if (e8 == 1)
+		 		pixels.filter_seuil();
+		 	if (e9 == 1)
+		 		pixels.filter_noise();
+		 	if (e10 == 1)
+		 		pixels.filter_redChannel();
+		 	if (e11 == 1)
+		 		pixels.filter_RGB2BRG();
+		 	if (e12 == 1)
+		 		pixels.filter_3D();
+
+			//pixels.filter_opacity();
+			//pixels.filter_greenChannel();
+			//pixels.filter_blueChannel();
+
+		 	this.canvas.getContext("2d").putImageData( pixels, 0, 0);
+		 			 
+		 };
+
+		// Appliquer l'effet trans_flip à l'objet PhotoBoothApp2
+		PhotoBoothApp2.prototype.applyTransFlip = function(){
+			var ctx = this.canvas2.getContext('2d');
+			ctx.trans_flip();
+		}
+	
+		// Création des deux objets PhotoBoothApp (invisible) et PhotoBoothApp2 (visible)
+		var app = new PhotoBoothApp( "canvas" );
+		var vid = new PhotoBoothApp2("canvas2");
+
+		// Ajout des écouteurs à chaque bouton
+		btn.addEventListener('click', app.screenShot, false);
+
+	 	e1.addEventListener('click', function(){e1.style.opacity = 0.3; e1 = 1; app.applyFilter();}, false);		
+		e2.addEventListener('click', function(){e2.style.opacity = 0.3; e2 = 1; app.applyFilter();}, false);
+		e3.addEventListener('click', function(){e3.style.opacity = 0.3; e3 = 1; app.applyFilter();}, false);
+		e4.addEventListener('click', function(){e4.style.opacity = 0.3; e4 = 1; app.applyFilter();}, false);
+		e5.addEventListener('click', function(){e5.style.opacity = 0.3; e5 = 1; app.applyFilter();}, false);
+		e6.addEventListener('click', function(){e6.style.opacity = 0.3; e6 = 1; app.applyFilter();}, false);
+		e7.addEventListener('click', function(){e7.style.opacity = 0.3; e7 = 1; app.applyFilter();}, false);
+		e8.addEventListener('click', function(){e8.style.opacity = 0.3; e8 = 1; app.applyFilter();}, false);
+		e9.addEventListener('click', function(){e9.style.opacity = 0.3; e9 = 1; app.applyFilter();}, false);
+		e10.addEventListener('click', function(){e10.style.opacity = 0.3; e10 = 1; app.applyFilter();}, false);
+		e11.addEventListener('click', function(){e11.style.opacity = 0.3; e11 = 1; app.applyFilter();}, false);
+		e12.addEventListener('click', function(){e12.style.opacity = 0.3; e12 = 1; app.applyFilter();}, false);
+
+		t1.addEventListener('click', function(){t1.style.opacity = 0.3; t1 = 1; app.applyTransform();}, false);
+		t2.addEventListener('click', function(){t2.style.opacity = 0.3; t2 = 1; app.applyTransform();}, false);
+		t3.addEventListener('click', function(){t3.style.opacity = 0.3; t3 = 1; app.applyTransform();}, false);
+		t4.addEventListener('click', function(){t4.style.opacity = 0.3; t4 = 1; app.applyTransform();}, false);
+		t5.addEventListener('click', function(){t5.style.opacity = 0.3; t5 = 1; app.applyTransform();}, false);
+		t6.addEventListener('click', function(){t6.style.opacity = 0.3; t6 = 1; app.applyTransform();}, false);
+		t7.addEventListener('click', function(){t7.style.opacity = 0.3; t7 = 1; app.applyTransform();}, false);
+		
+		</script>
+
+	</body>
+</html>		

@@ -1,0 +1,15 @@
+
+#container {position:relative}
+.petit{height: 228px; margin-top: 50px}
+#container.grand{height: 530px;}
+.sliderbutton {position: absolute; width:33px; height:37px; cursor:pointer; bottom: 10px}
+#slideleft {background:url(images/fleche-g.png) no-repeat; left: 75px;z-index:10}
+#slideright {background:url(images/fleche-d.png) no-repeat; right: 75px}
+#slider {float:left; position:relative}
+.petit-slider{width:280px; height:228px; margin-top: -5px}
+#slider.grand-slider{width: 580px; height: 530px;margin-top: 0}
+.grande-img{width: 580px; height: 530px;}
+.petite-img{width:280px; height:228px;}
+#slider ul {position:absolute; list-style:none; top:0; left:0}
+#slider li {float:left; width:580px; height:235px}
+.pagination {display: none;}

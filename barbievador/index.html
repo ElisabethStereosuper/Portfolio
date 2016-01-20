@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Barbie Vador</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+	<style>
+	
+	body{
+		background: url('barbievador.jpg') no-repeat fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover
+	}
+	div{
+		width: 443px;
+		height: 371px;
+		margin: 15% auto 0;
+		position: relative
+	}
+	img{position: absolute}
+	.fond{left: 0;top: 5px}
+	#fond2{top: 0}
+	.bouche{left: 177px;top: 247px}
+	#bouche2{left: 179px}
+	.e_y{left: 207px;top: 163px}
+	#entre_y2{top: 166px}
+	.front{left: 203px;top: 12px}
+	#front2{top: 13px}
+	.menton{left: 177px;top: 285px}
+	#menton2{top: 305px}
+	.nez{left: 207px;top: 198px}
+	#nez2{top: 201px}
+	.casque{left: 84px;top: 8px}
+	#casque2{left: 89px;top: 3px}
+	.casqued{left: 225px;top: 2px}
+	#casque2D{left: 220px;top: 4px}
+	.col{left: 130px;top: 295px}
+	.cold{left: 223px;top: 295px}
+	.cote{left: 45px;top: 151px}
+	#cote2{top: 154px}
+	.coted{left: 314px;top: 142px}
+	#cote2D{left: 315px;top: 151px}
+	.cote2{left: 68px;top: 150px}
+	#cote222{left: 71px;top: 157px}
+	.cote2d{left: 290px;top: 145px}
+	#cote222D{left: 291px;top: 151px}
+	.epaule{left: 3px;top: 307px}
+	#epaule2{left: 8px;top: 318px}
+	.epauled{left: 280px;top: 307px}
+	#epaule2D{left: 279px;top: 320px}
+	.joue{left: 130px;top: 210px}
+	#joue2{top: 211px}
+	.joued{left: 232px;top: 210px}
+	#joue2D{top: 212px}
+	.mach{left: 125px;top: 215px}
+	#mach2{left: 131px}
+	.machd{left: 267px;top: 215px}
+	#mach2D{left: 274px;top: 214px}
+	.oeil{left: 133px;top: 165px}
+	#oeil2{left: 132px;top: 163px}
+	.oeild{left: 230px;top: 165px}
+	#oeil2D{left: 229px;top: 163px}
+	.rect{left: 168px;top: 235px}
+	#rect2{left: 172px;top: 228px}
+	.rectd{left: 227px;top: 235px}
+	#rect2D{left: 234px;top: 229px}
+	.rond{left: 164px;top: 289px}
+	#rond2{left: 158px;top: 292px}
+	.rondd{left: 253px;top: 289px}
+	#rond2D{left: 246px;top: 292px}
+
+</style>
+</head>
+
+<body onkeypress= "evtClavier(event)">
+	
+	<div>
+
+		<img id="fond" alt="" class="fond" src="./DarkVador/Noir/Milieu/fond.png"/>
+		<img id="fond2" alt="" class="fond" src="./DarkVador/Rose/Milieu/fond.png"/> 
+
+		<img id="bouche" alt="" class="bouche" src="./DarkVador/Noir/Milieu/bouche.png"/>
+		<img id="bouche2" alt="" class="bouche" src="./DarkVador/Rose/Milieu/bouche.png"/>
+
+		<img id="entre_y" alt="" class="e_y" src="./DarkVador/Noir/Milieu/entre_yeux.png"/>
+		<img id="entre_y2" alt="" class="e_y" src="./DarkVador/Rose/Milieu/entre_yeux.png"/>
+
+		<img id="front" alt="" class="front" src="./DarkVador/Noir/Milieu/front.png"/>
+		<img id="front2" alt="" class="front" src="./DarkVador/Rose/Milieu/front.png"/>
+
+		<img id="menton" alt="" class="menton" src="./DarkVador/Noir/Milieu/menton.png"/>
+		<img id="menton2" alt="" class="menton" src="./DarkVador/Rose/Milieu/menton.png"/>
+		
+		<img id="nez" alt="" class="nez" src="./DarkVador/Noir/Milieu/nez.png"/>
+		<img id="nez2" alt="" class="nez" src="./DarkVador/Rose/Milieu/nez.png"/>
+
+		<img id="casque" alt="" class="casque" src="./DarkVador/Noir/Gauche/casque.png"/>
+		<img id="casque2" alt="" class="casque" src="./DarkVador/Rose/Gauche/casque.png"/>
+		<img id="casqueD" alt="" class="casqued" src="./DarkVador/Noir/Droite/casque.png"/>
+		<img id="casque2D" alt="" class="casqued" src="./DarkVador/Rose/Droite/casque.png"/>
+
+		<img id="cote" alt="" class="cote" src="./DarkVador/Noir/Gauche/cote.png"/>
+		<img id="cote2" alt="" class="cote" src="./DarkVador/Rose/Gauche/cote.png"/>
+		<img id="coteD" alt="" class="coted" src="./DarkVador/Noir/Droite/cote.png"/>
+		<img id="cote2D" alt="" class="coted" src="./DarkVador/Rose/Droite/cote.png"/>
+		
+		<img id="cote22" alt="" class="cote2" src="./DarkVador/Noir/Gauche/cote2.png"/>
+		<img id="cote222" alt="" class="cote2" src="./DarkVador/Rose/Gauche/cote2.png"/>
+		<img id="cote22D" alt="" class="cote2d" src="./DarkVador/Noir/Droite/cote2.png"/>
+		<img id="cote222D" class="cote2d" src="./DarkVador/Rose/Droite/cote2.png"/>
+
+		<img id="epaule" alt="" class="epaule" src="./DarkVador/Noir/Gauche/epaule.png"/>
+		<img id="epaule2" alt="" class="epaule" src="./DarkVador/Rose/Gauche/epaule.png"/>
+		<img id="epauleD" alt="" class="epauled" src="./DarkVador/Noir/Droite/epaule.png"/>
+		<img id="epaule2D" alt="" class="epauled" src="./DarkVador/Rose/Droite/epaule.png"/>
+
+		<img id="joue" alt="" class="joue" src="./DarkVador/Noir/Gauche/joue.png"/>
+		<img id="joue2" alt="" class="joue" src="./DarkVador/Rose/Gauche/joue.png"/>
+		<img id="joueD" alt="" class="joued" src="./DarkVador/Noir/Droite/joue.png"/>
+		<img id="joue2D" alt="" class="joued" src="./DarkVador/Rose/Droite/joue.png"/>
+
+		<img id="mach" alt="" class="mach" src="./DarkVador/Noir/Gauche/machoire.png"/>
+		<img id="mach2" alt="" class="mach" src="./DarkVador/Rose/Gauche/machoire.png"/>
+		<img id="machD" alt="" class="machd" src="./DarkVador/Noir/Droite/machoire.png"/>
+		<img id="mach2D" alt="" class="machd" src="./DarkVador/Rose/Droite/machoire.png"/>
+
+		<img id="oeil" alt="" class="oeil" src="./DarkVador/Noir/Gauche/oeil.png"/>
+		<img id="oeil2" alt="" class="oeil" src="./DarkVador/Rose/Gauche/oeil.png"/>
+		<img id="oeilD" alt="" class="oeild" src="./DarkVador/Noir/Droite/oeil.png"/>
+		<img id="oeil2D" alt="" class="oeild" src="./DarkVador/Rose/Droite/oeil.png"/>
+
+		<img id="rect" alt="" class="rect" src="./DarkVador/Noir/Gauche/rect.png"/>
+		<img id="rect2" alt="" class="rect" src="./DarkVador/Rose/Gauche/rect.png"/>
+		<img id="rectD" alt="" class="rectd" src="./DarkVador/Noir/Droite/rect.png"/>
+		<img id="rect2D" alt="" class="rectd" src="./DarkVador/Rose/Droite/rect.png"/>
+
+		<img id="rond" alt="" class="rond" src="./DarkVador/Noir/Gauche/rond.png"/>
+		<img id="rond2" alt="" class="rond" src="./DarkVador/Rose/Gauche/rond.png"/>
+		<img id="rondD" alt="" class="rondd" src="./DarkVador/Noir/Droite/rond.png"/>
+		<img id="rond2D" alt="" class="rondd" src="./DarkVador/Rose/Droite/rond.png"/>
+
+	</div>
+
+	<script>
+
+	//IMAGES
+	
+		var fond = document.getElementById("fond");
+		fond.style.opacity = 0;
+		var fond2 = document.getElementById("fond2");
+		fond2.style.opacity = 0;
+
+		var bouche = document.getElementById("bouche");
+		bouche.style.opacity = 0;
+		var bouche2 = document.getElementById("bouche2");
+		bouche2.style.opacity = 0;
+
+		var entre_y = document.getElementById("entre_y");
+		entre_y.style.opacity = 0;
+		var entre_y2 = document.getElementById("entre_y2");
+		entre_y2.style.opacity = 0;
+
+		var front = document.getElementById("front");
+		front.style.opacity = 0;
+		var front2 = document.getElementById("front2");
+		front2.style.opacity = 0;
+
+		var menton = document.getElementById("menton");
+		menton.style.opacity = 0;
+		var menton2 = document.getElementById("menton2");
+		menton2.style.opacity = 0;
+
+		var nez = document.getElementById("nez");
+		nez.style.opacity = 0;
+		var nez2 = document.getElementById("nez2");
+		nez2.style.opacity = 0;
+
+		var casque = document.getElementById("casque");
+		casque.style.opacity = 0;
+		var casque2 = document.getElementById("casque2");
+		casque2.style.opacity = 0;
+
+		var cote = document.getElementById("cote");
+		cote.style.opacity = 0;
+		var cote2 = document.getElementById("cote2");
+		cote2.style.opacity = 0;
+
+		var cote22 = document.getElementById("cote22");
+		cote22.style.opacity = 0;
+		var cote222 = document.getElementById("cote222");
+		cote222.style.opacity = 0;
+
+		var epaule = document.getElementById("epaule");
+		epaule.style.opacity = 0;
+		var epaule2 = document.getElementById("epaule2");
+		epaule2.style.opacity = 0;
+
+		var joue = document.getElementById("joue");
+		joue.style.opacity = 0;
+		var joue2 = document.getElementById("joue2");
+		joue2.style.opacity = 0;
+
+		var mach = document.getElementById("mach");
+		mach.style.opacity = 0;
+		var mach2 = document.getElementById("mach2");
+		mach2.style.opacity = 0;
+
+		var oeil = document.getElementById("oeil");
+		oeil.style.opacity = 0;
+		var oeil2 = document.getElementById("oeil2");
+		oeil2.style.opacity = 0;
+
+		var rect = document.getElementById("rect");
+		rect.style.opacity = 0;
+		var rect2 = document.getElementById("rect2");
+		rect2.style.opacity = 0;
+
+		var rond = document.getElementById("rond");
+		rond.style.opacity = 0;
+		var rond2 = document.getElementById("rond2");
+		rond2.style.opacity = 0;
+
+		var casqueD = document.getElementById("casqueD");
+		casqueD.style.opacity = 0;
+		var casque2D = document.getElementById("casque2D");
+		casque2D.style.opacity = 0;
+
+		var coteD = document.getElementById("coteD");
+		coteD.style.opacity = 0;
+		var cote2D = document.getElementById("cote2D");
+		cote2D.style.opacity = 0;
+
+		var cote22D = document.getElementById("cote22D");
+		cote22D.style.opacity = 0;
+		var cote222D = document.getElementById("cote222D");
+		cote222D.style.opacity = 0;
+
+		var epauleD = document.getElementById("epauleD");
+		epauleD.style.opacity = 0;
+		var epaule2D = document.getElementById("epaule2D");
+		epaule2D.style.opacity = 0;
+
+		var joueD = document.getElementById("joueD");
+		joueD.style.opacity = 0;
+		var joue2D = document.getElementById("joue2D");
+		joue2D.style.opacity = 0;
+
+		var machD = document.getElementById("machD");
+		machD.style.opacity = 0;
+		var mach2D = document.getElementById("mach2D");
+		mach2D.style.opacity = 0;
+
+		var oeilD = document.getElementById("oeilD");
+		oeilD.style.opacity = 0;
+		var oeil2D = document.getElementById("oeil2D");
+		oeil2D.style.opacity = 0;
+
+		var rectD = document.getElementById("rectD");
+		rectD.style.opacity = 0;
+		var rect2D = document.getElementById("rect2D");
+		rect2D.style.opacity = 0;
+
+		var rondD = document.getElementById("rondD");
+		rondD.style.opacity = 0;
+		var rond2D = document.getElementById("rond2D");
+		rond2D.style.opacity = 0;
+
+
+	// SONS
+		var audioElement1 = document.createElement('audio');
+		audioElement1.setAttribute('src', './Sons/fond.mp3');
+
+		var audioElement2 = document.createElement('audio');
+		audioElement2.setAttribute('src', './Sons/blaster.mp3');
+
+		var audioElement3 = document.createElement('audio');
+		audioElement3.setAttribute('src', './Sons/blaster2.mp3');
+
+		var audioElement4 = document.createElement('audio');
+		audioElement4.setAttribute('src', './Sons/bruit.mp3');
+
+		var audioElement5 = document.createElement('audio');
+		audioElement5.setAttribute('src', './Sons/chewbacca.mp3');
+
+		var audioElement6 = document.createElement('audio');
+		audioElement6.setAttribute('src', './Sons/jabba.mp3');
+
+		var audioElement7 = document.createElement('audio');
+		audioElement7.setAttribute('src', './Sons/bete.mp3');
+
+		var audioElement8 = document.createElement('audio');
+		audioElement8.setAttribute('src', './Sons/laser.mp3');
+
+		var audioElement9 = document.createElement('audio');
+		audioElement9.setAttribute('src', './Sons/laser2.mp3');
+
+		var audioElement10 = document.createElement('audio');
+		audioElement10.setAttribute('src', './Sons/note1.mp3');
+
+		var audioElement11 = document.createElement('audio');
+		audioElement11.setAttribute('src', './Sons/note2.mp3');
+
+		var audioElement12 = document.createElement('audio');
+		audioElement12.setAttribute('src', './Sons/note3.mp3');
+
+		var audioElement13 = document.createElement('audio');
+		audioElement13.setAttribute('src', './Sons/note4.mp3');
+
+		var audioElement14 = document.createElement('audio');
+		audioElement14.setAttribute('src', './Sons/note5.mp3');
+
+		var audioElement15 = document.createElement('audio');
+		audioElement15.setAttribute('src', './Sons/note6.mp3');
+
+		var audioElement16 = document.createElement('audio');
+		audioElement16.setAttribute('src', './Sons/note7.mp3');
+
+		var audioElement17 = document.createElement('audio');
+		audioElement17.setAttribute('src', './Sons/note8.mp3');
+
+		var audioElement18 = document.createElement('audio');
+		audioElement18.setAttribute('src', './Sons/note9.mp3');
+
+		var audioElement19 = document.createElement('audio');
+		audioElement19.setAttribute('src', './Sons/r2d2.mp3');
+
+		var audioElement20 = document.createElement('audio');
+		audioElement20.setAttribute('src', './Sons/r2d22.mp3');
+
+		var audioElement21 = document.createElement('audio');
+		audioElement21.setAttribute('src', './Sons/respiration.mp3');
+
+		var audioElement22 = document.createElement('audio');
+		audioElement22.setAttribute('src', './Sons/robot.mp3');
+
+		var audioElement23 = document.createElement('audio');
+		audioElement23.setAttribute('src', './Sons/vaisseau.mp3');
+
+		var audioElement24 = document.createElement('audio');
+		audioElement24.setAttribute('src', './Sons/yoda.mp3');
+
+
+	// EVENEMENTS CLAVIER
+		function evtClavier(evenement)
+		   {
+		       var touche = window.event ? evenement.keyCode : evenement.which;
+
+		    // Récupérer le numéro correspondant à chaque touche
+		       //alert(touche);
+
+		    if (touche == 97){
+		    //On ne fait pas disparaitre ce son car il sert de fond sonore
+		       		audioElement1.play();
+		       		fond.style.opacity = 1;
+		       document.addEventListener('mousemove', evtSouris97);
+		       }
+
+		    // Démarrer le son au premier appui et faire apparaitre l'image
+		    if (touche == 98){
+		       	if (audioElement2.paused == true){
+		       		audioElement2.play();
+		       		bouche.style.opacity = 1;
+		    // L'arreter au second (l'image reste à l'écran)
+		       	}else{
+		       		audioElement2.pause();	
+		       	}
+		    // Lancer les évènements souris
+		       	document.addEventListener('mousemove', evtSouris98);
+		       }
+
+		    if (touche == 99){
+		       	if (audioElement3.paused == true){
+		       		audioElement3.play();
+		       		entre_y.style.opacity = 1;
+		       	}else{
+		       		audioElement3.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris99);
+		       }
+		    
+		    if (touche == 100){
+		       	if (audioElement4.paused == true){
+		       		audioElement4.play();
+		       		front.style.opacity = 1;
+		       	}else{
+		       		audioElement4.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris100);
+		   	}
+
+		   	if (touche == 101){
+		       	if (audioElement5.paused == true){
+		       		audioElement5.play();
+		       		menton.style.opacity = 1;
+		       	}else{
+		       		audioElement5.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris101);
+		   	}
+
+		   	if (touche == 102){
+		       	if (audioElement6.paused == true){
+		       		audioElement6.play();
+		       		nez.style.opacity = 1;
+		       	}else{
+		       		audioElement6.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris102);
+		   	}
+
+		   	if (touche == 103){
+		       	if (audioElement7.paused == true){
+		       		audioElement7.play();
+		       		casque.style.opacity = 1;
+		       	}else{
+		       		audioElement7.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris103);
+		   	}
+
+		   	if (touche == 105){
+		       	if (audioElement9.paused == true){
+		       		audioElement9.play();
+		       		cote.style.opacity = 1;
+		       	}else{
+		       		audioElement9.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris105);
+		   	}
+
+		   	if (touche == 106){
+		       	if (audioElement10.paused == true){
+		       		audioElement10.play();
+		       		cote22.style.opacity = 1;
+		       	}else{
+		       		audioElement10.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris106);
+		   	}
+
+		   	if (touche == 107){
+		       	if (audioElement11.paused == true){
+		       		audioElement11.play();
+		       		epaule.style.opacity = 1;
+		       	}else{
+		       		audioElement11.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris107);
+		   	}
+
+		   	if (touche == 108){
+		       	if (audioElement12.paused == true){
+		       		audioElement12.play();
+		       		joue.style.opacity = 1;
+		       	}else{
+		       		audioElement12.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris108);
+		   	}
+
+		   	if (touche == 109){
+		       	if (audioElement13.paused == true){
+		       		audioElement13.play();
+		       		mach.style.opacity = 1;
+		       	}else{
+		       		audioElement13.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris109);
+		   	}
+
+		   	if (touche == 110){
+		       	if (audioElement14.paused == true){
+		       		audioElement14.play();
+		       		oeil.style.opacity = 1;
+		       	}else{
+		       		audioElement14.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris110);
+		   	}
+
+		   	if (touche == 111){
+		       	if (audioElement15.paused == true){
+		       		audioElement15.play();
+		       		rect.style.opacity = 1;
+		       	}else{
+		       		audioElement15.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris111);
+		   	}
+
+		   	if (touche == 112){
+		       	if (audioElement16.paused == true){
+		       		audioElement16.play();
+		       		rond.style.opacity = 1;
+		       	}else{
+		       		audioElement16.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris112);
+		   	}
+
+		   	if (touche == 113){
+		       	if (audioElement17.paused == true){
+		       		audioElement17.play();
+		       		casqueD.style.opacity = 1;
+		       	}else{
+		       		audioElement17.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris113);
+		   	}
+
+		   	if (touche == 115){
+		       	if (audioElement19.paused == true){
+		       		audioElement19.play();
+		       		coteD.style.opacity = 1;
+		       	}else{
+		       		audioElement19.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris115);
+		   	}
+
+		   	if (touche == 116){
+		       	if (audioElement20.paused == true){
+		       		audioElement20.play();
+		       		cote22D.style.opacity = 1;
+		       	}else{
+		       		audioElement20.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris116);
+		   	}
+
+		   	if (touche == 117){
+		       	if (audioElement21.paused == true){
+		       		audioElement21.play();
+		       		epauleD.style.opacity = 1;
+		       	}else{
+		       		audioElement21.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris117);
+		   	}
+
+		   	if (touche == 118){
+		       	if (audioElement22.paused == true){
+		       		audioElement22.play();
+		       		joueD.style.opacity = 1;
+		       	}else{
+		       		audioElement22.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris118);
+		   	}
+
+		   	if (touche == 119){
+		       	if (audioElement23.paused == true){
+		       		audioElement23.play();
+		       		machD.style.opacity = 1;
+		       	}else{
+		       		audioElement13.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris119);
+		   	}
+
+		   	if (touche == 120){
+		       	if (audioElement24.paused == true){
+		       		audioElement24.play();
+		       		oeilD.style.opacity = 1;
+		       	}else{
+		       		audioElement24.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris120);
+		   	}
+
+		   	if (touche == 104){
+		       	if (audioElement8.paused == true){
+		       		audioElement8.play();
+		       		rectD.style.opacity = 1;
+		       	}else{
+		       		audioElement8.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris104);
+		   	}
+
+		   	if (touche == 114){
+		       	if (audioElement18.paused == true){
+		       		audioElement18.play();
+		       		rondD.style.opacity = 1;
+		       	}else{
+		       		audioElement18.pause();	
+		       	}
+		       	document.addEventListener('mousemove', evtSouris114);
+		   	}
+		}
+
+
+	// EVENEMENTS SOURIS
+		function evtSouris97(ev)
+			{
+			//Récupérer la position de la souris
+				var y = parseInt(ev.clientY);
+
+			//Si la souris est en haut ou en bas: son à fond, disparition image rose, apparition image noire
+					if (y > 600 || y < 300){
+						fond.style.opacity = 0;
+						fond2.style.opacity = 1;
+						audioElement1.volume = 0.2;
+				//Si la souris est au milieu: son plus faible, disparition image noire, apparition image rose
+					}else{
+						fond.style.opacity = 1;
+						fond2.style.opacity = 0;
+						audioElement1.volume = 0.7;
+					}
+			}
+
+		function evtSouris98(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					bouche.style.opacity = 0;
+					bouche2.style.opacity = 1;
+					audioElement2.volume = 0.3;
+				}else{
+					bouche.style.opacity = 1;
+					bouche2.style.opacity = 0;
+					audioElement2.volume = 1;
+				}
+			}
+
+		function evtSouris99(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					entre_y.style.opacity = 0;
+					entre_y2.style.opacity = 1;
+					audioElement3.volume = 0.3;
+				}else{
+					entre_y.style.opacity = 1;
+					entre_y2.style.opacity = 0;
+					audioElement3.volume = 1;
+				}
+			}
+
+		function evtSouris100(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					front.style.opacity = 0;
+					front2.style.opacity = 1;
+					audioElement4.volume = 0.3;
+				}else{
+					front.style.opacity = 1;
+					front2.style.opacity = 0;
+					audioElement4.volume = 1;
+				}
+			}
+
+		function evtSouris101(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					menton.style.opacity = 0;
+					menton2.style.opacity = 1;
+					audioElement5.volume = 0.3;
+				}else{
+					menton.style.opacity = 1;
+					menton2.style.opacity = 0;
+					audioElement5.volume = 1;
+				}
+			}
+
+		function evtSouris102(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					nez.style.opacity = 0;
+					nez2.style.opacity = 1;
+					audioElement6.volume = 0.3;
+				}else{
+					nez.style.opacity = 1;
+					nez2.style.opacity = 0;
+					audioElement6.volume = 1;
+				}
+			}
+
+		function evtSouris103(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					casque.style.opacity = 0;
+					casque2.style.opacity = 1;
+					audioElement7.volume = 0.3;
+				}else{
+					casque.style.opacity = 1;
+					casque2.style.opacity = 0;
+					audioElement7.volume = 1;
+				}
+			}
+
+		function evtSouris104(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					rectD.style.opacity = 0;
+					rect2D.style.opacity = 1;
+					audioElement8.volume = 0.3;
+				}else{
+					rectD.style.opacity = 1;
+					rect2D.style.opacity = 0;
+					audioElement8.volume = 1;
+				}
+			}
+
+		function evtSouris105(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					cote.style.opacity = 0;
+					cote2.style.opacity = 1;
+					audioElement9.volume = 0.3;
+				}else{
+					cote.style.opacity = 1;
+					cote2.style.opacity = 0;
+					audioElement9.volume = 1;
+				}
+			}
+
+		function evtSouris106(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					cote22.style.opacity = 0;
+					cote222.style.opacity = 1;
+					audioElement10.volume = 0.3;
+				}else{
+					cote22.style.opacity = 1;
+					cote222.style.opacity = 0;
+					audioElement10.volume = 1;
+				}
+			}
+
+		function evtSouris107(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					epaule.style.opacity = 0;
+					epaule2.style.opacity = 1;
+					audioElement11.volume = 0.3;
+				}else{
+					epaule.style.opacity = 1;
+					epaule2.style.opacity = 0;
+					audioElement11.volume = 1;
+				}
+			}
+
+		function evtSouris108(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					joue.style.opacity = 0;
+					joue2.style.opacity = 1;
+					audioElement12.volume = 0.3;
+				}else{
+					joue.style.opacity = 1;
+					joue2.style.opacity = 0;
+					audioElement12.volume = 1;
+				}
+			}
+
+		function evtSouris109(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					mach.style.opacity = 0;
+					mach2.style.opacity = 1;
+					audioElement13.volume = 0.3;
+				}else{
+					mach.style.opacity = 1;
+					mach2.style.opacity = 0;
+					audioElement13.volume = 1;
+				}
+			}
+
+		function evtSouris110(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					oeil.style.opacity = 0;
+					oeil2.style.opacity = 1;
+					audioElement14.volume = 0.3;
+				}else{
+					oeil.style.opacity = 1;
+					oeil2.style.opacity = 0;
+					audioElement14.volume = 1;
+				}
+			}
+
+		function evtSouris111(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					rect.style.opacity = 0;
+					rect2.style.opacity = 1;
+					audioElement15.volume = 0.3;
+				}else{
+					rect.style.opacity = 1;
+					rect2.style.opacity = 0;
+					audioElement15.volume = 1;
+				}
+			}
+
+		function evtSouris112(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					rond.style.opacity = 0;
+					rond2.style.opacity = 1;
+					audioElement16.volume = 0.3;
+				}else{
+					rond.style.opacity = 1;
+					rond2.style.opacity = 0;
+					audioElement16.volume = 1;
+				}
+			}
+
+		function evtSouris113(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					casqueD.style.opacity = 0;
+					casque2D.style.opacity = 1;
+					audioElement17.volume = 0.3;
+				}else{
+					casqueD.style.opacity = 1;
+					casque2D.style.opacity = 0;
+					audioElement17.volume = 1;
+				}
+			}
+
+		function evtSouris114(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					rondD.style.opacity = 0;
+					rond2D.style.opacity = 1;
+					audioElement18.volume = 0.3;
+				}else{
+					rondD.style.opacity = 1;
+					rond2D.style.opacity = 0;
+					audioElement18.volume = 1;
+				}
+			}
+
+		function evtSouris115(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					coteD.style.opacity = 0;
+					cote2D.style.opacity = 1;
+					audioElement19.volume = 0.3;
+				}else{
+					coteD.style.opacity = 1;
+					cote2D.style.opacity = 0;
+					audioElement19.volume = 1;
+				}
+			}
+
+		function evtSouris116(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					cote22D.style.opacity = 0;
+					cote222D.style.opacity = 1;
+					audioElement20.volume = 0.3;
+				}else{
+					cote22D.style.opacity = 1;
+					cote222D.style.opacity = 0;
+					audioElement20.volume = 1;
+				}
+			}
+
+		function evtSouris117(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					epauleD.style.opacity = 0;
+					epaule2D.style.opacity = 1;
+					audioElement21.volume = 0.3;
+				}else{
+					epauleD.style.opacity = 1;
+					epaule2D.style.opacity = 0;
+					audioElement21.volume = 1;
+				}
+			}
+
+		function evtSouris118(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					joueD.style.opacity = 0;
+					joue2D.style.opacity = 1;
+					audioElement22.volume = 0.3;
+				}else{
+					joueD.style.opacity = 1;
+					joue2D.style.opacity = 0;
+					audioElement22.volume = 1;
+				}
+			}
+
+		function evtSouris119(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					machD.style.opacity = 0;
+					mach2D.style.opacity = 1;
+					audioElement23.volume = 0.3;
+				}else{
+					machD.style.opacity = 1;
+					mach2D.style.opacity = 0;
+					audioElement23.volume = 1;
+				}
+			}
+
+		function evtSouris120(ev)
+			{
+				var y = parseInt(ev.clientY);
+				if (y > 600 || y < 300){
+					oeilD.style.opacity = 0;
+					oeil2D.style.opacity = 1;
+					audioElement24.volume = 0.3;
+				}else{
+					oeilD.style.opacity = 1;
+					oeil2D.style.opacity = 0;
+					audioElement24.volume = 1;
+				}
+			}			
+
+	</script>
+
+</body>
+
+</html>
