@@ -9,23 +9,23 @@
 			</footer>
 
 			<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
-			<?php if($page=='A propos'){ ?>
-				<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAzn1oXenf2qYfc68ZPDilVQhVfftRz258&sensor=false&extension=.js'></script> 
+			<?php if($page === 'A propos'){ ?>
+				<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAzn1oXenf2qYfc68ZPDilVQhVfftRz258'></script>
 			<?php } ?>
 			<script type='text/javascript' src='js/scripts.js'></script>
 
-			<?php if($page=='Contact'){ 
+			<?php if($page === 'Contact'){
 
 				if( !empty($_POST) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['message']) ){ ?>
 					<?php
-				        $nom = strip_tags(urldecode($_POST['nom'])); 
+				        $nom = strip_tags(urldecode($_POST['nom']));
 				        $email = strip_tags(urldecode($_POST['email']));
 				        $message = strip_tags(urldecode($_POST['message']));
 
-				        $sujet = 'Elisabeth Hamel / Portfolio : '.$nom;
+				        $sujet = 'Elisabeth Hamel / Portfolio : ' . $nom;
 				        $monEmail = 'e.hamel.portfolio@gmail.com';
 
-				        $headers = 'From: '.$nom.' <'.$email.'>';
+				        $headers = 'From: ' . $nom . ' <' . $email . '>';
 
 				        $pop = mail($monEmail, $sujet, $message, $headers) ? "<div class='pop'><p>Votre message a bien été envoyé! :)</p></div>" : "<div class='pop'><p>Une erreur est survenue lors de l'envoi du message :(</p></div>";
 				        echo $pop;
