@@ -1,60 +1,42 @@
 /******* GÉNÉRAL *******/
 
 ::-moz-selection{
-    background: $black;
-    color: $white;
+    background: #000;
+    color: #fff;
     text-shadow: none;
 }
 ::selection{
-    background: $black;
-    color: $white;
+    background: #000;
+    color: #fff;
     text-shadow: none;
 }
 
 html{
-    font-size: 62.5%; /* sets the base font to 10px for easier math */
+    font-size: 62.5%;
 }
 
 body{
-    font-family: sans-serif;
-    font-family: 'Roboto Mono', 'Inconsolata';
-    font-size: 1.8em;
+    @include inconsolata(1.8em);
     line-height: 1.4;
-    //background: #fdfcfc;
-    color: rgba(0,0,0,0.9);
-    // background: rgba(0,0,0,0.9);
-    // color: rgba(#fff, 0.95);
+    background: rgba(191, 175, 147, 0.2);
+    color: $txt;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: rgba(191, 175, 147, 0.2);
+}
+
+h1, h2, h3, h4, h5, h6{
+    @include abril(6rem);
+    font-weight: 400;
 }
 
 h1{
-    font-family: 'Abril Fatface';
-    //text-transform: uppercase;
-    font-size: 7rem;
     margin: 0 0 0.3em;
-    letter-spacing: -0.02em;
-    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 h2{
-    // font-family: 'Unica One';
-    // text-transform: uppercase;
-    font-family: 'Abril Fatface';
     font-size: 3.4rem;
     margin: 2.5em 0 1em;
-    //letter-spacing: 1px;
-    font-weight: 400;
-    // &:before{
-    //     content: '';
-    //     display: inline-block;
-    //     height: 5px;
-    //     width: 5px;
-    //     margin: 0 5px 0 0;
-    //     background: #000;
-    //     transform: translateY(-1px);
-    // }
 }
 
 h3{
@@ -124,98 +106,24 @@ ol{
     }
 }
 
-.list-simple{
-    > li{
-        margin: 0 0 2px;
-        &:before{
-            display: none;
-        }
-    }
-}
-
 .list-work{
-    // position: relative;
-    // &:before{
-    //     content: '';
-    //     width: 2px;
-    //     position: absolute;
-    //     top: 12px;
-    //     bottom: 9px;
-    //     left: 4px;
-    //     background: #000;
-    //     z-index: -1;
-    // }
     > li{
         margin: 0 0 20px;
         &:before{
             display: none;
-            // height: 10px;
-            // width: 10px;
-            // padding: 1px;
-            // border: 2px solid;
-            // background-clip: content-box;
-            // background: #fff;
         }
     }
     a{
         display: inline-block;
-        font-family: 'Unica One';
-        text-transform: uppercase;
-        font-size: 2rem;
-        vertical-align: middle;
-
         padding: 2px 15px;
-    }
-    time{
-        display: inline-block;
-        margin: 0 10px 0 0;
-        font-size: 1.8rem;
         vertical-align: middle;
+        @include unica(2rem);
+        text-transform: uppercase;
     }
     span{
-        font-size: 1.4rem;
         display: block;
-        //padding: 0 0 0 100px;
         margin: 5px 0 0;
-    }
-}
-
-[target='_blank']{
-    padding: 2px 5px;
-    background: rgba(#000, .8);
-    color: #fff;
-    &:hover, &:focus{
-        background: #00c7bf;
-    }
-}
-
-.btn{
-    display: inline-block;
-    //padding: 10px 25px;
-    //border: 2px solid;
-    font-family: 'Unica One';
-    text-transform: uppercase;
-    //font-size: 1.6rem;
-    &:before, &:after{
-        content: '';
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        background: currentColor;
-        vertical-align: middle;
-        transition: transform $transition;
-    }
-    &:before{
-        margin: 0 10px 0 0;
-    }
-    &:after{
-        margin: 0 0 0 10px;
-    }
-    &:hover, &:focus{
-        color: #ec4c1c;
-        &:before, &:after{
-            transform: scale(0.7);
-        }
+        font-size: 1.4rem;
     }
 }
 
@@ -236,16 +144,24 @@ hr{
     max-width: 250px;
     border: 0;
     margin: 3em auto 5em;
-    background: $black;
+    background: $txt;
 }
 
 
 /******* LIENS / BOUTONS *******/
 
 a{
-    color: #00c7bf;
+    color: $primary;
     text-decoration: none;
     transition: $transition;
+    &[target='_blank']{
+        padding: 2px 5px;
+        background: rgba(#000, 0.8);
+        color: #fff;
+        &:hover, &:focus{
+            background: $primary;
+        }
+    }
     &:focus, &:hover{
     }
     &:focus{
@@ -255,6 +171,32 @@ a{
     }
 }
 
+.btn{
+    display: inline-block;
+    font-family: $unica;
+    text-transform: uppercase;
+    &:before, &:after{
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        background: currentColor;
+        vertical-align: middle;
+        transition: transform $transition;
+    }
+    &:before{
+        margin: 0 10px 0 0;
+    }
+    &:after{
+        margin: 0 0 0 10px;
+    }
+    &:hover, &:focus{
+        color: $secondary;
+        &:before, &:after{
+            transform: scale(0.7);
+        }
+    }
+}
 
 /******* CLASSES GENERALES  *******/
 
@@ -264,10 +206,6 @@ a{
 
 .clearfix{
     @include clearfix;
-}
-
-.pos-relative{
-    position: relative;
 }
 
 .align-center{

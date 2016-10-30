@@ -6,23 +6,10 @@
     top: 0;
     left: 0;
     right: 0;
-    // background: rgba(#fff, 0.7);
-    // background: rgba(0, 0, 0, 0.01);
-
-    // background: rgba(0,0,0,0.9);
-    // color: rgba(#fff, 0.95);
-
-    // position: fixed;
-    // top: 0;
-    // bottom: 0;
-    // left: 0;
-    //border-right: 2px solid;
-    //box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.07);
     nav{
         display: flex;
         justify-content: space-between;
     }
-
     ul{
         margin: 0;
         li{
@@ -33,48 +20,15 @@
             }
         }
         a{
-            color: rgba(0,0,0,0.97);
-            // color: rgba(#fff, 0.95);
-            font-family: 'Unica One';
+            color: $txt;
+            @include unica(1.6rem);
             text-transform: uppercase;
-
-            letter-spacing: 1px;
-            font-size: 1.6rem;
+            letter-spacing: 0.02em;
         }
     }
 }
 
-// .logo{
-//     display: inline-block;
-//     //width: 71px;
-//     //width: 119px;
-//     padding: 0 0 0 50px;
-//     position: relative;
-//     font-family: 'Unica One';
-//     font-size: 2.2rem;
-//     //font-size: 3rem;
-//     line-height: 1;
-//     text-transform: uppercase;
-//     letter-spacing: -0.02em;
-//     span{
-//         display: block;
-//     }
-//     &:before{
-//         content: '';
-//         position: absolute;
-//         width: 40px;
-//         height: 35px;
-//         top: 0;
-//         bottom: 0;
-//         margin: auto;
-//         left: 0;
-//         background: url(../layoutImg/logo.png) no-repeat;
-//         background-size: 100%;
-//     }
-// }
-
 .logo{
     display: block;
     width: 35px;
-    //margin: 0 0 30px;
 }

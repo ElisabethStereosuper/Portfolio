@@ -61,7 +61,17 @@
 }
 
 // Fonts
-// @mixin font($size){
-//     font-family: $font;
-//     font-size: $size;
-// }
+@mixin inconsolata($size){
+    font-family: $inconsolata;
+    font-size: $size;
+}
+
+@mixin abril($size){
+    font-family: $abril;
+    font-size: $size;
+}
+
+@mixin unica($size){
+    font-family: $unica;
+    font-size: $size;
+}

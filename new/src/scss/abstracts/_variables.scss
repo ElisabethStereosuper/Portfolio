@@ -2,14 +2,17 @@
 
 
 // Colors
-$white: rgb(255, 255, 255);
-$black: rgb(0, 0, 0);
+$txt: rgba(#000, 0.9);
+$primary: #00c7bf;
+$secondary: #ec4c1c;
 
 // Transitions
 $transition: 0.3s ease-in-out;
 
 // Fonts
-// $font: 'font', sans-serif;
+$inconsolata: 'Inconsolata', monospace;
+$abril: 'Abril', sans-serif;
+$unica: 'Unica', sans-serif;
 
 // Mediaqueries
 $retina: 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)';

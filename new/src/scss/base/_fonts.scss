@@ -1,11 +1,26 @@
-// @font-face{
-//     font-family: 'font';
-//     src: url('../fonts/font.woff2') format('woff2'),
-//          url('../fonts/font.woff') format('woff'),
-//          url('../fonts/font.ttf') format('truetype');
-//     font-weight: 400;
-//     font-style: normal;
-// }
+@font-face{
+    font-family: 'Inconsolata';
+    src: url('../fonts/inconsolata.woff2') format('woff2'),
+         url('../fonts/inconsolata.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Abril';
+    src: url('../fonts/abril.woff2') format('woff2'),
+         url('../fonts/abril.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Unica';
+    src: url('../fonts/unica.woff2') format('woff2'),
+         url('../fonts/unica.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 // [class^='icon-'], [class*=' icon-']{
 //     @include font-icon;
