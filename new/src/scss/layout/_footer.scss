@@ -1,6 +1,44 @@
 /* Footer */
 
 #footer{
-    margin-top: 100px;
-    font-size: 1.4rem;
+    margin: 150px 0 20px;
+    font-size: 1.3rem;
+    > a, span{
+        opacity: 0.7;
+        color: $txt;
+    }
+}
+
+.social{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0 0 10px;
+    position: relative;
+    margin: 0 0 0 20px;
+    &:before{
+        content: '';
+        width: 1px;
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        left: 0;
+        background: #000;
+    }
+    li{
+        display: inline-block;
+        margin: 0;
+        &:before{
+            display: none;
+        }
+    }
+    a{
+        display: block;
+        padding: 10px;
+        text-indent: -99em;
+    }
+    .icon{
+        float: left;
+        text-indent: 0;
+        fill: $txt;
+    }
 }

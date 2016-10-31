@@ -114,11 +114,13 @@ ol{
         }
     }
     a{
-        display: inline-block;
-        padding: 2px 15px;
-        vertical-align: middle;
-        @include unica(2rem);
-        text-transform: uppercase;
+        &[target='_blank']{
+            display: inline-block;
+            padding: 2px 15px 1px;
+            vertical-align: middle;
+            @include unica(2rem);
+            text-transform: uppercase;
+        }
     }
     span{
         display: block;
@@ -216,4 +218,10 @@ a{
 }
 .align-right{
     text-align: right;
+}
+
+.icon{
+    width: 1.2em;
+    height: 1.2em;
+    fill: currentColor;
 }
