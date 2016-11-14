@@ -1,0 +1,182 @@
+.work-list, .portfolio-list{
+    li{
+        a, span, p{
+            transition: opacity $transition;
+        }
+        &.off{
+            a, span, p{
+                opacity: 0.4;
+            }
+        }
+    }
+    a{
+        &[target='_blank']{
+            display: inline-block;
+            padding: 2px 15px 1px;
+            position: relative;
+            @include unica(2rem);
+            text-transform: uppercase;
+            z-index: 1;
+            background: rgba(#000, 0.8);
+            &:before, &:after{
+                content: attr(data-text);
+                padding: 2px 15px 1px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                transform-origin: 50% 50%;
+                z-index: -1;
+            }
+            &:after{
+                background: none;
+            }
+            &:hover, &:focus{
+                background: #000;
+                &:after{
+                    animation: jumpAfter 0.3s ease-in-out 0s infinite normal;
+                    color: $primary;
+                    // transform: rotate(4deg) translate3d(-1px, 1px, 0);
+                }
+                &:before{
+                    animation: jumpBefore 0.2s ease-in-out 0s infinite normal;
+                    color: $secondary;
+                    // transform: rotate(-2deg) translate3d(2px, 0, 0);
+                }
+            }
+        }
+    }
+    span{
+        display: block;
+        margin: 5px 0 0;
+        font-size: 1.4rem;
+    }
+}
+
+.work-list{
+    > li{
+        margin: 0 0 20px;
+        &:before{
+            display: none;
+        }
+    }
+}
+
+.portfolio-list{
+    //border-left: 1px solid rgba(#000, 0.2);
+    position: relative;
+    margin: 50px 0 0 80px;
+    &:before{
+        content: '';
+        border-left: 1px solid rgba(#000, 0.2);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+    li{
+        margin: 0 0 25px;
+        &:before{
+            display: none;
+        }
+    }
+    > li{
+        padding: 30px 0 0;
+        position: relative;
+        margin: 0 0 60px;
+    }
+    ul{
+        margin: 0;
+    }
+    a{
+        &[target='_blank']{
+            padding: 5px 30px 4px;
+            &:before, &:after{
+                padding: 5px 30px 4px;
+            }
+        }
+    }
+    time{
+        position: absolute;
+        top: -10px;
+        left: -80px;
+        color: rgba(#000, 0.4);
+        &:before, &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        &:after{
+            width: 10px;
+            height: 10px;
+            border: 1px solid rgba(#000, 0.2);
+            right: -50px;
+            border-radius: 50%;
+            background: #f3f0ec;
+        }
+        &:before{
+            width: 30px;
+            height: 1px;
+            right: -40px;
+            background: rgba(#000, 0.2);
+        }
+    }
+    span{
+        margin-left: 30px;
+    }
+    p{
+        margin: 0 0 0 30px;
+        font-size: 1.4rem;
+        color: rgba($txt, 0.4);
+    }
+}
+
+@keyframes jumpAfter{
+    0%{
+        transform: rotate(1deg) translate3d(-1px, 0, 0);
+    }
+    20%{
+        transform: rotate(1deg) translate3d(-1px, 0, 0);
+    }
+    40%{
+        transform: rotate(1deg) translate3d(-1px, 0, 0);
+    }
+    50%{
+        transform: rotate(1deg) translate3d(-2px, 0, 0);
+    }
+    60%{
+        transform: rotate(1deg) translate3d(-1px, 0, 0);
+    }
+    80%{
+        transform: rotate(1deg) translate3d(-1px, 0, 0);
+    }
+    100%{
+        transform: rotate(1deg) translate3d(-2px, 0, 0);
+    }
+}
+@keyframes jumpBefore{
+    0%{
+        transform: rotate(-1deg) translate3d(1px, 0, 0);
+    }
+    20%{
+        transform: rotate(-1deg) translate3d(-1px, -1px, 0);
+    }
+    40%{
+        transform: rotate(-1deg) translate3d(1px, 0, 0);
+    }
+    50%{
+        transform: rotate(-1deg) translate3d(-1px, 0, 0);
+    }
+    60%{
+        transform: rotate(-1deg) translate3d(1px, 0, 0);
+    }
+    80%{
+        transform: rotate(-1deg) translate3d(1px, 0, 0);
+    }
+    100%{
+        transform: rotate(-1deg) translate3d(1px, 0, 0);
+    }
+}

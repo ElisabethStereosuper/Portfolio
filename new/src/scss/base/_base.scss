@@ -20,7 +20,8 @@ body{
     line-height: 1.4;
     background: rgba(191, 175, 147, 0.2);
     color: $txt;
-    -webkit-font-smoothing: antialiased;
+    // -webkit-font-smoothing: antialiased;
+    // -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
@@ -106,29 +107,6 @@ ol{
     }
 }
 
-.list-work{
-    > li{
-        margin: 0 0 20px;
-        &:before{
-            display: none;
-        }
-    }
-    a{
-        &[target='_blank']{
-            display: inline-block;
-            padding: 2px 15px 1px;
-            vertical-align: middle;
-            @include unica(2rem);
-            text-transform: uppercase;
-        }
-    }
-    span{
-        display: block;
-        margin: 5px 0 0;
-        font-size: 1.4rem;
-    }
-}
-
 img{
     max-width: 100%;
     height: auto;
@@ -157,46 +135,37 @@ a{
     text-decoration: none;
     transition: $transition;
     &[target='_blank']{
-        padding: 2px 5px;
-        background: rgba(#000, 0.8);
+        display: inline-block;
+        padding: 0 5px;
+        position: relative;
         color: #fff;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: rgba(#000, 0.8);
+            transition: $transition;
+        }
         &:hover, &:focus{
-            background: $primary;
+            color: #fff;
+            &:after{
+                transform: rotate(-2deg) scale(1.05);
+                background: $primary;
+            }
         }
     }
     &:focus, &:hover{
+        color: $secondary;
     }
     &:focus{
         outline: 0;
     }
     &:active{
-    }
-}
-
-.btn{
-    display: inline-block;
-    font-family: $unica;
-    text-transform: uppercase;
-    &:before, &:after{
-        content: '';
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        background: currentColor;
-        vertical-align: middle;
-        transition: transform $transition;
-    }
-    &:before{
-        margin: 0 10px 0 0;
-    }
-    &:after{
-        margin: 0 0 0 10px;
-    }
-    &:hover, &:focus{
-        color: $secondary;
-        &:before, &:after{
-            transform: scale(0.7);
-        }
+        filter: saturate(300%);
     }
 }
 
@@ -224,4 +193,5 @@ a{
     width: 1.2em;
     height: 1.2em;
     fill: currentColor;
+    transition: $transition;
 }

@@ -35,6 +35,18 @@
         display: block;
         padding: 10px;
         text-indent: -99em;
+        &:after{
+            background: none;
+        }
+        &:hover, &:focus{
+            transform: scale(1.15);
+            &:after{
+                background: none;
+            }
+            .icon{
+                fill: $primary;
+            }
+        }
     }
     .icon{
         float: left;

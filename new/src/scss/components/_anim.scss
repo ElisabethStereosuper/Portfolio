@@ -1,0 +1,13 @@
+.anim-elt{
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    .js &{
+        opacity: 0;
+        transform: translate3d(0, 100px, 0);
+        transition: opacity $transition, transform $transition;
+        &.on{
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
