@@ -28,6 +28,7 @@
                 right: 0;
                 transform-origin: 50% 50%;
                 z-index: -1;
+                opacity: 0;
             }
             &:after{
                 background: none;
@@ -37,11 +38,13 @@
                 &:after{
                     animation: jumpAfter 0.3s ease-in-out 0s infinite normal;
                     color: $primary;
+                    opacity: 1;
                     // transform: rotate(4deg) translate3d(-1px, 1px, 0);
                 }
                 &:before{
                     animation: jumpBefore 0.2s ease-in-out 0s infinite normal;
                     color: $secondary;
+                    opacity: 1;
                     // transform: rotate(-2deg) translate3d(2px, 0, 0);
                 }
             }
