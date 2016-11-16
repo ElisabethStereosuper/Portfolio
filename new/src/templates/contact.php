@@ -2,10 +2,10 @@
 <html lang='en-EN' class='no-js'>
     <head>
         <meta charset='utf-8'>
-        <meta name='description' content='Discover my work, front-end development of static and dynamic websites with WordPress.'>
+        <meta name='description' content='Learn more about me, my background and skills.'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-        <title>Portfolio - Elisabeth Hamel &bull; Front-End Developper</title>
+        <title>Contact - Elisabeth Hamel &bull; Front-End Developper</title>
 
         <meta name='author' content='Elisabeth Hamel'>
 
@@ -27,100 +27,43 @@
                     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 109.5 98.2'><path fill='#3CB8B7' d='M.6 51.2c1.5-4.8 4.4-8.6 8.8-11.1 1.6-.9 3.9-.5 5.2.9 1.4 1.6.6 3-.3 4.4-.3.5-.8 1-1.3 1.4-5.2 5.3-4.8 12.3 1.2 16.8 3.3 2.4 7 3.2 10.9 1.4 3.8-1.8 6.5-4.4 6.8-8.9.3-3.7-.4-7.1-2.1-10.4C28.3 42.9 27 40 26 37c-4-13-.2-24.7 11-31.6C48.6-1.8 60.7-1.7 72.4 5c9.3 5.3 14 13.6 13.5 24.5-.3 6.7-3.1 12.6-7 18.1-.8 1.2-1.4 2.4-1.7 3.8-2.1 8.7 4.4 16.1 12.9 14.5 4.5-.8 7.4-3.6 8.9-7.9 1.4-4.1.2-7.7-2.9-10.7-.8-.8-1.5-1.7-2-2.7-.8-1.9-.3-3.3 1.5-4.2 1.5-.7 2.9-.7 4.4.2 4.1 2.4 6.5 6.1 8.4 10.2 3 8.3-1.5 15.3-2.6 17.1-5.2 8.6-15.1 11.4-23.7 10.5-.8-.1-1.6-.2-2.7 0 .9 1.1 1.6 2.1 2.4 2.9 3.7 3.8 7.5 7.4 13.1 7.7 1.7.1 3.4-.2 5-.1 2.9.1 4.2 2.7 2.8 5.2-1.1 2-2.8 3.2-4.9 3.6-4 .9-8.1.9-12-.6-9.5-3.6-17.3-9.6-23.6-17.5-1.8-2.3-4-3.9-7-4.4-4.2-.6-6.6 2.1-9 4.9-7.6 8.9-16.4 16-28.3 17.8-4.2.7-8.5.1-11.4-3.8-.9-1.2-1.2-2.5-.4-3.9.8-1.3 2-1.8 3.5-1.9 1.7-.1 3.3.7 5 .4 6.7-1.2 11-5.7 15.3-11.1-4 .7-7.5.7-11 .1C11.3 76.3 5.5 72.5 2 65.5c-.8-1.8-3-6.7-1.4-14.3z' class='body'/><linearGradient id='a' x1='12.713' x2='6.167' y1='59.499' y2='50.291' gradientUnits='userSpaceOnUse' gradientTransform='matrix(1 0 0 -1 0 100)'><stop offset='0' stop-color='#204656'/><stop offset='1' stop-color='#3CB8B7'/></linearGradient><path fill='url(#a)' d='M1.3 49.3s2.1-6.1 8.5-9.4c0 0 3.5-1.4 5.4 2 0 0 .8 1.3-1.2 3.9 0 0-4 3.6-4.4 7.2' class='g-path'/><linearGradient id='b' x1='95.667' x2='101.623' y1='59.168' y2='52.038' gradientUnits='userSpaceOnUse' gradientTransform='matrix(1 0 0 -1 0 100)'><stop offset='0' stop-color='#204656'/><stop offset='1' stop-color='#3CB8B7'/></linearGradient><path fill='url(#b)' d='M99.1 51.9s-.4-2.2-3.6-5.2c0 0-2.3-2.5-1.7-4.5 0 0 .8-2.5 4.4-2.3 0 0 3.8.4 8.2 7.1' class='g-path'/><linearGradient id='c' x1='9.688' x2='19.76' y1='6.267' y2='8.339' gradientUnits='userSpaceOnUse' gradientTransform='matrix(1 0 0 -1 0 100)'><stop offset='0' stop-color='#204656'/><stop offset='1' stop-color='#3CB8B7'/></linearGradient><path fill='url(#c)' d='M25 96.1s-14.7 6.4-19.1-3.2c0 0-1-3.6 3.1-4.5 0 0 .7-.4 5.1.5 0 0 4.5-.5 9.2-4' class='g-path'/><linearGradient id='d' x1='101.175' x2='87.304' y1='5.225' y2='8.111' gradientUnits='userSpaceOnUse' gradientTransform='matrix(1 0 0 -1 0 100)'><stop offset='.002' stop-color='#DC2924'/><stop offset='.182' stop-color='#CA6143'/><stop offset='.4' stop-color='#AF8C6B'/><stop offset='.599' stop-color='#8FA48C'/><stop offset='.771' stop-color='#6CB0A4'/><stop offset='.911' stop-color='#4DB6B2'/><stop offset='1' stop-color='#3CB8B7'/></linearGradient><path fill='url(#d)' d='M89.4 87.5s2.6 1.2 4.7 1.4c0 0 1.7.3 4.9-.1 0 0 3.6-.3 4.3 2.3 0 0 1.1 4-4.4 6.2 0 0-6.7 2.5-13.5-.4-6.7-2.9-7.7-4-8.4-4.2' class='g-path'/><path d='M45.8 35.7c-3 0-5.5 2.5-5.5 5.5s2.4 5.5 5.3 5.5c3.1 0 5.6-2.4 5.7-5.4 0-3-2.5-5.6-5.5-5.6z' class='eye e1'/><path d='M64.6 38.7c-2 0-4.4 2.5-4.4 4.5 0 2.2 2.2 4.4 4.5 4.3 2.3 0 4.4-2.2 4.3-4.4-.1-2.2-2.3-4.4-4.4-4.4z' class='eye e2'/></svg>
                 </a>
                 <ul>
-                    <li><a href='portfolio.html' class='active'>Portfolio</a></li>
+                    <li><a href='portfolio.html'>Portfolio</a></li>
                     <li><a href='about.html'>About</a></li>
-                    <li><a href='contact.php'>Contact</a></li>
+                    <li><a href='contact.php' class='active'>Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <main role='main' id='main'>
             <div class='container'>
-                <h1 class='anim-elt'>Portfolio</h1>
+                <section>
+                    <h1 class='anim-elt'>Contact</h1>
+                    <p class='anim-elt'>You want to work with me, you have a question, you just want to say hi ? Don't hesitate to drop me a message by filling this form.</p>
 
-                <ul class='portfolio-list anim-elt' id='portfolio'>
-                    <li>
-                        <time datetime='2016' class='anim-elt'>2016</time>
-                        <ul>
-                            <li class='anim-elt'>
-                                <a href='http://leongrosse.fr' target='_blank' data-text='Leon Grosse'>Leon Grosse</a>
-                                <span>Stéréosuper</span>
-                                <p>HTML, CSS [SASS], JavaScript [jQuery, TweenMax, Mapbox]</p>
-                            </li>
-                            <li class='anim-elt'>
-                                <a href='http://www.alvencapital.com' target='_blank' data-text='AlvenCapital'>AlvenCapital</a>
-                                <span>Stéréosuper</span>
-                                <p>HTML, CSS [SASS], JavaScript [jQuery, TweenMax], WordPress</p>
-                            </li>
-                            <li class='anim-elt'>
-                                <a href='http://www.labelleboite.fr' target='_blank' data-text='La Belle Boîte'>La Belle Boîte</a>
-                                <span>Stéréosuper</span>
-                                <p>HTML, CSS [LESS], JavaScript [TweenMax], WordPress</p>
-                            </li>
-                            <li class='anim-elt'>
-                                <a href='http://nantesaleau.com' target='_blank' data-text="Nantes à l'Eau">Nantes à l'Eau</a>
-                                <span>Freelance</span>
-                                <p>HTML, CSS, JavaScript [jQuery], WordPress</p>
-                            </li>
-                            <li class='anim-elt'>
-                                <a href='http://www.akeneo.com' target='_blank' data-text='Akeneo'>Akeneo</a>
-                                <span>Stéréosuper</span>
-                                <p>HTML, CSS [LESS], JavaScript [jQuery, TweenMax], WordPress [Multilingual]</p>
-                            </li>
-                            <li class='anim-elt'>
-                                <a href='http://www.encreseche.com/' target='_blank' data-text='Encre Sèche'>Encre Sèche</a>
-                                <span>Freelance</span>
-                                <p>HTML, CSS, WordPress</p>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <time datetime='2015' class='anim-elt'>2015</time>
-                        <ul>
-                            <li class='anim-elt'>
-                                <a href='http://institutdavignon.fr' target='_blank' data-text="Institut d'Avignon">Institut d'Avignon</a>
-                                <span>Stéréosuper</span>
-                                <p>HTML, CSS [LESS], JavaScript [jQuery, TweenMax], WordPress</p>
-                            </li>
-                            <li class='anim-elt'>
-                                <a href='http://success.wisembly.com/' target='_blank' data-text='Wisembly Success Center'>Wisembly Success Center</a>
-                                <span>Stéréosuper</span>
-                                <p>HTML, CSS [LESS], JavaScript [jQuery, TweenMax], WordPress [Multilingual]</p>
-                            </li>
-                            <li class='anim-elt'>
-                                <a href='http://wisembly.com/' target='_blank' data-text='Wisembly'>Wisembly</a>
-                                <span>Stéréosuper</span>
-                                <p>HTML, CSS [LESS], JavaScript [jQuery, TweenMax], WordPress [Multilingual]</p>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <time datetime='2014' class='anim-elt'>2014</time>
-                        <ul>
-                            <li class='anim-elt'>
-                                <a href='http://www.rezorue.com/' target='_blank' data-text='REZOrue'>REZOrue</a>
-                                <span>Freelance</span>
-                                <p>HTML, CSS, JavaScript [jQuery], WordPress [Multilingual]</p>
-                            </li>
-                            <li class='anim-elt'>
-                                <a href='http://serenpedia.com/' target='_blank' data-text='Serenpedia'>Serenpedia</a>
-                                <span>Intuiti</span>
-                                <p>WordPress</p>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <time datetime='2013' class='anim-elt'>2013</time>
-                        <ul>
-                            <li class='anim-elt'>
-                                <a href='https://constructionlaverendrye.com/' target='_blank' data-text='La Vérendrye Construction'>La Vérendrye Construction</a>
-                                <span>Vacarm</span>
-                                <p>HTML, CSS, JavaScript [jQuery], WordPress</p>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                    <form action='' method='POST' id='contactForm'>
+                        <div class='field'>
+                            <input type='text' name='name' id='name' required placeholder='Peter Griffin' class='anim-elt'>
+                            <label for='name' class='anim-elt'>Your name<sup>*</sup></label>
+                        </div>
+                        <div class='field'>
+                            <input type='email' name='email' id='email' required placeholder='ekiekieki@pateng.com' class='anim-elt'>
+                            <label for='email' class='anim-elt'>Your email<sup>*</sup></label>
+                        </div>
+                        <div class='field'>
+                            <input type='text' name='movie' id='movie' placeholder='Mars Attack' class='anim-elt' value=''>
+                            <label for='movie' class='anim-elt'>Your favourite movie</label>
+                        </div>
+                        <div class='field'>
+                            <textarea name='message' id='message' required placeholder='Hello there !' class='anim-elt'></textarea>
+                            <label for='message' class='anim-elt'>Your message<sup>*</sup></label>
+                        </div>
+                        <button type='submit' for='contactForm' class='btn anim-elt'>Send</button>
+                    </form>
 
+                    <p class='small-text anim-elt'>Fields marked with a * are required.</p>
+
+                    <p class='anim-elt'>Believe it or not, I kind of enjoy developing forms! But if you don't feel comfortable using it, you can reach me on <a href='mailto:elisabethhamel@outlook.com' title='Send me a message'>elisabethhamel@outlook.com</a>.</p>
+                </section>
             </div>
         </main>
 

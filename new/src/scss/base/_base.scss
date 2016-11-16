@@ -195,3 +195,8 @@ a{
     fill: currentColor;
     transition: $transition;
 }
+
+.small-text{
+    font-size: 1.4rem;
+    color: rgba($txt, 0.5);
+}
