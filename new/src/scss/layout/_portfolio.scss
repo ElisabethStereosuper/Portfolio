@@ -91,6 +91,9 @@
     }
     ul{
         margin: 0;
+        > li{
+            position: relative;
+        }
     }
     a{
         &[target='_blank']{
@@ -98,13 +101,19 @@
             &:before, &:after{
                 padding: 5px 30px 4px;
             }
+            &:hover, &:focus{
+                + time{
+                    opacity: 1;
+                }
+            }
         }
     }
     time{
         position: absolute;
         top: -10px;
-        left: -80px;
+        left: -78px;
         color: rgba(#000, 0.4);
+        @include unica(1.6rem);
         &:before, &:after{
             content: '';
             position: absolute;

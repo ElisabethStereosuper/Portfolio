@@ -46,7 +46,7 @@
                             <label for='name' class='anim-elt'>Your name<sup>*</sup></label>
                         </div>
                         <div class='field'>
-                            <input type='email' name='email' id='email' required placeholder='ekiekieki@pateng.com' class='anim-elt'>
+                            <input type='email' name='email' id='email' required placeholder='ekiekiekipateng@knights-of-ni.com' class='anim-elt'>
                             <label for='email' class='anim-elt'>Your email<sup>*</sup></label>
                         </div>
                         <div class='field'>
@@ -62,7 +62,7 @@
 
                     <p class='small-text anim-elt'>Fields marked with a * are required.</p>
 
-                    <p class='anim-elt'>Believe it or not, I kind of enjoy developing forms! But if you don't feel comfortable using it, you can reach me on <a href='mailto:elisabethhamel@outlook.com' title='Send me a message'>elisabethhamel@outlook.com</a>.</p>
+                    <p class='anim-elt'>Believe it or not, I kind of enjoy styling forms! But if you don't feel comfortable using it, you can reach me on <a href='mailto:elisabethhamel@outlook.com' title='Send me a message'>elisabethhamel@outlook.com</a>.</p>
                 </section>
             </div>
         </main>

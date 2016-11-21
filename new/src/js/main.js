@@ -15,10 +15,26 @@ $(function(){
 
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
-    $('#portfolio').on('mouseenter', 'a', function(){
+    $('#portfolio').on('mouseenter focusin', 'a', function(){
         $(this).parents('li').siblings().addClass('off');
-    }).on('mouseleave', 'a', function(){
+    }).on('mouseleave focusout', 'a', function(){
         $(this).parents('li').siblings().removeClass('off');
+    });
+
+    $('#chart').on('click', 'line + circle', function(){
+        if($(this).siblings('path').attr('class') === 'on'){
+            $(this).siblings('path').attr('class', '');
+        }else{
+            $(this).siblings('path').attr('class', 'on');
+        }
+    }).on('click', '.puce', function(){
+        if($(this).attr('class') === 'puce on'){
+            $('path').attr('class', '');
+            $(this).attr('class', 'puce');
+        }else{
+            $('path').attr('class', 'on');
+            $(this).attr('class', 'puce on');
+        }
     });
 
 

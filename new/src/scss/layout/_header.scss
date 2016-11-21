@@ -7,7 +7,8 @@
     left: 0;
     right: 0;
     backface-visibility: hidden;
-    transition: 0.3s ease-in-out;
+    pointer-events: none;
+    transition: $transition;
     .js &{
         &.off{
             opacity: 0;
@@ -93,6 +94,9 @@
                 transform: scale(1) rotate(-2deg) translate3d(2px, 0, 0);
             }
         }
+    }
+    a{
+        pointer-events: auto;
     }
 }
 

@@ -71,24 +71,28 @@ input, textarea{
     //         transform: translate3d(0, -25px, 0);
     //     }
     // }
-    &:not(:placeholder-shown):not(:focus):valid{
-        border-color: $primary;
-        color: $txt;
-        + label{
-            cursor: default;
-            transform: translate3d(0, -25px, 0);
-            color: $primary;
-            sup{
-                opacity: 0;
+    &:not(:placeholder-shown){
+        &:not(:focus){
+            color: $txt;
+            + label{
+                cursor: default;
+                transform: translate3d(0, -25px, 0);
             }
-        }
-    }
-    &:not(:placeholder-shown):not(:focus):invalid{
-        border-color: $secondary;
-        + label{
-            cursor: default;
-            transform: translate3d(0, -25px, 0);
-            color: $secondary;
+            &:valid{
+                border-color: $primary;
+                + label{
+                    color: $primary;
+                    sup{
+                        opacity: 0;
+                    }
+                }
+            }
+            &:invalid{
+                border-color: $secondary;
+                + label{
+                    color: $secondary;
+                }
+            }
         }
     }
 }
@@ -116,17 +120,11 @@ input{
 
 button{
     &.btn{
-        .js &{
-            color: rgba($txt, 0.3);
-            &.ok{
-                color: $primary;
-            }
-            &:hover, &:focus{
-                color: rgba($secondary, 0.3);
-            }
-            &:hover, &:focus{
-                color: $secondary;
-            }
+        &.ok{
+            color: $primary;
+        }
+        &:hover, &:focus{
+            color: $secondary;
         }
     }
 }
