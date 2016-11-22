@@ -1,0 +1,22 @@
+.map{
+    padding: 0 0 50%;
+    margin: 0 0 2em;
+    a{
+        padding: 0;
+        &:after{
+            display: none;
+        }
+    }
+    .gm-style-cc{
+        display: none;
+    }
+    a{
+        color: transparent !important;
+        img{
+            max-width: 30px;
+            height: auto !important;
+            left: 10px !important;
+        }
+    }
+
+}
