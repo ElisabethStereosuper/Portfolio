@@ -1,7 +1,7 @@
 /* Header */
 
 #header{
-    padding: 20px 20px 20px 25px;
+    padding: 20px 13px 20px 25px;
     position: fixed;
     top: 0;
     left: 0;
@@ -169,5 +169,18 @@
     }
     100%{
         transform: scale(1);
+    }
+}
+
+
+@media (max-width: 1200px){
+    #header{
+        padding-right: 18px;
+        li{
+            margin: 0;
+            a{
+                margin: 0 7px;
+            }
+        }
     }
 }

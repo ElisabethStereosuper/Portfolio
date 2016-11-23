@@ -1,21 +1,31 @@
 .map{
     padding: 0 0 50%;
-    margin: 0 0 2em;
-    a{
-        padding: 0;
-        &:after{
-            display: none;
-        }
-    }
     .gm-style-cc{
         display: none;
     }
+    .gm-bundled-control{
+        .gmnoprint{
+            > div{
+                background: rgba(#fff, 0.5) !important;
+            }
+        }
+    }
     a{
+        padding: 0;
         color: transparent !important;
+        &:after{
+            display: none;
+        }
         img{
             max-width: 30px;
             height: auto !important;
             left: 10px !important;
+        }
+    }
+    + .small-text{
+        margin: 10px 0 2em;
+        &:before{
+            content: '— ';
         }
     }
 

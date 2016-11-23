@@ -7,7 +7,7 @@
         stroke: #f2efe9;
         stroke-width: 10;
         cursor: crosshair;
-        transition: $transition;
+        transition: 0.35s ease-in-out;
         // transform-origin: 50% 50%;
         &:hover, &.on{
             fill: $primary !important;
@@ -29,27 +29,71 @@
         pointer-events: none;
         + circle{
             fill: $txt;
+            .js &{
+                transition: 0.35s ease-in-out;
+                opacity: 0;
+                &.on{
+                    opacity: 1;
+                }
+            }
+        }
+        .js &{
+            transition: 0.35s ease-in-out;
+            opacity: 0;
+            &.on{
+                opacity: 1;
+            }
         }
     }
     circle{
         cursor: pointer;
         transform-origin: 50% 50%;
-        transition: $transition;
+        transition: 0.35s ease-in-out;
         &:hover{
             transform: scale(1.2);
+        }
+    }
+    .paths{
+        .js &{
+            transform: scale(0);
+            transition: 0.4s ease-in-out;
+            transform-origin: 50% 42%;
+            &.on{
+                transform: scale(1);
+            }
+        }
+    }
+    .puce{
+        .js &{
+            transform: scale(0);
+            &.on{
+                transform: scale(1.2);
+                &.final{
+                    transform: scale(1);
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+            }
         }
     }
 }
 
 .title{
     font-size: 35px;
+    .js &{
+        opacity: 0;
+        &.on{
+            opacity: 1;
+        }
+    }
 }
 .text{
     font-size: 28px;
     transform: translate3d(0, -30px, 0);
     opacity: 0;
     transform-origin: 0 0;
-    transition: $transition;
+    transition: 0.35s ease-in-out;
 }
 
 .text-right{
