@@ -193,10 +193,20 @@ a{
     width: 1.2em;
     height: 1.2em;
     fill: currentColor;
-    transition: $transition;
 }
 
 .small-text{
     font-size: 1.4rem;
     color: rgba($txt, 0.5);
+}
+
+
+@media (max-width: 560px){
+    body{
+        font-size: 1.6rem;
+    }
+
+    h1{
+        font-size: 5rem;
+    }
 }

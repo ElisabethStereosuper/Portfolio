@@ -1,6 +1,7 @@
 /* Footer */
 
 #footer{
+    position: relative;
     margin: 150px 0 20px;
     font-size: 1.3rem;
     > a, span{
@@ -40,22 +41,35 @@
         display: block;
         padding: 10px;
         text-indent: -99em;
+        color: $txt;
         &:after{
             background: none;
         }
         &:hover, &:focus{
+            color: $primary;
             transform: scale(1.15);
             &:after{
                 background: none;
-            }
-            .icon{
-                fill: $primary;
             }
         }
     }
     .icon{
         float: left;
         text-indent: 0;
-        fill: $txt;
+    }
+}
+
+@media (max-width: 490px){
+    #footer{
+        margin-top: 170px;
+    }
+    .social{
+        padding: 0;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        &:before{
+            display: none;
+        }
     }
 }

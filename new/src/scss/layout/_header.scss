@@ -6,6 +6,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 2;
     backface-visibility: hidden;
     pointer-events: none;
     transition: $transition;
@@ -26,13 +27,6 @@
                 opacity: 0;
             }
         }
-    }
-    li{
-        display: inline-block;
-        margin: 0 0 0 6px;
-        &:before{
-            display: none;
-        }
         a{
             display: block;
             padding: 2px 5px;
@@ -44,6 +38,7 @@
             letter-spacing: 0.02em;
 
             margin: 0 12px;
+            transition: color $transition, background $transition, transform $transition;
             // &:before, &:after{
             //     content: '';
             //     display: inline-block;
@@ -95,8 +90,23 @@
             }
         }
     }
+    li{
+        display: inline-block;
+        margin: 0 0 0 6px;
+        &:before{
+            display: none;
+        }
+    }
     a{
         pointer-events: auto;
+    }
+    .icon{
+        display: none;
+        float: left;
+        text-indent: 0;
+    }
+    .icon-contact{
+        height: 1.15em;
     }
 }
 
@@ -182,5 +192,43 @@
                 margin: 0 7px;
             }
         }
+    }
+}
+
+@media (max-width: 1000px){
+    #header{
+        ul{
+            a{
+                padding: 6px 5px 0;
+                line-height: 1;
+                text-indent: -99em;
+                overflow: hidden;
+                &:hover, &:focus{
+                    background: none;
+                    color: $secondary;
+                    transform: scale(1.2);
+                }
+            }
+            .active{
+                background: none;
+                color: $secondary;
+                transform: scale(1.1);
+                &:before, &:after{
+                    display: none;
+                }
+            }
+        }
+        .icon{
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 860px){
+    #header{
+        padding: 15px 13px 14px 20px;
+        background: rgba($background, 0.95);
+        box-shadow: 0 0 20px 0 rgba(133,133,133,0.05);
+        pointer-events: auto;
     }
 }

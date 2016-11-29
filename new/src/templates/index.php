@@ -24,13 +24,25 @@
         <header role='banner' id='header'>
             <nav role='navigation'>
                 <!--<a href='./' class='logo'>Elisabeth <span>Hamel</span></a>-->
-                <a href='./' class='logo off'>
+                <a href='./' class='logo off' title='Back to home'>
                     <?php include('includes/logo.svg'); ?>
                 </a>
                 <ul class='off'>
-                    <li><a href='portfolio.php'>Portfolio</a></li>
-                    <li><a href='about.php'>About</a></li>
-                    <li><a href='contact.php'>Contact</a></li>
+                    <li>
+                        <a href='portfolio.php' title='See my references'>
+                            Portfolio<svg class='icon'><use xlink:href='#icon-portfolio'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='about.php' title='About me'>
+                            About<svg class='icon'><use xlink:href='#icon-about'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='contact.php' title='Contact informations'>
+                            Contact<svg class='icon icon-contact'><use xlink:href='#icon-contact'/></svg>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -49,22 +61,22 @@
                     <ul class='work-list' id='portfolio'>
                         <li class='anim-elt'>
                             <!--<time>[09/2016]</time>-->
-                            <a href='http://leongrosse.fr' target='_blank' data-text='Leon Grosse'>Leon Grosse</a>
+                            <a href='http://leongrosse.fr' target='_blank' data-text='Leon Grosse' title='Go on Leon Grosse website'>Leon Grosse</a>
                             <span>Stéréosuper</span>
                         </li>
                         <li class='anim-elt'>
                             <!--<time>[09/2016]</time>-->
-                            <a href='http://www.alvencapital.com' target='_blank' data-text='AlvenCapital'>AlvenCapital</a>
+                            <a href='http://www.alvencapital.com' target='_blank' data-text='AlvenCapital' title='Go on AlvenCapital website'>AlvenCapital</a>
                             <span>Stéréosuper</span>
                         </li>
                         <li class='anim-elt'>
                             <!--<time>[08/2016]</time>-->
-                            <a href='http://www.labelleboite.fr' target='_blank' data-text='La Belle Boîte'>La Belle Boîte</a>
+                            <a href='http://www.labelleboite.fr' target='_blank' data-text='La Belle Boîte' title='Go on La Belle Boîte website'>La Belle Boîte</a>
                             <span>Stéréosuper</span>
                         </li>
                         <li class='anim-elt'>
                             <!--<time>[08/2016]</time>-->
-                            <a href='http://nantesaleau.com' target='_blank' data-text="Nantes à l'Eau">Nantes à l'Eau</a>
+                            <a href='http://nantesaleau.com' target='_blank' data-text="Nantes à l'Eau" title="Go on Nantes à l'Eau website">Nantes à l'Eau</a>
                             <span>Freelance</span>
                         </li>
                         <!--<li>
@@ -114,10 +126,10 @@
                 <section>
                     <h2 class='anim-elt'>Find&hellip;</h2>
                     <ul>
-                        <li class='anim-elt'>My <a href='https://github.com/ElisabethStereosuper' target='_blank'>GitHub</a> work and <a href='https://codepen.io/elisabeth_hamel/' target='_blank'>Codepen</a> experiments,</li>
-                        <li class='anim-elt'>Some tech (occasional) tweets on <a href='https://twitter.com/Elisabeth_Hamel' target='_blank'>Twitter</a>,</li>
-                        <li class='anim-elt'>A few answers and questions on <a href='https://stackoverflow.com/users/6654864/shwarp?tab=profile' target='_blank'>Stackoverflow</a>,</li>
-                        <li class='anim-elt'>My <a href='https://www.linkedin.com/in/elisabeth-hamel-7757b85a' target='_blank'>LinkedIn</a> and <a href='http://www.viadeo.com/p/0022dbjl3rirf4gh' target='_blank'>Viadeo</a> professionnal profile</li>
+                        <li class='anim-elt'>My <a href='https://github.com/ElisabethStereosuper' target='_blank' title='Check my GitHub account'>GitHub</a> work and <a href='https://codepen.io/elisabeth_hamel/' target='_blank' title='Check my Codepen account'>Codepen</a> experiments,</li>
+                        <li class='anim-elt'>Some tech (occasional) tweets on <a href='https://twitter.com/Elisabeth_Hamel' target='_blank' title='Check my Twitter account'>Twitter</a>,</li>
+                        <li class='anim-elt'>A few answers and questions on <a href='https://stackoverflow.com/users/6654864/shwarp?tab=profile' target='_blank' title='Check my Stackoverflow account'>Stackoverflow</a>,</li>
+                        <li class='anim-elt'>My <a href='https://www.linkedin.com/in/elisabeth-hamel-7757b85a' target='_blank' title='Check my LinkedIn account'>LinkedIn</a> and <a href='http://www.viadeo.com/p/0022dbjl3rirf4gh' target='_blank' title='Check my Viadeo account'>Viadeo</a> professionnal profile</li>
                     </ul>
                     <a href='contact.php' class='btn anim-elt'>Get in touch</a>
                 </section>

@@ -27,9 +27,21 @@
                     <?php include('includes/logo.svg'); ?>
                 </a>
                 <ul>
-                    <li><a href='portfolio.php' class='active'>Portfolio</a></li>
-                    <li><a href='about.php'>About</a></li>
-                    <li><a href='contact.php'>Contact</a></li>
+                    <li>
+                        <a href='portfolio.php' class='active'>
+                            Portfolio<svg class='icon'><use xlink:href='#icon-portfolio'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='about.php'>
+                            About<svg class='icon'><use xlink:href='#icon-about'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='contact.php'>
+                            Contact<svg class='icon icon-contact'><use xlink:href='#icon-contact'/></svg>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -44,42 +56,42 @@
                         <ul>
                             <li class='anim-elt'>
                                 <a href='http://leongrosse.fr' target='_blank' data-text='Leon Grosse'>
-                                    <span>Leon Grosse</span>
+                                    Leon Grosse
                                 </a>
                                 <span>Stéréosuper</span>
                                 <p>HTML, CSS [SASS], JavaScript [jQuery, GreenSock, Mapbox] <br>Gulp</p>
                             </li>
                             <li class='anim-elt'>
                                 <a href='http://www.alvencapital.com' target='_blank' data-text='AlvenCapital'>
-                                    <span>AlvenCapital</span>
+                                    AlvenCapital
                                 </a>
                                 <span>Stéréosuper</span>
                                 <p>HTML, CSS [SASS], JavaScript [jQuery, GreenSock] <br>WordPress [theme&nbsp;development]</p>
                             </li>
                             <li class='anim-elt'>
                                 <a href='http://www.labelleboite.fr' target='_blank' data-text='La Belle Boîte'>
-                                    <span>La Belle Boîte</span>
+                                    La Belle Boîte
                                 </a>
                                 <span>Stéréosuper</span>
                                 <p>HTML, CSS [LESS], JavaScript [GreenSock] <br>WordPress [theme&nbsp;development]</p>
                             </li>
                             <li class='anim-elt'>
                                 <a href='http://nantesaleau.com' target='_blank' data-text="Nantes à l'Eau">
-                                    <span>Nantes à l'Eau</span>
+                                    Nantes à l'Eau
                                 </a>
                                 <span>Freelance</span>
                                 <p>HTML, CSS, JavaScript [jQuery] <br>WordPress</p>
                             </li>
                             <li class='anim-elt'>
                                 <a href='http://www.akeneo.com' target='_blank' data-text='Akeneo'>
-                                    <span>Akeneo</span>
+                                    Akeneo
                                 </a>
                                 <span>Stéréosuper</span>
                                 <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [Multilingual, theme&nbsp;development]</p>
                             </li>
                             <li class='anim-elt'>
                                 <a href='http://www.encreseche.com/' target='_blank' data-text='Encre Sèche'>
-                                    <span>Encre Sèche</span>
+                                    Encre Sèche
                                 </a>
                                 <span>Freelance</span>
                                 <p>HTML, CSS <br>WordPress</p>
@@ -91,21 +103,21 @@
                         <ul>
                             <li class='anim-elt'>
                                 <a href='http://institutdavignon.fr' target='_blank' data-text="Institut d'Avignon">
-                                    <span>Institut d'Avignon</span>
+                                    Institut d'Avignon
                                 </a>
                                 <span>Stéréosuper</span>
                                 <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [theme&nbsp;development]</p>
                             </li>
                             <li class='anim-elt'>
                                 <a href='http://success.wisembly.com/' target='_blank' data-text='Wisembly Success Center'>
-                                    <span>Wisembly Success Center</span>
+                                    Wisembly Success Center
                                 </a>
                                 <span>Stéréosuper</span>
-                                <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [multilingual, theme&nbsp;development]</p>
+                                <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [multilingual, theme&nbsp;development, AJAX]</p>
                             </li>
                             <li class='anim-elt'>
                                 <a href='http://wisembly.com/' target='_blank' data-text='Wisembly'>
-                                    <span>Wisembly</span>
+                                    Wisembly
                                 </a>
                                 <span>Stéréosuper</span>
                                 <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [multilingual, theme&nbsp;development]</p>
@@ -117,14 +129,14 @@
                         <ul>
                             <li class='anim-elt'>
                                 <a href='http://www.rezorue.com/' target='_blank' data-text='REZOrue'>
-                                    <span>REZOrue</span>
+                                    REZOrue
                                 </a>
                                 <span>Freelance</span>
                                 <p>HTML, CSS, JavaScript [jQuery] <br>WordPress [multilingual]</p>
                             </li>
                             <li class='anim-elt'>
                                 <a href='http://serenpedia.com/' target='_blank' data-text='Serenpedia'>
-                                    <span>Serenpedia</span>
+                                    Serenpedia
                                 </a>
                                 <span>Intuiti</span>
                                 <p>WordPress [multilingual]</p>
@@ -136,7 +148,7 @@
                         <ul>
                             <li class='anim-elt'>
                                 <a href='https://constructionlaverendrye.com/' target='_blank' data-text='La Vérendrye Construction'>
-                                    <span>La Vérendrye Construction</span>
+                                    La Vérendrye Construction
                                 </a>
                                 <span>Vacarm</span>
                                 <p>HTML, CSS, JavaScript [jQuery] <br>WordPress</p>

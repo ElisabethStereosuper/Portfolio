@@ -27,9 +27,21 @@
                     <?php include('includes/logo.svg'); ?>
                 </a>
                 <ul>
-                    <li><a href='portfolio.php'>Portfolio</a></li>
-                    <li><a href='about.php'>About</a></li>
-                    <li><a href='contact.php' class='active'>Contact</a></li>
+                    <li>
+                        <a href='portfolio.php'>
+                            Portfolio<svg class='icon'><use xlink:href='#icon-portfolio'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='about.php'>
+                            About<svg class='icon'><use xlink:href='#icon-about'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='contact.php' class='active'>
+                            Contact<svg class='icon icon-contact'><use xlink:href='#icon-contact'/></svg>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>

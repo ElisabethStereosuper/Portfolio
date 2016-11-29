@@ -27,9 +27,21 @@
                     <?php include('includes/logo.svg'); ?>
                 </a>
                 <ul>
-                    <li><a href='portfolio.php'>Portfolio</a></li>
-                    <li><a href='about.php' class='active'>About</a></li>
-                    <li><a href='contact.php'>Contact</a></li>
+                    <li>
+                        <a href='portfolio.php'>
+                            Portfolio<svg class='icon'><use xlink:href='#icon-portfolio'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='about.php' class='active'>
+                            About<svg class='icon'><use xlink:href='#icon-about'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='contact.php'>
+                            Contact<svg class='icon icon-contact'><use xlink:href='#icon-contact'/></svg>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -122,9 +134,9 @@
                         <circle style='fill:#ddd' cx='250' cy='250' r='60' class='puce'/>
                     </svg>
 
-                    <p class='anim-elt'>I'm also concerned about <strong>SEO</strong>, <strong>accessibility</strong> and everything in general that is connected to my field.</p>
+                    <p class='anim-elt'>I'm also concerned about <strong>SEO</strong>, <strong>accessibility</strong> and everything in general that is connected to my field. <br>I use <strong>GitHub</strong>, <strong>NPM</strong>, <strong>Gulp</strong> to automatise my workflow.</p>
                     <p class='anim-elt'>I graduated with a two and a one year diploma in <strong>Multimedia Technologies</strong>, and I've been working for now two years at Stéréosuper.</p>
-                    <p class='anim-elt'>Want to know more about my background or get more details about my skills?</p>
+                    <p class='anim-elt'>Want to know more about my background?</p>
                     <a href='#' class='btn anim-elt'>Download my resume</a>
                 </section>
                 <section>
@@ -140,7 +152,7 @@
 
         <?php include('includes/footer.html'); ?>
 
-        <script src='js/libs/googleMapsApi.js' defer></script>
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB1uPQvRPQP9tOgEnK1HOB5JqGza8i7DiQ' defer></script>
         <script src='js/main.js' defer></script>
     </body>
 </html>

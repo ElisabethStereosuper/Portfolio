@@ -99,6 +99,7 @@ input, textarea{
 
 textarea{
     height: 26px;
+    max-width: 600px;
     &:focus, &:not(:placeholder-shown):valid{
         height: 200px;
     }
