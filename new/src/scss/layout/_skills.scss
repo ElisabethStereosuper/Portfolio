@@ -47,18 +47,20 @@
         }
     }
     circle{
-        cursor: pointer;
         transform-origin: 50% 50%;
         transition: 0.35s ease-in-out;
-        &:hover{
-            transform: scale(1.2);
+        .js &{
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.2);
+            }
         }
     }
     .paths{
         .js &{
             transform: scale(0);
             transition: 0.4s ease-in-out;
-            transform-origin: 50% 42%;
+            transform-origin: 48% 42%;
             &.on{
                 transform: scale(1);
             }

@@ -50,8 +50,8 @@
             <div class='container'>
                 <section>
                     <h1 class='anim-elt'>About</h1>
-                    <p class='anim-elt'>I am Elisabeth Hamel, a 23 years old <strong>Front-End Developper</strong>. I'm available for <strong>freelance</strong> work, depending on the projects.</p>
-                    <p class='anim-elt'>I'd like to do more <strong>open-source</strong> work in the future, and continue to learn new technologies and/or languages. I enjoy doing a job where it's necessary to learn everyday!</p>
+                    <p class='anim-elt'>I'd like to do more <strong>open-source</strong> work in the future, and continue to learn new technologies&nbsp;/&nbsp;languages. I enjoy doing a job where it's necessary to learn everyday!</p>
+                    <p class='anim-elt'>I'm available for <strong>freelance</strong> work, depending on the projects.</p>
                 </section>
                 <section>
                     <h2 class='anim-elt'>Skills</h2>
@@ -62,7 +62,7 @@
                                 <g class='text-right'>
                                     <text x='-100' y='350' class='title'>HTML/CSS</text>
                                     <text x='-100' y='400' class='text'>
-                                        <tspan>Semantic, W3C validation</tspan>
+                                        <tspan>Semantic, W3C, Twig</tspan>
                                         <tspan x='-100' y='435'>SASS / LESS</tspan>
                                     </text>
                                 </g>
@@ -135,16 +135,18 @@
                     </svg>
 
                     <p class='anim-elt'>I'm also concerned about <strong>SEO</strong>, <strong>accessibility</strong> and everything in general that is connected to my field. <br>I use <strong>GitHub</strong>, <strong>NPM</strong>, <strong>Gulp</strong> to automatise my workflow.</p>
-                    <p class='anim-elt'>I graduated with a two and a one year diploma in <strong>Multimedia Technologies</strong>, and I've been working for now two years at Stéréosuper.</p>
+                    <!--<p class='anim-elt'>I graduated with a three year diploma in <strong>Multimedia Technologies</strong>, and I've been working for now two years at Stéréosuper.</p>
                     <p class='anim-elt'>Want to know more about my background?</p>
-                    <a href='#' class='btn anim-elt'>Download my resume</a>
+                    <a href='#' class='btn anim-elt'>Download my resume</a>-->
                 </section>
                 <section>
                     <h2 class='anim-elt'>Miscellaneous</h2>
                     <p class='anim-elt'>I'm passionate about new technologies, especially the <strong>web</strong>, but I'm also a big fan of <strong>cinema</strong> and I espically love <strong>travelling</strong>, discovering new cultures, landscapes, meeting people.</p>
-                    <p class='anim-elt'>So here's a map of the trips I took so far:</p>
-                    <div id='map' class='map'></div>
-                    <p class='small-text anim-elt'>In blue, the places I lived in.</p>
+                    <div class='map-wrapper'>
+                        <p class='anim-elt'>So here's a map of the trips I took so far:</p>
+                        <div id='map' class='map'></div>
+                        <p class='small-text anim-elt'>In blue, the places I lived in.</p>
+                    </div>
                     <p class='anim-elt'>For the rest, I enjoy Tarantino's movies, climbing, beers, sushis and the subtle humor of my workmates :)</p>
                 </section>
             </div>

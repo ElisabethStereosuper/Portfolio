@@ -9,14 +9,15 @@
 }
 
 form{
-    margin: 4.5em 0 2em;
-    + .small-text{
-        margin: 0 0 5em;
-    }
+    margin: 4.5em 0 5em;
 }
 
 fieldset{
 
+}
+
+.text-error{
+    color: $secondary;
 }
 
 .field{
@@ -35,9 +36,17 @@ label, input, textarea{
 
 label{
     cursor: pointer;
-    transition: color $transition, transform $transition;
-    sup{
+    transition: color $transition, transform 0.1s ease-in-out;
+    transform-origin: 0 0;
+    sup, + span{
         transition: opacity $transition;
+    }
+    span{
+        font-size: 0.8em;
+    }
+    + span{
+        font-size: 0.7em;
+        color: $secondary;
     }
 }
 
@@ -51,18 +60,18 @@ input, textarea, select, button{
 
 input, textarea{
     width: 100%;
-    border-bottom: 1px solid $txt;
+    border-bottom: 1px solid $border;
     color: rgba($txt, 0.5);
     &:-webkit-autofill{
       	box-shadow: 0 0 0 1000px $background inset;
   	}
-    &:focus{
+    &:focus, .form-error &{
         &::-webkit-input-placeholder{
             color: rgba($txt, 0.2);
         }
         + label{
             cursor: default;
-            transform: translate3d(0, -25px, 0);
+            transform: translate3d(0, -25px, 0) scale(0.9);
         }
     }
     // &[required]:valid{
@@ -76,13 +85,13 @@ input, textarea{
             color: $txt;
             + label{
                 cursor: default;
-                transform: translate3d(0, -25px, 0);
+                transform: translate3d(0, -25px, 0) scale(0.9);
             }
             &:valid{
                 border-color: $primary;
                 + label{
                     color: $primary;
-                    sup{
+                    sup, + span{
                         opacity: 0;
                     }
                 }
@@ -93,6 +102,13 @@ input, textarea{
                     color: $secondary;
                 }
             }
+        }
+    }
+    .error &{
+        border-color: $secondary;
+        + label{
+            //color: #c32121;
+            color: $secondary;
         }
     }
 }
@@ -108,6 +124,9 @@ textarea{
 input{
     &[type=text]{
         max-width: 350px;
+    }
+    &[type=tel]{
+        max-width: 250px;
     }
     &[type=email]{
         max-width: 450px;

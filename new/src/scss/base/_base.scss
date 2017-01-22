@@ -18,7 +18,7 @@ html{
 body{
     @include inconsolata(1.8em);
     line-height: 1.4;
-    background: rgba(191, 175, 147, 0.2);
+    background: $background;
     color: $txt;
     //-webkit-font-smoothing: antialiased;
      -webkit-font-smoothing: subpixel-antialiased;
@@ -134,6 +134,7 @@ a{
     color: $primary;
     text-decoration: none;
     transition: $transition;
+    transform: translate3d(0, 0, 0);
     &[target='_blank']{
         display: inline-block;
         padding: 0 5px;

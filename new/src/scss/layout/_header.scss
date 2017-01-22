@@ -9,11 +9,11 @@
     z-index: 2;
     backface-visibility: hidden;
     pointer-events: none;
-    transition: $transition;
+    transition: 0.5s ease-in-out;
     .js &{
         &.off{
             opacity: 0;
-            transform: translate3d(0, 30px, 0);
+            transform: translate3d(0, -30px, 0);
         }
     }
     nav{
@@ -21,12 +21,8 @@
         justify-content: space-between;
     }
     ul{
+        position: relative;
         margin: 0;
-        .js &{
-            &.off{
-                opacity: 0;
-            }
-        }
         a{
             display: block;
             padding: 2px 5px;
@@ -36,30 +32,10 @@
             text-align: center;
             text-transform: uppercase;
             letter-spacing: 0.02em;
-
             margin: 0 12px;
+            transform: none;
             transition: color $transition, background $transition, transform $transition;
-            // &:before, &:after{
-            //     content: '';
-            //     display: inline-block;
-            //     width: 5px;
-            //     height: 5px;
-            //     background: currentColor;
-            //     vertical-align: middle;
-            //     transform: scale(0);
-            //     transition: transform $transition;
-            // }
-            // &:before{
-            //     margin: 0 7px 0 0;
-            // }
-            // &:after{
-            //     margin: 0 0 0 7px;
-            // }
             &:hover, &:focus{
-                // color: $secondary;
-                // &:before, &:after{
-                //     transform: scale(1);
-                // }
                 background: rgba(#000, 0.8);
                 color: rgba(#fff, 0.9);
             }
@@ -110,31 +86,44 @@
     }
 }
 
-.logo{
+.logo-home, .logo{
     display: block;
     width: 35px;
     height: 32px;
     backface-visibility: hidden;
+}
+
+.logo-home{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(2);
+    transition: $transition;
+    opacity: 0;
+    &.op{
+        transform: scale(1.7);
+    }
+    &.on{
+        opacity: 1;
+        .eye{
+            transform: scale(1);
+        }
+        &.op{
+            opacity: 0;
+        }
+    }
+    .no-js &{
+        display: none;
+    }
+}
+
+.logo{
     transition: 0.15s ease-in-out;
-    .js &{
-        &.off{
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            transform: scale(2);
-            &.op{
-                opacity: 0;
-                transform: scale(1.7);
-            }
-        }
-        &.on{
-            .eye{
-                transform: scale(1);
-            }
-        }
+    .eye{
+        transform: scale(1);
     }
     .body, .g-path{
         transition: $transition;
@@ -227,8 +216,19 @@
 @media (max-width: 860px){
     #header{
         padding: 15px 13px 14px 20px;
-        background: rgba($background, 0.95);
-        box-shadow: 0 0 20px 0 rgba(133,133,133,0.05);
+        background: $background;
+        border-bottom: 1px solid $border;
         pointer-events: auto;
+        ul{
+            &:before{
+                content: '';
+                width: 1px;
+                position: absolute;
+                top: -15px;
+                bottom: -15px;
+                left: -20px;
+                background: $border;
+            }
+        }
     }
 }
