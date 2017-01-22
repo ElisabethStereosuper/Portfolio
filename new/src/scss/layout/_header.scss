@@ -80,6 +80,7 @@
         display: none;
         float: left;
         text-indent: 0;
+        pointer-events: none;
     }
     .icon-contact{
         height: 1.15em;
@@ -188,6 +189,7 @@
     #header{
         ul{
             a{
+                width: 30px;
                 padding: 6px 5px 0;
                 line-height: 1;
                 text-indent: -99em;
