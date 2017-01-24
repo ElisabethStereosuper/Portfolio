@@ -4,8 +4,10 @@
     color: transparent;
 }
 ::-moz-placeholder{
+    color: transparent;
 }
 :-ms-input-placeholder{
+    color: transparent;
 }
 
 form{
@@ -67,6 +69,12 @@ input, textarea{
   	}
     &:focus, .form-error &{
         &::-webkit-input-placeholder{
+            color: rgba($txt, 0.2);
+        }
+        &::-moz-placeholder{
+            color: rgba($txt, 0.2);
+        }
+        &:-ms-input-placeholder{
             color: rgba($txt, 0.2);
         }
         + label{

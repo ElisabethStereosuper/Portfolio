@@ -127,6 +127,8 @@ if(isset($_POST['submit'])){
         <main role='main' id='main'>
             <div class='container'>
                 <section>
+                    <div id='particles'></div>
+
                     <h1 class='anim-elt'>Contact</h1>
 
                     <?php if($success){ ?>

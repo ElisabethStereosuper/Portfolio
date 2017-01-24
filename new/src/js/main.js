@@ -2,6 +2,7 @@
 
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var Cookies = require('./libs/js.cookie.js');
+// var particlesJS = require('./libs/particles.min.js');
 
 
 // $(function(){
@@ -64,5 +65,12 @@ $(window).on('load', function(){
     if(chart.length){
         animChart(chart);
     }
+
+    console.log(particlesJS)
+
+    particlesJS.load('particles', 'js/particles.json', function(){
+        console.log('callback - particles.js config loaded');
+    });
+    // particlesJS();
 
 });

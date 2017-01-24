@@ -48,6 +48,8 @@
 
         <main role='main' id='main'>
             <div class='container'>
+                <div id='particles'></div>
+
                 <h1 class='anim-elt'>Portfolio</h1>
 
                 <ul class='portfolio-list anim-elt' id='portfolio'>

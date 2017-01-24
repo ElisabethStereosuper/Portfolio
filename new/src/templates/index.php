@@ -53,6 +53,8 @@ $octopus = isset($_COOKIE['octopus']) ? true : false;
 
         <main role='main' id='main'>
             <div class='container'>
+                <div id='particles'></div>
+
                 <section>
                     <h1 class='anim-elt'>Hello!</h1>
                     <p class='anim-elt'>I am Elisabeth Hamel, a <strong>Front-End &amp; WordPress Developper</strong> currently working at <a href='http://stereosuper.fr' target='_blank'>Stéréosuper</a>, based in Nantes (France).</p>
@@ -94,9 +96,9 @@ $octopus = isset($_COOKIE['octopus']) ? true : false;
                     <a href='contact.php' class='btn anim-elt'>Get in touch</a>
                 </section>
 
-            </div>
+                <div class='logo-home' id='logo'><?php include('includes/logo.svg'); ?></div>
 
-            <div class='logo-home' id='logo'><?php include('includes/logo.svg'); ?></div>
+            </div>
         </main>
 
         <?php include('includes/footer.html'); ?>

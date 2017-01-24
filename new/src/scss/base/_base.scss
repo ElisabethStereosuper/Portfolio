@@ -19,6 +19,7 @@ body{
     @include inconsolata(1.8em);
     line-height: 1.4;
     background: $background;
+    // background: linear-gradient(to bottom, $background 0%, rgba($background, 0.1) 100%);
     color: $txt;
     //-webkit-font-smoothing: antialiased;
      -webkit-font-smoothing: subpixel-antialiased;
@@ -131,6 +132,8 @@ hr{
 /******* LIENS / BOUTONS *******/
 
 a{
+    position: relative;
+    z-index: 1;
     color: $primary;
     text-decoration: none;
     transition: $transition;
@@ -138,7 +141,6 @@ a{
     &[target='_blank']{
         display: inline-block;
         padding: 0 5px;
-        position: relative;
         color: #fff;
         &:after{
             content: '';

@@ -48,6 +48,8 @@
 
         <main role='main' id='main'>
             <div class='container'>
+                <div id='particles'></div>
+
                 <section>
                     <h1 class='anim-elt'>About</h1>
                     <p class='anim-elt'>I'd like to do more <strong>open-source</strong> work in the future, and continue to learn new technologies&nbsp;/&nbsp;languages. I enjoy doing a job where it's necessary to learn everyday!</p>
