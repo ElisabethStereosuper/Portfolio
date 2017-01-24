@@ -5,9 +5,19 @@ var Cookies = require('./libs/js.cookie.js');
 // var particlesJS = require('./libs/particles.min.js');
 
 
-// $(function(){
+$(function(){
 
-// });
+    function checkEmptyInput(input){
+        input.val() !== '' ? input.addClass('filled') : input.removeClass('filled');
+    }
+
+    $('form').on('input propertychange', 'input, textarea', function(){
+        checkEmptyInput($(this));
+    }).find('input, textarea').each(function(){
+        checkEmptyInput($(this));
+    });
+
+});
 
 $(window).on('load', function(){
 
@@ -35,12 +45,14 @@ $(window).on('load', function(){
             $(this).removeClass('off').dequeue();
             endAnimHome = true;
             Cookies.set('octopus', true, { expires: 1, path: '/' });
+            particlesJS.load('particles', 'js/particles.json');
         });
     }
 
     if(body.hasClass('home')){
         if(Cookies.get('octopus')){
             animElts(eltsToAnim);
+            particlesJS.load('particles', 'js/particles.json');
         }else{
             headerAnimation();
 
@@ -56,6 +68,7 @@ $(window).on('load', function(){
         }
     }else{
         animElts(eltsToAnim);
+        particlesJS.load('particles', 'js/particles.json');
     }
 
     if($('#map').length){
@@ -65,12 +78,5 @@ $(window).on('load', function(){
     if(chart.length){
         animChart(chart);
     }
-
-    console.log(particlesJS)
-
-    particlesJS.load('particles', 'js/particles.json', function(){
-        console.log('callback - particles.js config loaded');
-    });
-    // particlesJS();
 
 });
