@@ -7,6 +7,14 @@
 }
 
 @font-face{
+    font-family: 'Inconsolata Bold';
+    src: url('../fonts/inconsolata-bold.woff2') format('woff2'),
+         url('../fonts/inconsolata-bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
     font-family: 'Abril';
     src: url('../fonts/abril.woff2') format('woff2'),
          url('../fonts/abril.woff') format('woff');
