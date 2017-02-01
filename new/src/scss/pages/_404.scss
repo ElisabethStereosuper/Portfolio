@@ -1,0 +1,16 @@
+.logo-404{
+    display: block;
+    max-width: 200px;
+    margin: 4em 0 0;
+    .body{
+        fill: $txt;
+    }
+    .eye-full{
+        fill: #fff;
+    }
+    .eye-center{
+        fill: $txt;
+        transform: scale(0.4);
+        transform-origin: 50% 50%;
+    }
+}

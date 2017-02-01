@@ -2,6 +2,7 @@
 
 var $ = require('jquery-slim');
 var Cookies = require('js-cookie');
+//var isMobile = require('ismobilejs');
 
 require('particles.js');
 
@@ -26,6 +27,8 @@ $(window).on('load', function(){
     var animChart = require('./chart.js');
     var mapInit = require('./map.js');
 
+    var ff = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
     var body = $('body'), header = $('#header');
     var endAnimHome = false;
     var eltsToAnim = $('.anim-elt');
@@ -46,14 +49,18 @@ $(window).on('load', function(){
             $(this).removeClass('off').dequeue();
             endAnimHome = true;
             Cookies.set('octopus', true, { expires: 1, path: '/' });
-            particlesJS.load('particles', 'js/particles.json');
+            if(!ff){
+                particlesJS.load('particles', 'js/particles.json');
+            }
         });
     }
 
     if(body.hasClass('home')){
         if(Cookies.get('octopus')){
             animElts(eltsToAnim);
-            particlesJS.load('particles', 'js/particles.json');
+            if(!ff){
+                particlesJS.load('particles', 'js/particles.json');
+            }
         }else{
             headerAnimation();
 
@@ -69,7 +76,9 @@ $(window).on('load', function(){
         }
     }else{
         animElts(eltsToAnim);
-        particlesJS.load('particles', 'js/particles.json');
+        if(!ff){
+            particlesJS.load('particles', 'js/particles.json');
+        }
     }
 
     if($('#map').length){
@@ -78,6 +87,17 @@ $(window).on('load', function(){
 
     if(chart.length){
         animChart(chart);
+    }
+
+    if($('#logo-404').length){
+        var x, y;
+        body.on('mousemove', function(e){
+            x = e.pageX;
+            y = e.pageY;
+            console.log(x)
+            console.log(y)
+        });
+        //$('#logo-404').find('.eye-center')
     }
 
 });
