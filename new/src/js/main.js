@@ -55,6 +55,10 @@ $(window).on('load', function(){
         });
     }
 
+    if(ff){
+        body.addClass('ff');
+    }
+
     if(body.hasClass('home')){
         if(Cookies.get('octopus')){
             animElts(eltsToAnim);
