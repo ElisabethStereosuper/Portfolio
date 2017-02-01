@@ -1,4 +1,4 @@
-var $ = require('./libs/jquery/dist/jquery.slim.min.js');
+var $ = require('jquery-slim');
 
 module.exports = function(elts){
     var delay = 150;

@@ -1,8 +1,9 @@
 'use strict';
 
-var $ = require('./libs/jquery/dist/jquery.slim.min.js');
-var Cookies = require('./libs/js.cookie.js');
-// var particlesJS = require('./libs/particles.min.js');
+var $ = require('jquery-slim');
+var Cookies = require('js-cookie');
+
+require('particles.js');
 
 
 $(function(){
