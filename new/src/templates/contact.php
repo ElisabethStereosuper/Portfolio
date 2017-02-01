@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
         }
     }
     if(!empty($phone)){
-        if(!(strlen($phone) < 20 && strlen($phone) > 9 && preg_match("/^\+?[^.\-][0-9\.\- ]+$/", $phone))){
+        if(!(strlen($phone) < 20 && strlen($phone) > 9 && preg_match('/^\+?[^.\-][0-9\.\- ]+$/', $phone))){
             $errorPhone = 'The phone number is not valid';
             $error = true;
         }
@@ -133,56 +133,57 @@ if(isset($_POST['submit'])){
 
                     <?php if($success){ ?>
 
-                        <p class='anim-elt'>Thanks, your message was successfully send!</p>
-                        <p class='anim-elt'>I'll get back to you soon :)</p>
-
-                    <?php }else{ ?>
-
-                        <p class='anim-elt'>You want to work with me, you have a question, you just want to say "Hi" ? Don't hesitate to drop me a message by filling this form.</p>
-
-                        <?php
-                            if($errorSend){
-                                echo '<p class="text-error anim-elt">' . $errorSend . '</p>';
-                            }else if($error){ ?>
-                                <p class='text-error anim-elt'>The form contains some errors. Please check the highlighted fields:</p>
-                            <?php }
-                        ?>
-
-                        <form action='#' method='POST' id='contactForm' <?php if($error) echo 'class="form-error"'; ?>>
-                            <div class='field <?php if($errorName) echo "error"; ?>'>
-                                <input type='text' name='name' id='name' placeholder='Peter Griffin' class='anim-elt' value='<?php echo $name; ?>' required>
-                                <label for='name' class='anim-elt'>Your name<sup>*</sup></label>
-                                <?php if($errorName) echo '<span class="anim-elt">' . $errorName . '</span>'; ?>
-                            </div>
-                            <div class='field <?php if($errorMail) echo "error"; ?>'>
-                                <input type='email' name='email' id='email' placeholder='ekiekiekipateng@knights.ni' class='anim-elt' value='<?php echo $mail; ?>' required>
-                                <label for='email' class='anim-elt'>Your email<sup>*</sup></label>
-                                <?php if($errorMail) echo '<span class="anim-elt">' . $errorMail . '</span>'; ?>
-                            </div>
-                            <div class='field <?php if($errorPhone) echo "error"; ?>'>
-                                <input type='tel' name='phone' id='phone' placeholder='06 06 66 66 66' class='anim-elt' value='<?php echo $phone; ?>'>
-                                <label for='phone' class='anim-elt'>Your phone number <span>(optionnal)</span></label>
-                                <?php if($errorPhone) echo '<span class="anim-elt">' . $errorPhone . '</span>'; ?>
-                            </div>
-                            <div class='field'>
-                                <input type='text' name='movie' id='movie' placeholder='Mars Attack' class='anim-elt' value='<?php echo $movie; ?>'>
-                                <label for='movie' class='anim-elt'>Your favourite movie <span>(optionnal)</span></label>
-                            </div>
-                            <div class='field <?php if($errorMsg) echo "error"; ?>'>
-                                <textarea name='message' id='message' placeholder='Hello there !' class='anim-elt' required><?php echo $msg; ?></textarea>
-                                <label for='message' class='anim-elt'>Your message<sup>*</sup></label>
-                                <?php if($errorMsg) echo '<span class="anim-elt">' . $errorMsg . '</span>'; ?>
-                            </div>
-                            <div class='hidden'>
-                                <input type='url' name='url' id='url' value='<?php echo $spamUrl; ?>'>
-                                <label for='url'>Please leave this field empty</label>
-                            </div>
-                            <button type='submit' for='contactForm' class='btn anim-elt' name='submit'>Send</button>
-                        </form>
-
-                        <p class='anim-elt'>Believe it or not, I kind of enjoy styling forms! But if you don't feel comfortable using it, you can reach me on <a href='mailto:elisabethhamel@outlook.com' title='Send me a message'>elisabethhamel@outlook.com</a>.</p>
+                        <p class='anim-elt text-success'>
+                            Thanks, your message was successfully send!<br>
+                            I'll get back to you soon :)
+                        </p>
 
                     <?php } ?>
+
+                    <p class='anim-elt'>You want to work with me, you have a question, you just want to say "Hi" ? Don't hesitate to drop me a message by filling this form.</p>
+
+                    <?php
+                        if($errorSend){
+                            echo '<p class="text-error anim-elt">' . $errorSend . '</p>';
+                        }else if($error){ ?>
+                            <p class='text-error anim-elt'>The form contains some errors. Please check the highlighted fields:</p>
+                        <?php }
+                    ?>
+
+                    <form action='#' method='POST' id='contactForm' <?php if($error) echo 'class="form-error"'; ?>>
+                        <div class='field <?php if($errorName) echo "error"; ?>'>
+                            <input type='text' name='name' id='name' placeholder='Peter Griffin' class='anim-elt' value='<?php if(!$success) echo $name; ?>' required>
+                            <label for='name' class='anim-elt'>Your name<sup>*</sup></label>
+                            <?php if($errorName) echo '<span class="anim-elt">' . $errorName . '</span>'; ?>
+                        </div>
+                        <div class='field <?php if($errorMail) echo "error"; ?>'>
+                            <input type='email' name='email' id='email' placeholder='ekiekiekipateng@knights.ni' class='anim-elt' value='<?php if(!$success) echo $mail; ?>' required>
+                            <label for='email' class='anim-elt'>Your email<sup>*</sup></label>
+                            <?php if($errorMail) echo '<span class="anim-elt">' . $errorMail . '</span>'; ?>
+                        </div>
+                        <div class='field <?php if($errorPhone) echo "error"; ?>'>
+                            <input type='tel' name='phone' id='phone' placeholder='06 06 66 66 66' class='anim-elt' value='<?php if(!$success) echo $phone; ?>'>
+                            <label for='phone' class='anim-elt'>Your phone number <span>(optionnal)</span></label>
+                            <?php if($errorPhone) echo '<span class="anim-elt">' . $errorPhone . '</span>'; ?>
+                        </div>
+                        <div class='field'>
+                            <input type='text' name='movie' id='movie' placeholder='Mars Attack' class='anim-elt' value='<?php if(!$success) echo $movie; ?>'>
+                            <label for='movie' class='anim-elt'>Your favourite movie <span>(optionnal)</span></label>
+                        </div>
+                        <div class='field <?php if($errorMsg) echo "error"; ?>'>
+                            <textarea name='message' id='message' placeholder='Hello there !' class='anim-elt' required><?php if(!$success) echo $msg; ?></textarea>
+                            <label for='message' class='anim-elt'>Your message<sup>*</sup></label>
+                            <?php if($errorMsg) echo '<span class="anim-elt">' . $errorMsg . '</span>'; ?>
+                        </div>
+                        <div class='hidden'>
+                            <input type='url' name='url' id='url' value='<?php echo $spamUrl; ?>'>
+                            <label for='url'>Please leave this field empty</label>
+                        </div>
+                        <button type='submit' for='contactForm' class='btn anim-elt' name='submit'>Send</button>
+                    </form>
+
+                    <p class='anim-elt'>Believe it or not, I kind of enjoy styling forms! But if you don't feel comfortable using it, you can reach me on <a href='mailto:elisabethhamel@outlook.com' title='Send me a message'>elisabethhamel@outlook.com</a>.</p>
+
                 </section>
             </div>
         </main>

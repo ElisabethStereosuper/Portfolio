@@ -14,12 +14,12 @@ form{
     margin: 4.5em 0 5em;
 }
 
-fieldset{
-
-}
-
 .text-error{
     color: $secondary;
+}
+.text-success{
+    margin: 2em 0;
+    color: $primary;
 }
 
 .field{
@@ -40,7 +40,7 @@ label{
     cursor: pointer;
     transition: color $transition, transform 0.1s ease-in-out;
     transform-origin: 0 0;
-    sup, + span{
+    sup{
         transition: opacity $transition;
     }
     span{
@@ -54,7 +54,7 @@ label{
 
 input, textarea, select, button{
     border: 0;
-  	transition: $transition;
+  	transition: color $transition, border-color $transition;
   	&:focus{
       	outline: 0;
   	}
@@ -82,13 +82,7 @@ input, textarea{
             transform: translate3d(0, -25px, 0) scale(0.9);
         }
     }
-    // &[required]:valid{
-    //     + label{
-    //         cursor: default;
-    //         transform: translate3d(0, -25px, 0);
-    //     }
-    // }
-    &:not(:placeholder-shown){
+    &.filled{
         &:not(:focus){
             color: $txt;
             + label{
@@ -99,7 +93,7 @@ input, textarea{
                 border-color: $primary;
                 + label{
                     color: $primary;
-                    sup, + span{
+                    sup{
                         opacity: 0;
                     }
                 }
@@ -112,11 +106,19 @@ input, textarea{
             }
         }
     }
+    &:invalid{
+        box-shadow: none;
+    }
     .error &{
         border-color: $secondary;
         + label{
-            //color: #c32121;
             color: $secondary;
+        }
+        &.filled:not(:focus){
+            border-color: $secondary;
+            + label{
+                color: $secondary;
+            }
         }
     }
 }
@@ -124,7 +126,7 @@ input, textarea{
 textarea{
     height: 26px;
     max-width: 600px;
-    &:focus, &:not(:placeholder-shown):valid{
+    &:focus, &.filled:valid{
         height: 200px;
     }
 }
@@ -148,11 +150,8 @@ input{
 
 button{
     &.btn{
-        &.ok{
-            color: $primary;
-        }
         &:hover, &:focus{
-            color: $secondary;
+            color: $primary;
         }
     }
 }
