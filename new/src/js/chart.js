@@ -9,36 +9,29 @@ module.exports = function(chart){
 
     function animChart(){
         chart.queue(function(){
-            $(this).find('.puce').addClass('on');
-            $(this).dequeue();
+            $(this).find('.puce').addClass('on').end().dequeue();
         }).delay(340).queue(function(){
-            $(this).find('.puce').addClass('final');
-            $(this).dequeue();
+            $(this).find('.puce').addClass('final').end().dequeue();
         }).delay(250).queue(function(){
-            $(this).find('.paths').addClass('on');
-            $(this).dequeue();
+            $(this).find('.paths').addClass('on').end().dequeue();
         }).delay(350).queue(function(){
             $(this).find('.paths > g').each(function(i){
                 var thisPath = $(this);
                 thisPath.delay(i*150).queue(function(){
-                    thisPath.find('line + circle').addClass('on');
-                    thisPath.dequeue();
+                    thisPath.find('line + circle').addClass('on').end().dequeue();
                 }).delay(100).queue(function(){
-                    thisPath.find('line').addClass('on');
-                    thisPath.dequeue();
+                    thisPath.find('line').addClass('on').end().dequeue();
                 }).delay(100).queue(function(){
-                    thisPath.find('.title').addClass('on');
-                    thisPath.dequeue();
+                    thisPath.find('.title').addClass('on').end().dequeue();
                 });;
-            });
-            $(this).addClass('done').dequeue();
+            }).end().addClass('done').dequeue();
         });
     }
 
     function launchAnimChart(){
         myScroll = $(document).scrollTop();
 
-        if(!chart.hasClass('done') && myScroll > chart.offset().top - windowHeight/1.5){
+        if(!chart.hasClass('done') && myScroll > chart.offset().top - windowHeight/1.7){
             animChart()
         }
     }
