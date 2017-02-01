@@ -63,7 +63,6 @@
                                 <p>HTML, CSS [SASS], JavaScript [jQuery, GreenSock] <br>WordPress [theme&nbsp;development]</p>
                                 <a href='https://thinkovery.com' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                         </ul>
@@ -77,7 +76,6 @@
                                 <p>HTML [Twig], CSS [SASS], JavaScript [jQuery, GreenSock, BarbaJS]</p>
                                 <a href='http://www.stereosuper.fr' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -86,7 +84,6 @@
                                 <p>HTML, CSS [SASS], JavaScript [jQuery, GreenSock, Mapbox]</p>
                                 <a href='http://leongrosse.fr' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -95,7 +92,6 @@
                                 <p>HTML, CSS [SASS], JavaScript [jQuery, GreenSock] <br>WordPress [theme&nbsp;development]</p>
                                 <a href='http://www.alvencapital.com' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -104,7 +100,6 @@
                                 <p>HTML, CSS [LESS], JavaScript [GreenSock] <br>WordPress [theme&nbsp;development]</p>
                                 <a href='http://www.labelleboite.fr' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -113,7 +108,6 @@
                                 <p>HTML, CSS, JavaScript [jQuery], WordPress</p>
                                 <a href='http://nantesaleau.com' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -122,7 +116,6 @@
                                 <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [Multilingual, theme&nbsp;development]</p>
                                 <a href='http://www.akeneo.com' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -131,7 +124,6 @@
                                 <p>HTML, CSS, WordPress</p>
                                 <a href='http://www.encreseche.com/' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                         </ul>
@@ -145,7 +137,6 @@
                                 <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [theme&nbsp;development]</p>
                                 <a href='http://institutdavignon.fr' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -154,7 +145,6 @@
                                 <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [multilingual, theme&nbsp;development, AJAX]</p>
                                 <a href='http://success.wisembly.com/' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -163,7 +153,6 @@
                                 <p>HTML, CSS [LESS], JavaScript [jQuery, GreenSock] <br>WordPress [multilingual, theme&nbsp;development]</p>
                                 <a href='http://wisembly.com/' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                         </ul>
@@ -177,7 +166,6 @@
                                 <p>HTML, CSS, JavaScript [jQuery] <br>WordPress [multilingual]</p>
                                 <a href='http://www.rezorue.com/' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                             <li class='anim-elt'>
@@ -186,7 +174,6 @@
                                 <p>WordPress [multilingual]</p>
                                 <a href='http://serenpedia.com/' target='_blank' class='btn-ext'>
                                     <span data-text='Check it out'>Check it out</span>
-                                    <svg class='icon'><use xlink:href='#icon-link'/></svg>
                                 </a>
                             </li>
                         </ul>

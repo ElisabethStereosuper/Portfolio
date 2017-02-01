@@ -29,6 +29,20 @@
 .btn-ext{
     font-family: $unica;
     text-transform: uppercase;
+    &:before{
+        content: '';
+        width: 18px;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: $border;
+        transform: scaleX(0) translate3d(-10px, 0, 0);
+        transform-origin: 0 0;
+        transition: $transition;
+    }
     &[target='_blank']{
         padding: 0;
         color: $primary;
@@ -56,25 +70,12 @@
             opacity: 0;
         }
     }
-    > .icon{
-        width: 0.9em;
-        height: 0.9em;
-        position: absolute;
-        top: 0;
-        bottom: 2px;
-        left: 0;
-        margin: auto;
-        opacity: 0;
-        transform: scale(0.9);
-        transition: transform $transition, opacity $transition;
-    }
     &:hover, &:focus{
-        > .icon{
-            transform: scale(1);
-            opacity: 1;
+        &:before{
+            transform: scaleX(1) translate3d(0, 0, 0);
         }
         > span{
-            transform: translate3d(22px, 0, 0);
+            transform: translate3d(24px, 0, 0);
             &:after{
                 animation: jumpAfter 0.3s ease-in-out 0s infinite normal;
                 color: $primary;
