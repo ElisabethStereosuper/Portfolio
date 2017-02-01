@@ -77,7 +77,7 @@ if(isset($_POST['submit'])){
 }
 
 ?><!DOCTYPE html>
-<html lang='en-EN' class='no-js'>
+<html lang='en' class='no-js'>
     <head>
         <meta charset='utf-8'>
         <meta name='description' content='Learn more about me, my background and skills.'>
@@ -94,7 +94,7 @@ if(isset($_POST['submit'])){
 
         <link rel='stylesheet' href='css/main.css'>
 
-        <script async>document.getElementsByTagName('html')[0].className = 'js';</script>
+        <script>document.getElementsByTagName('html')[0].className = 'js';</script>
     </head>
 
     <body>

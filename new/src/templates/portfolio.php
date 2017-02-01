@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en-EN' class='no-js'>
+<html lang='en' class='no-js'>
     <head>
         <meta charset='utf-8'>
         <meta name='description' content='Discover my work, front-end development of static and dynamic websites with WordPress.'>
@@ -16,7 +16,7 @@
 
         <link rel='stylesheet' href='css/main.css'>
 
-        <script async>document.getElementsByTagName('html')[0].className = 'js';</script>
+        <script>document.getElementsByTagName('html')[0].className = 'js';</script>
     </head>
 
     <body>
