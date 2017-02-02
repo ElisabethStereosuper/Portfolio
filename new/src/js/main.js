@@ -49,49 +49,32 @@ $(window).on('load', function(){
             $(this).removeClass('off').dequeue();
             endAnimHome = true;
             Cookies.set('octopus', true, { expires: 1, path: '/' });
-            if(!ff){
-                particlesJS.load('particles', 'js/particles.json');
-            }
+            !ff & particlesJS.load('particles', 'js/particles.json');
         });
     }
 
-    if(ff){
-        body.addClass('ff');
-    }
+    ff & body.addClass('ff');
 
     if(body.hasClass('home')){
         if(Cookies.get('octopus')){
             animElts(eltsToAnim);
-            if(!ff){
-                particlesJS.load('particles', 'js/particles.json');
-            }
+            !ff & particlesJS.load('particles', 'js/particles.json');
         }else{
             headerAnimation();
 
             $(window).on('focusin', function(){
-                if(!endAnimHome){
-                    headerAnimation();
-                }
+                !endAnimHome && headerAnimation();
             }).on('focusout', function(){
-                if(!endAnimHome){
-                    header.clearQueue();
-                }
+                !endAnimHome && header.clearQueue();
             });
         }
     }else{
         animElts(eltsToAnim);
-        if(!ff){
-            particlesJS.load('particles', 'js/particles.json');
-        }
+        !ff & particlesJS.load('particles', 'js/particles.json');
     }
 
-    if($('#map').length){
-        mapInit();
-    }
-
-    if(chart.length){
-        animChart(chart);
-    }
+    $('#map').length && mapInit();
+    chart.length && animChart(chart);
 
     if($('#logo-404').length){
         var x, y;

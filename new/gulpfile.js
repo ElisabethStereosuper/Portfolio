@@ -7,6 +7,7 @@ var reload = browserSync.reload;
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var optimizejs = require('gulp-optimize-js');
 
 var report_error = function(error) {
     $.notify({
@@ -68,6 +69,7 @@ gulp.task('js', function () {
         .pipe(source('main.js'))
         .pipe(buffer())
         .pipe($.uglify())
+        .pipe(optimizejs())
         .pipe(gulp.dest('dest/js'));
 });
 
