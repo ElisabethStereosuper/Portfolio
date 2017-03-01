@@ -28,6 +28,8 @@ $(window).on('load', function(){
     var mapInit = require('./map.js');
 
     var ff = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    var safari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+    console.log(safari)
 
     var body = $('body'), header = $('#header');
     var endAnimHome = false;
@@ -49,16 +51,17 @@ $(window).on('load', function(){
             $(this).removeClass('off').dequeue();
             endAnimHome = true;
             Cookies.set('octopus', true, { expires: 1, path: '/' });
-            !ff & particlesJS.load('particles', 'js/particles.json');
+            if(!ff) particlesJS.load('particles', 'js/particles.json');
         });
     }
 
-    ff & body.addClass('ff');
+    if(ff) body.addClass('ff');
+    if(!safari) body.addClass('not-safari');
 
     if(body.hasClass('home')){
         if(Cookies.get('octopus')){
             animElts(eltsToAnim);
-            !ff & particlesJS.load('particles', 'js/particles.json');
+            if(!ff) particlesJS.load('particles', 'js/particles.json');
         }else{
             headerAnimation();
 
@@ -70,11 +73,11 @@ $(window).on('load', function(){
         }
     }else{
         animElts(eltsToAnim);
-        !ff & particlesJS.load('particles', 'js/particles.json');
+        if(!ff) particlesJS.load('particles', 'js/particles.json');
     }
 
-    $('#map').length && mapInit();
-    chart.length && animChart(chart);
+    if($('#map').length) mapInit();
+    if(chart.length) animChart(chart);
 
     if($('#logo-404').length){
         var x, y;
