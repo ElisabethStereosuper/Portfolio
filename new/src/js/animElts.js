@@ -1,7 +1,7 @@
 var $ = require('jquery-slim');
 
 module.exports = function(elts){
-    var delay = 150;
+    var delay = 50;
 
     elts.each(function(i){
         $(this).delay(delay*i).queue(function(){

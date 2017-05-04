@@ -29,7 +29,7 @@ $(window).on('load', function(){
 
     var ff = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
     var safari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
-    console.log(safari)
+    console.log(safari);
 
     var body = $('body'), header = $('#header');
     var endAnimHome = false;
@@ -55,26 +55,27 @@ $(window).on('load', function(){
         });
     }
 
-    if(ff) body.addClass('ff');
-    if(!safari) body.addClass('not-safari');
-
-    if(body.hasClass('home')){
-        if(Cookies.get('octopus')){
-            animElts(eltsToAnim);
-            if(!ff) particlesJS.load('particles', 'js/particles.json');
-        }else{
-            headerAnimation();
-
-            $(window).on('focusin', function(){
-                !endAnimHome && headerAnimation();
-            }).on('focusout', function(){
-                !endAnimHome && header.clearQueue();
-            });
-        }
-    }else{
+    function lauchGeneralAnimations(){
         animElts(eltsToAnim);
         if(!ff) particlesJS.load('particles', 'js/particles.json');
     }
+
+    if(ff) body.addClass('ff');
+    if(!safari) body.addClass('not-safari');
+
+    if(body.hasClass('home') && Cookies.get('octopus')){
+        lauchGeneralAnimations();
+    }else{
+        headerAnimation();
+
+        $(window).on('focusin', function(){
+            !endAnimHome && headerAnimation();
+        }).on('focusout', function(){
+            !endAnimHome && header.clearQueue();
+        });
+    }
+
+    !body.hasClass('home') && lauchGeneralAnimations();
 
     if($('#map').length) mapInit();
     if(chart.length) animChart(chart);
@@ -84,8 +85,8 @@ $(window).on('load', function(){
         body.on('mousemove', function(e){
             x = e.pageX;
             y = e.pageY;
-            console.log(x)
-            console.log(y)
+            console.log(x);
+            console.log(y);
         });
         //$('#logo-404').find('.eye-center')
     }
