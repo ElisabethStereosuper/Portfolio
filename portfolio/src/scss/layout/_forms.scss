@@ -1,0 +1,164 @@
+/* Forms */
+
+::-webkit-input-placeholder{
+    color: transparent;
+}
+::-moz-placeholder{
+    color: transparent;
+}
+:-ms-input-placeholder{
+    color: transparent;
+}
+
+form{
+    margin: 4.5em 0 5em;
+}
+
+.text-error{
+    color: $secondary;
+}
+.text-success{
+    margin: 2em 0;
+    color: $primary;
+}
+
+.field{
+    position: relative;
+    margin: 0 0 3em;
+    > label{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+label, input, textarea{
+    display: block;
+}
+
+label{
+    cursor: pointer;
+    transition: color $transition, transform 0.1s ease-in-out;
+    transform-origin: 0 0;
+    sup{
+        transition: opacity $transition;
+    }
+    span{
+        font-size: 0.8em;
+    }
+    + span{
+        font-size: 0.7em;
+        color: $secondary;
+    }
+}
+
+input, textarea, select, button{
+    border: 0;
+  	transition: color $transition, border-color $transition;
+  	&:focus{
+      	outline: 0;
+  	}
+}
+
+input, textarea{
+    width: 100%;
+    border-bottom: 1px solid $border;
+    color: rgba($txt, 0.5);
+    &:-webkit-autofill{
+      	box-shadow: 0 0 0 1000px $background inset;
+  	}
+    &:focus, .form-error &{
+        &::-webkit-input-placeholder{
+            color: rgba($txt, 0.2);
+        }
+        &::-moz-placeholder{
+            color: rgba($txt, 0.2);
+        }
+        &:-ms-input-placeholder{
+            color: rgba($txt, 0.2);
+        }
+        + label{
+            cursor: default;
+            transform: translate3d(0, -25px, 0) scale(0.9);
+        }
+    }
+    &.filled{
+        &:not(:focus){
+            color: $txt;
+            + label{
+                cursor: default;
+                transform: translate3d(0, -25px, 0) scale(0.9);
+            }
+            &:valid{
+                border-color: $primary;
+                + label{
+                    color: $primary;
+                    sup{
+                        opacity: 0;
+                    }
+                }
+            }
+            &:invalid{
+                border-color: $secondary;
+                + label{
+                    color: $secondary;
+                }
+            }
+        }
+    }
+    &:invalid{
+        box-shadow: none;
+    }
+    .error &{
+        border-color: $secondary;
+        + label{
+            color: $secondary;
+        }
+        &.filled:not(:focus){
+            border-color: $secondary;
+            + label{
+                color: $secondary;
+            }
+        }
+    }
+}
+
+textarea{
+    height: 26px;
+    max-width: 600px;
+    &:focus, &.filled:valid{
+        height: 200px;
+    }
+}
+
+input{
+    &[type=text]{
+        max-width: 350px;
+    }
+    &[type=tel]{
+        max-width: 250px;
+    }
+    &[type=email]{
+        max-width: 450px;
+    }
+    &[type=search]{
+        &::-webkit-search-cancel-button, &::-webkit-search-decoration{
+            display: none;
+        }
+    }
+}
+
+button{
+    &.btn{
+        &:hover, &:focus{
+            color: $primary;
+        }
+    }
+}
+
+select{
+    // hide the arrow on edge + ie
+    &::-ms-expand{
+        display: none;
+    }
+}

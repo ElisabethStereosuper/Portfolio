@@ -179,7 +179,7 @@ if(isset($_POST['submit'])){
                             <label for='movie' class='anim-elt'>Your favourite movie <span>(optionnal)</span></label>
                         </div>
                         <div class='field <?php if($errorMsg) echo "error"; ?>'>
-                            <textarea name='message' id='message' placeholder='Hello there !' class='anim-elt' required><?php if(!$success) echo $msg; ?></textarea>
+                            <textarea name='message' id='message' placeholder="What is the answer to the ultimate question, of life, the universe, and everything?" class='anim-elt' required><?php if(!$success) echo $msg; ?></textarea>
                             <label for='message' class='anim-elt'>Your message<sup>*</sup></label>
                             <?php if($errorMsg) echo '<span class="anim-elt">' . $errorMsg . '</span>'; ?>
                         </div>

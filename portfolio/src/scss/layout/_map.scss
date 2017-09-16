@@ -1,0 +1,43 @@
+.map{
+    padding: 0 0 50%;
+    .gm-style-cc{
+        display: none;
+    }
+    .gm-bundled-control{
+        .gmnoprint{
+            > div{
+                background: rgba(#fff, 0.5) !important;
+            }
+        }
+    }
+    a{
+        padding: 0;
+        color: transparent !important;
+        &:after{
+            display: none;
+        }
+        img{
+            max-width: 30px;
+            height: auto !important;
+            left: 10px !important;
+        }
+    }
+    + .small-text{
+        margin: 10px 0 2em;
+        &:before{
+            content: '— ';
+        }
+    }
+}
+
+.map-wrapper{
+    .no-js &{
+        display: none;
+    }
+}
+
+@media (max-width: 473px){
+    .map-wrapper{
+        display: none;
+    }
+}

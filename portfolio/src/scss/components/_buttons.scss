@@ -1,0 +1,27 @@
+/* Buttons */
+
+.btn{
+    display: inline-block;
+    font-family: $unica;
+    text-transform: uppercase;
+    box-shadow: none;
+    //color: $primary;
+    &:before, &:after{
+        content: '+';
+        display: inline-block;
+        vertical-align: middle;
+        transition: transform $transition;
+    }
+    &:before{
+        margin: 0 5px 0 0;
+    }
+    &:after{
+        margin: 0 0 0 5px;
+    }
+    &:hover, &:focus{
+        box-shadow: none;
+        &:before, &:after{
+            transform: scale(0.7);
+        }
+    }
+}

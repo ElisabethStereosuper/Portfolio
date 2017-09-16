@@ -1,0 +1,38 @@
+// Variables //
+
+
+// Colors
+$white: #fff;
+$black: #000;
+
+$txt: rgba($black, 0.9);
+$primary: #00c7bf;
+$secondary: #ec4c1c;
+$background: #f9f7f5;
+$border: rgba($black, 0.4);
+
+
+// Transitions
+$transition: 0.25s ease-in-out;
+
+
+// Fonts
+$inconsolata: 'Inconsolata', monospace;
+$inconsolataBold: 'Inconsolata Bold', $inconsolata;
+$abril: 'Abril', sans-serif;
+$unica: 'Unica', sans-serif;
+
+
+// Mediaqueries
+$retina: 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)';
+
+$desktop: '1100px';
+$desktop-small: '960px';
+$tablet: '780px';
+$phone: '580px';
+$phone-small: '400px';
+
+
+// Grid
+$col: 100/12*1%;
+$gutter: 10px;

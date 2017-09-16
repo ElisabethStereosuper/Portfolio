@@ -60,6 +60,7 @@
 
                 <section>
                     <h1 class='anim-elt'>About</h1>
+                    <p class='anim-elt'>My name is Elisabeth, and I've been a Front-End developer for 3 years now.</p>
                     <p class='anim-elt'>I'd like to do more <strong>open-source</strong> work in the future, and continue to learn new technologies&nbsp;/&nbsp;languages. I enjoy doing a job where it's necessary to learn everyday!</p>
                     <p class='anim-elt'>I'm available for <strong>freelance</strong> work, depending on the projects.</p>
                 </section>
@@ -97,6 +98,7 @@
                                     <text x='520' y='50' class='text'>
                                         <tspan>Vanilla JS, jQuery, GreenSock</tspan>
                                         <tspan x='520' y='85'>React & AngularJS notions</tspan>
+                                        <tspan x='520' y='120'>Browserify</tspan>
                                     </text>
                                 </g>
                                 <line x1='505' y1='-5' x2='390' y2='110' />
