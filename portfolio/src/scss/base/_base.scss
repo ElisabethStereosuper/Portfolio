@@ -41,7 +41,7 @@ h1{
 
 h2{
     font-size: 3.4rem;
-    margin: 4em 0 1em;
+    margin: 3em 0 1em;
 }
 
 h3{
@@ -65,7 +65,9 @@ h6{
 }
 
 p{
-    margin: 1em 0;
+    padding: 1em 0;
+    margin: 0;
+    background: $background;
 }
 
 b, strong{
@@ -78,9 +80,10 @@ blockquote{
 }
 
 ol, ul{
-    padding: 0;
-    margin: 1em 0 1.5em;
+    padding: 1em 0 1.5em;
+    margin: 0;
     list-style: none;
+    background: $background;
 }
 
 ul{

@@ -11,6 +11,23 @@
     //margin: 0 auto;
 }
 
+.grid-plus{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    > div{
+        width: 15%;
+        border-right: 1px solid rgba($black, 0.05);
+        &:nth-child(odd){
+            border-color: rgba($black, 0.03);
+        }
+    }
+}
+
 @media (max-width: 1200px){
     .container{
         padding-left: 12%;
