@@ -41,7 +41,7 @@ h1{
 
 h2{
     font-size: 3.4rem;
-    margin: 3em 0 1em;
+    margin: 1em 0;
 }
 
 h3{
@@ -83,7 +83,6 @@ ol, ul{
     padding: 1em 0 1.5em;
     margin: 0;
     list-style: none;
-    background: $background;
 }
 
 ul{
@@ -138,7 +137,7 @@ a{
     position: relative;
     text-decoration: none;
     transition: $transition;
-    box-shadow: 0 1px 0 rgba($black, 0.5);
+    box-shadow: 0 1px 0 rgba($black, 0.4);
     color: currentColor;
     // &:before{
     //     content: '+';

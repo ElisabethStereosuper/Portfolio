@@ -1,13 +1,13 @@
 /* Grid */
-#main{
-    position: relative;
+.main{
     margin: 30vh 0 0;
 }
 
 .container{
     //max-width: 930px;
-    max-width: 72%;
-    padding: 0 50px 0 15%;
+    max-width: 60%;
+    padding: 0 50px 0 0;
+    margin: 0 0 0 $col;
     //margin: 0 auto;
 }
 
@@ -20,35 +20,52 @@
     bottom: 0;
     z-index: -1;
     > div{
-        width: 15%;
+        width: $col;
         border-right: 1px solid rgba($black, 0.05);
+        position: relative;
         &:nth-child(odd){
             border-color: rgba($black, 0.03);
+        }
+        &:after{
+            content: '';
+            width: 1px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: rgba($black, 0.015);
         }
     }
 }
 
-@media (max-width: 1200px){
-    .container{
-        padding-left: 12%;
-    }
-}
+// @media (max-width: 1200px){
+//     .container{
+//         padding-left: 12%;
+//     }
+// }
 
-@media (max-width: 1000px){
-    .container{
-        max-width: 80%;
-    }
-}
+// @media (max-width: 1000px){
+//     .container{
+//         max-width: 80%;
+//     }
+// }
 
 @media (max-width: 860px){
+    .main{
+        margin: 25vh 0 0;
+    }
+
     .container{
         max-width: 100%;
-        padding: 0 65px;
+        margin: 0 $col/2;
+        padding: 0;
     }
 }
 
 @media (max-width: 560px){
     .container{
-        padding: 0 30px;
+        margin: 0 $gutter;
     }
 }

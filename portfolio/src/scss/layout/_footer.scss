@@ -1,6 +1,6 @@
 /* Footer */
 
-#footer{
+.footer{
     position: relative;
     margin: 150px 0 20px;
     font-size: 1.3rem;
@@ -16,22 +16,21 @@
     a{
         box-shadow: none;
     }
+    > span{
+        display: inline-block;
+        width: $col;
+        margin: 0 0 0 $col;
+    }
 }
 
 .social{
     display: inline-block;
     vertical-align: middle;
-    padding: 0 0 0 10px;
-    position: relative;
-    margin: 0 0 0 20px;
     &:before{
-        content: '';
-        width: 1px;
-        position: absolute;
-        top: 5px;
-        bottom: 5px;
-        left: 0;
-        background: $border;
+        content: '+';
+        display: inline-block;
+        margin: 0 0 0 -3px;
+        opacity: 0.7;
     }
     li{
         display: inline-block;
@@ -63,17 +62,31 @@
     }
 }
 
-@media (max-width: 490px){
-    #footer{
-        margin-top: 170px;
-    }
-    .social{
-        padding: 0;
-        position: absolute;
-        top: -50px;
-        left: 0;
-        &:before{
-            display: none;
+
+@media (max-width: 860px){
+    .footer{
+        > span{
+            width: $col*1.5;
+            margin: 0 0 0 $col/2;
         }
     }
+}
+
+@media (max-width: 560px){
+    .footer{
+        > span{
+            width: calc(#{$col*2} - #{$gutter});
+            margin: 0 0 0 $gutter;
+        }
+    }
+}
+
+@media (max-width: 490px){
+    .footer{
+        margin-top: 170px;
+        > span{
+            width: calc(#{$col*2.5} - #{$gutter});
+        }
+    }
+
 }

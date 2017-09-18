@@ -1,10 +1,8 @@
 .work-list{
-    margin: 9vw 0 0;
+    margin: 15vh 0 0;
     padding: 0 15% 0 0;
-    &:hover{
-        a{
-            opacity: 0.3;
-        }
+    + .work-list{
+        margin: 9vh 0 0;
     }
     > li{
         &:before{
@@ -12,180 +10,80 @@
         }
     }
     a{
-        display: block;
-        padding: 0 0 5vw;
+        display: inline-block;
+        padding: 0 20px 10vh 0;
         box-shadow: none;
+        background: rgba($background, 0.8);
         &:hover, &:focus{
             color: $txt;
-            opacity: 1;
-            strong{
+            h2{
                 &:after{
                     transform: rotate(90deg);
                 }
             }
+            img{
+                filter: sepia(0.5);
+                opacity: 0.3;
+                transform: translate3d(0, 0, 0);
+                transition: opacity 1s ease-in-out, filter 0.7s ease-in-out, 0.3s transform 0.3s ease-in-out;
+            }
         }
-        > span, time{
+        &:active{
+            img{
+                filter: sepia(0);
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                transition: $transition;
+            }
+        }
+        > span, > time, > p{
             display: block;
             font-size: 1.4rem;
-            color: rgba($black, 0.5);
+            color: rgba($black, 0.7);
         }
-        > span{
+        > span, > p{
+            color: rgba($black, 0.4);
             &:last-child{
                 margin: 10px 0 0;
                 font-size: 1.1rem;
+                color: rgba($black, 0.7);
             }
+        }
+        > p{
+            padding: 0;
             span{
                 font-size: 1.1rem;
             }
         }
     }
-    strong{
+    h2{
         display: block;
         position: relative;
         margin: 0 0 10px;
         font-family: $unica;
         font-size: 2rem;
+        letter-spacing: 0.02em;
         text-transform: uppercase;
         &:after{
             content: '+';
             position: absolute;
-            left: -5px;
+            left: -4px;
             bottom: -10px;
             font-size: 1.6rem;
             opacity: 0.7;
             transition: $transition;
         }
     }
-}
-
-.portfolio-list{
-    position: relative;
-    margin: 50px 0 0 80px;
-    &:before{
-        content: '';
-        border-left: 1px solid $border;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-    }
-    li{
-        position: relative;
-        margin: 0 0 45px;
-        &:before{
-            display: none;
-        }
-    }
-    > li{
-        padding: 30px 0 0;
-        margin: 0 0 60px;
-    }
-    ul{
-        margin: 0;
-    }
-    h2{
-        display: block;
-        padding: 5px 30px 4px;
-        border-bottom: 1px solid $border;
-        position: relative;
-        margin: 0;
-        z-index: 1;
-        font-family: $unica;
-        font-size: 1.8rem;
-        text-transform: uppercase;
-        + span{
-            position: absolute;
-            right: 0;
-            top: 7px;
-            margin: 5px 0 0;
-            font-size: 1.2rem;
-        }
-    }
-    time{
-        width: 36px;
-        position: absolute;
-        top: -10px;
-        left: -78px;
-        font-family: $abril;
-        font-size: 1.6rem;
-        &:before, &:after{
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-        }
-        &:after{
-            width: 10px;
-            height: 10px;
-            border: 1px solid $border;
-            right: -48px;
-            border-radius: 50%;
-            background: $background;
-        }
-        &:before{
-            width: 30px;
-            height: 1px;
-            right: -40px;
-            background: $border;
-        }
-    }
-    p{
-        margin-left: 30px;
-        margin-bottom: 5px;
-        font-size: 1.4rem;
-        color: rgba($txt, 0.4);
-    }
-    .btn-ext{
-        margin: 0 0 0 30px;
-        font-size: 1.5rem;
-    }
-}
-
-
-@media (max-width: 860px){
-    .portfolio-list{
-        p{
-            font-size: 1.3rem;
-        }
-    }
-}
-
-@media (max-width: 560px){
-    .work-list{
-        a{
-            &[target='_blank']{
-                font-size: 1.8rem;
-            }
-        }
-    }
-    .portfolio-list{
-        margin-left: 0;
-        > li{
-            padding: 60px 0 0;
-            margin: 0 0 80px;
-        }
-        time{
-            left: 30px;
-            &:before, &:after{
-                right: auto;
-            }
-            &:before{
-                width: 20px;
-                left: -24px;
-            }
-            &:after{
-                left: -34px;
-            }
-        }
-    }
-}
-
-@media (max-width: 490px){
-    .portfolio-list{
-        h2 + span{
-            position: static;
-            margin-left: 30px;
-        }
+    img{
+        max-width: 40%;
+        position: fixed;
+        bottom: -10px;
+        right: -10px;
+        mix-blend-mode: overlay;
+        filter: sepia(1);
+        opacity: 0;
+        transform: translate3d(0, 10px, 0);
+        pointer-events: none;
+        transition: $transition;
     }
 }

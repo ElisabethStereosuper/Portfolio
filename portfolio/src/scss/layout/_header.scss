@@ -1,7 +1,7 @@
 /* Header */
 
 .header{
-    padding: 20px 13px 20px 25px;
+    padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -16,63 +16,53 @@
             transform: translate3d(0, -30px, 0);
         }
     }
-    nav{
-        display: flex;
-        justify-content: space-between;
-    }
+    // nav{
+    //     display: flex;
+    //     justify-content: space-between;
+    // }
     ul{
+        display: inline-block;
+        width: $col;
+        padding: 0;
         position: relative;
-        margin: 0;
+        vertical-align: middle;
+        margin: 0 0 0 $col*3;
+        &:before{
+            width: 1px;
+            position: absolute;
+            top: -15px;
+            bottom: -15px;
+            left: 0;
+            background: $border;
+        }
         a{
-            display: block;
+            display: inline-block;
             padding: 2px 5px 1px;
             position: relative;
-            color: $txt;
             font-family: $unica;
             font-size: 1.6rem;
-            text-align: center;
             text-transform: uppercase;
             letter-spacing: 0.02em;
-            margin: 0 21px;
-            z-index: auto;
-            transform: none;
             box-shadow: none;
             -webkit-font-smoothing: antialiased;
-            transition: color $transition, background $transition, transform $transition;
-            &:hover, &:focus{
-                background: rgba(#000, 0.8);
-                color: rgba(#fff, 0.9);
-            }
-        }
-        .active{
-            background: rgba(#000, 0.8);
-            color: #fff;
-            pointer-events: none;
-            cursor: default;
-            &:before, &:after{
-                content: '';
-                width: auto;
-                height: auto;
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                z-index: -1;
-            }
-            &:after{
-                background: $primary;
-                transform: scale(1) rotate(4deg) translate3d(-1px, 1px, 0);
-            }
+            color: $txt;
+            transition: $transition;
             &:before{
-                background: $secondary;
-                transform: scale(1) rotate(-2deg) translate3d(2px, 0, 0);
+                content: '+';
+                display: inline-block;
+                margin: 0 2px 0 -9px;
+                transition: $transition;
+            }
+            &:hover, &:focus{
+                &:before{
+                    transform: rotate(90deg);
+                }
             }
         }
     }
     li{
         display: inline-block;
-        margin: 0 0 0 7px;
+        width: 50%;
         &:before{
             display: none;
         }
@@ -91,10 +81,15 @@
     }
 }
 
+.logo-wrapper{
+    display: inline-block;
+    width: $col;
+}
 .logo{
     display: block;
     width: 35px;
     height: 32px;
+    margin: 0 0 0 $gutter;
     backface-visibility: hidden;
     box-shadow: none;
     transition: 0.15s ease-in-out;
@@ -107,12 +102,19 @@
     .body, .g-path{
         transition: $transition;
     }
+    .body{
+        fill: #000;
+    }
+    .g-path{
+        opacity: 0;
+    }
     &:hover, &:focus{
+        box-shadow: none;
         .body{
-            fill: #000 !important;
+            fill: $primary;
         }
         .g-path{
-            opacity: 0;
+            opacity: 1;
         }
         .e1{
             animation: clign 0.35s ease-in-out;
@@ -179,64 +181,44 @@
 }
 
 
-@media (max-width: 1200px){
-    #header{
-        padding-right: 18px;
-        li{
-            margin: 0;
-            a{
-                margin: 0 7px;
-            }
-        }
-    }
-}
+// @media (max-width: 1200px){
+//     #header{
+//         padding-right: 18px;
+//         li{
+//             margin: 0;
+//             a{
+//                 margin: 0 7px;
+//             }
+//         }
+//     }
+// }
 
-@media (max-width: 1000px){
-    #header{
+@media (max-width: 860px){
+    .header{
+        padding: 15px 0 14px;
+        background: $background;
+        border-bottom: 1px solid $border;
+        pointer-events: auto;
         ul{
+            text-align: center;
+            &:before{
+                content: '';
+            }
             a{
                 width: 30px;
                 padding: 6px 5px 0;
+                margin: 0 auto;
                 line-height: 1;
                 text-indent: -99em;
                 overflow: hidden;
                 &:hover, &:focus{
-                    background: none;
                     color: $secondary;
                     transform: scale(1.2);
-                }
-            }
-            .active{
-                background: none;
-                color: $secondary;
-                transform: scale(1.1);
-                &:before, &:after{
-                    display: none;
                 }
             }
         }
         .icon{
             display: block;
-        }
-    }
-}
-
-@media (max-width: 860px){
-    #header{
-        padding: 15px 13px 14px 20px;
-        background: $background;
-        border-bottom: 1px solid $border;
-        pointer-events: auto;
-        ul{
-            &:before{
-                content: '';
-                width: 1px;
-                position: absolute;
-                top: -15px;
-                bottom: -15px;
-                left: -20px;
-                background: $border;
-            }
         }
     }
 }
