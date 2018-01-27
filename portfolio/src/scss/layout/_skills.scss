@@ -5,7 +5,7 @@
     position: relative;
     margin: 3em auto 7em;
     z-index: 1;
-    overflow: visible;
+    overflow: visible !important;
     path{
         stroke: $background;
         stroke-width: 10;

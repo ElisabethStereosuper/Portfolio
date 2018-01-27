@@ -24,6 +24,11 @@ $(function(){
     }
 
     function loadHandler(){
+        var animChart = require('./chart.js');
+        var mapInit = require('./map.js');
+
+        var chart = $('#chart');
+
         $('#header').on('mouseenter', 'a', function(){
             TweenLite.to($(this).find('.scramble'), 0.5, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}}); 
         });
@@ -41,10 +46,11 @@ $(function(){
 
             $('.logo').find('.body').attr('style', '');
         });
+
+        if($('#map').length) mapInit();
+        if(chart.length) animChart(chart);
     }
 
-
-    // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
     document.readyState === 'complete' ? loadHandler() : $(window).on('load', loadHandler);

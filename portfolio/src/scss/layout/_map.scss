@@ -1,5 +1,8 @@
+$smallCol: 100%/6;
+
 .map{
-    padding: 0 0 50%;
+    padding: 0 0 45%;
+    margin: 0 $smallCol 0 0;
     .gm-style-cc{
         display: none;
     }
