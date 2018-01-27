@@ -29,11 +29,17 @@ $(function(){
         });
 
         $('#portfolio').on('mouseenter', 'a', function(){
-            TweenLite.to($(this).parents('li').siblings(), 0.25, {opacity: 0.2});
+            TweenLite.to([$(this).parents('li').siblings(), $(this).parents('ul').siblings().find('li')], 0.25, {opacity: 0.2});
 
             TweenLite.to($(this).find('.scramble'), 0.7, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}});
+
+            TweenLite.set($('.logo').find('.body'), {fill: $(this).data('color')});
+            // TweenLite.to([$('body'), $('p')], 0.3, {backgroundColor: $(this).data('color')});
+            // TweenLite.set([$('#portfolio').find('a')], {background: $(this).data('color')});
         }).on('mouseleave', 'a', function(){
-            TweenLite.to($(this).parents('li').siblings(), 0.25, {opacity: 1});
+            TweenLite.to([$(this).parents('li').siblings(), $(this).parents('ul').siblings().find('li')], 0.25, {opacity: 1});
+
+            $('.logo').find('.body').attr('style', '');
         });
     }
 

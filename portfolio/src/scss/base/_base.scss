@@ -204,6 +204,16 @@ a{
     color: rgba($txt, 0.5);
 }
 
+.intro{
+    max-width: 83.3%;
+}
+
+
+@media (max-width: $desktop){
+    .intro{
+        max-width: 100%;
+    }
+}
 
 @media (max-width: 560px){
     body{

@@ -103,7 +103,7 @@
         transition: $transition;
     }
     .body{
-        fill: #000;
+        fill: $txt;
     }
     .g-path{
         opacity: 0;
@@ -203,6 +203,13 @@
             text-align: center;
             &:before{
                 content: '';
+            }
+            li{
+                &:first-child{
+                    a{
+                        font-size: 1.5rem;
+                    }
+                }
             }
             a{
                 width: 30px;

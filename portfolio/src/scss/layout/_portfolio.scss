@@ -1,17 +1,19 @@
 .work-list{
+    display: flex;
+    flex-wrap: wrap;
     margin: 15vh 0 0;
-    padding: 0 15% 0 0;
     + .work-list{
         margin: 9vh 0 0;
     }
     > li{
+        width: 50%;
         &:before{
             content: none;
         }
     }
     a{
         display: inline-block;
-        padding: 0 20px 10vh 0;
+        padding: 0 50px 10vh 0;
         box-shadow: none;
         background: rgba($background, 0.8);
         &:hover, &:focus{
@@ -21,20 +23,20 @@
                     transform: rotate(90deg);
                 }
             }
-            img{
-                filter: sepia(0.5);
-                opacity: 0.3;
-                transform: translate3d(0, 0, 0);
-                transition: opacity 1s ease-in-out, filter 0.7s ease-in-out, 0.3s transform 0.3s ease-in-out;
-            }
+            // img{
+            //     filter: sepia(0.5);
+            //     opacity: 0.3;
+            //     transform: translate3d(0, 0, 0);
+            //     transition: opacity 1s ease-in-out, filter 0.7s ease-in-out, 0.3s transform 0.3s ease-in-out;
+            // }
         }
         &:active{
-            img{
-                filter: sepia(0);
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-                transition: $transition;
-            }
+            filter: none;
+            // img{
+            //     filter: sepia(0);
+            //     opacity: 1;
+            //     transition: $transition;
+            // }
         }
         > span, > time, > p{
             display: block;
@@ -74,16 +76,26 @@
             transition: $transition;
         }
     }
-    img{
-        max-width: 40%;
-        position: fixed;
-        bottom: -10px;
-        right: -10px;
-        mix-blend-mode: overlay;
-        filter: sepia(1);
-        opacity: 0;
-        transform: translate3d(0, 10px, 0);
-        pointer-events: none;
-        transition: $transition;
+    // img{
+    //     width: calc(40% - #{$gutter});
+    //     position: fixed;
+    //     bottom: $gutter;
+    //     right: $gutter;
+    //     filter: sepia(1);
+    //     opacity: 0;
+    //     pointer-events: none;
+    //     transition: $transition;
+    // }
+}
+
+
+@media (max-width: $desktop){
+    .work-list{
+        > li{
+            width: 100%;
+        }
+        a{
+            padding-right: 0;
+        }
     }
 }
