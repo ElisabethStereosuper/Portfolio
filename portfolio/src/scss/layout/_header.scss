@@ -30,8 +30,8 @@
         &:before{
             width: 1px;
             position: absolute;
-            top: -15px;
-            bottom: -15px;
+            top: -19px;
+            bottom: -19px;
             left: 0;
             background: $border;
         }
@@ -200,32 +200,53 @@
         border-bottom: 1px solid $border;
         pointer-events: auto;
         ul{
+            width: $col*1.5;
+            margin: 0 0 0 50%;
             text-align: center;
             &:before{
                 content: '';
             }
             li{
+                margin: 0;
                 &:first-child{
                     a{
                         font-size: 1.5rem;
                     }
                 }
             }
-            a{
-                width: 30px;
-                padding: 6px 5px 0;
-                margin: 0 auto;
-                line-height: 1;
-                text-indent: -99em;
-                overflow: hidden;
-                &:hover, &:focus{
-                    color: $secondary;
-                    transform: scale(1.2);
-                }
-            }
+            // a{
+            //     width: 30px;
+            //     padding: 6px 5px 0;
+            //     margin: 0 auto;
+            //     line-height: 1;
+            //     text-indent: -99em;
+            //     overflow: hidden;
+            //     &:hover, &:focus{
+            //         color: $secondary;
+            //         transform: scale(1.2);
+            //     }
+            // }
         }
-        .icon{
-            display: block;
+        // .icon{
+        //     display: block;
+        // }
+    }
+}
+
+@media (max-width: 560px){
+    .header{
+        ul{
+            width: $col*2;
+            margin: 0 0 0 $col*2;
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .header{
+        ul{
+            width: $col*2.5;
+            margin: 0 0 0 $col*1.5;
         }
     }
 }
