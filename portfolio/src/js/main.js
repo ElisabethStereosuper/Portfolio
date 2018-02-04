@@ -41,10 +41,13 @@ $(function(){
             TweenLite.set($('.logo').find('.body'), {fill: $(this).data('color')});
             // TweenLite.to([$('body'), $('p')], 0.3, {backgroundColor: $(this).data('color')});
             // TweenLite.set([$('#portfolio').find('a')], {background: $(this).data('color')});
+
+            $('.grid-plus').css('color', $(this).data('color')).addClass('on');
         }).on('mouseleave', 'a', function(){
             TweenLite.to([$(this).parents('li').siblings(), $(this).parents('ul').siblings().find('li')], 0.25, {opacity: 1});
 
             $('.logo').find('.body').attr('style', '');
+            $('.grid-plus').attr('style', '').removeClass('on');
         });
 
         if($('#map').length) mapInit();

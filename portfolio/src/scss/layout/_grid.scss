@@ -19,11 +19,21 @@
     right: 0;
     bottom: 0;
     z-index: -1;
+    color: $black;
+    &.on{
+        > div{
+            opacity: 0.25;
+            &:nth-child(2), &:nth-child(odd){
+                opacity: 0.1;
+            }
+        }
+    }
     > div{
         width: $col;
-        border-right: 1px solid $black;
+        border-right: 1px solid currentColor;
         position: relative;
         opacity: 0.05;
+        transition: $transition;
         &:nth-child(odd){
             opacity: 0.03;
         }
@@ -36,7 +46,7 @@
             left: 0;
             right: 0;
             margin: auto;
-            background: $black;
+            background: currentColor;
             opacity: 0.7;
         }
     }
