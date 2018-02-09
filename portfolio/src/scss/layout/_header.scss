@@ -58,6 +58,9 @@
                     transform: rotate(90deg);
                 }
             }
+            &.active{
+                color: $primary;
+            }
         }
     }
     li{

@@ -39,8 +39,15 @@ $smallCol: 100%/6;
     }
 }
 
-@media (max-width: 473px){
-    .map-wrapper{
-        display: none;
+@media (max-width: 860px){
+    .map{
+        padding: 0 0 50%;
+        margin: 0;
     }
 }
+
+// @media (max-width: 473px){
+//     .map-wrapper{
+//         display: none;
+//     }
+// }

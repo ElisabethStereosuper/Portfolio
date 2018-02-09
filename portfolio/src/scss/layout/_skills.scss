@@ -3,17 +3,18 @@
     width: 43%;
     max-width: 250px;
     position: relative;
-    margin: 3em auto 7em;
+    margin: 4em auto 8em;
     z-index: 1;
     overflow: visible !important;
     path{
         stroke: $background;
         stroke-width: 10;
+        fill: $primary;
         cursor: crosshair;
         transition: 0.35s ease-in-out;
         // transform-origin: 50% 50%;
         &:hover, &.on{
-            fill: $primary !important;
+            fill: $secondary;
             + g{
                 .title{
                     background: #000;
@@ -49,14 +50,9 @@
         }
     }
     circle{
+        pointer-events: none;
         transform-origin: 50% 50%;
         transition: 0.35s ease-in-out;
-        .js &{
-            cursor: pointer;
-            &:hover{
-                transform: scale(1.2);
-            }
-        }
     }
     .paths{
         .js &{
@@ -69,6 +65,9 @@
         }
     }
     .puce{
+        pointer-events: auto;
+        fill: #ddd;
+        cursor: pointer;
         .js &{
             transform: scale(0);
             &.on{

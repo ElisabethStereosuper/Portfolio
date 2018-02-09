@@ -1,69 +1,75 @@
 'use strict';
 
-var $ = require('jquery-slim');
+const $ = require('jquery-slim');
 
 // require('gsap');
 require('gsap/CSSPlugin');
 require('gsap/ScrambleTextPlugin');
-var TweenLite = require('gsap/TweenLite');
+const TweenLite = require('gsap/TweenLite');
 
 
 $(function(){
 
     window.requestAnimFrame = require('./requestAnimFrame.js');
-    var throttle = require('./throttle.js');
+    const throttle = require('./throttle.js');
 
-    var body = $('body');
+    const body = $('body');
     // window.outerWidth returns the window width including the scroll, but it's not working with $(window).outerWidth
-    var windowWidth = window.outerWidth, windowHeight = $(window).height();
+    // let windowWidth = window.outerWidth, windowHeight = $(window).height();
 
 
-    function resizeHandler(){
-        windowWidth = window.outerWidth;
-        windowHeight = $(window).height();
-    }
+    // function resizeHandler(){
+    //     windowWidth = window.outerWidth;
+    //     windowHeight = $(window).height();
+    // }
 
     function loadHandler(){
-        var animChart = require('./chart.js');
-        var mapInit = require('./map.js');
+        const animChart = require('./chart.js');
+        const mapInit = require('./map.js');
 
-        var chart = $('#chart');
+        const chart = $('#chart');
+        const grid = $('#gridPlus');
+        const logo = $('#logo');
 
         $('#header').on('mouseenter', 'a', function(){
             TweenLite.to($(this).find('.scramble'), 0.5, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}}); 
         });
 
         $('#portfolio').on('mouseenter', 'a', function(){
+
             TweenLite.to([$(this).parents('li').siblings(), $(this).parents('ul').siblings().find('li')], 0.25, {opacity: 0.2});
 
             TweenLite.to($(this).find('.scramble'), 0.7, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}});
 
-            TweenLite.set($('.logo').find('.body'), {fill: $(this).data('color')});
-            // TweenLite.to([$('body'), $('p')], 0.3, {backgroundColor: $(this).data('color')});
-            // TweenLite.set([$('#portfolio').find('a')], {background: $(this).data('color')});
+            TweenLite.set(logo.find('.body'), {fill: $(this).data('color')});
 
-            $('.grid-plus').css('color', $(this).data('color')).addClass('on');
+            grid.css('color', $(this).data('color')).addClass('on');
+
         }).on('mouseleave', 'a', function(){
+
             TweenLite.to([$(this).parents('li').siblings(), $(this).parents('ul').siblings().find('li')], 0.25, {opacity: 1});
 
-            $('.logo').find('.body').attr('style', '');
-            $('.grid-plus').attr('style', '').removeClass('on');
+            logo.find('.body').attr('style', '');
+
+            grid.attr('style', '').removeClass('on');
+
         });
 
-        if($('#map').length) mapInit();
-        if(chart.length) animChart(chart);
+        if( $('#map').length ) mapInit();
+
+        if( chart.length ) animChart( chart );
     }
 
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
     document.readyState === 'complete' ? loadHandler() : $(window).on('load', loadHandler);
 
-    $(window).on('resize', throttle(function(){
-        requestAnimFrame(resizeHandler);
-    }, 60));
+    // $(window).on('resize', throttle(function(){
+    //     requestAnimFrame(resizeHandler);
+    // }, 60));
 
-    $(document).on('scroll', throttle(function(){
+    // $(document).on('scroll', throttle(function(){
 
-    }, 60));
+    // }, 60));
 
 });

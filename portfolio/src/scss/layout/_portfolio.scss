@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     margin: 15vh 0 0;
     + .work-list{
-        margin: 9vh 0 0;
+        margin: 4vh 0 0;
     }
     > li{
         width: 50%;
@@ -13,7 +13,7 @@
     }
     a{
         display: inline-block;
-        padding: 0 50px 10vh 0;
+        padding: 0 50px 8vh 0;
         box-shadow: none;
         background: rgba($background, 0.8);
         &:hover, &:focus{

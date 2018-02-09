@@ -68,6 +68,9 @@ p{
     padding: 1em 0;
     margin: 0;
     background: $background;
+    &.small{
+        max-width: 83.3%;
+    }
 }
 
 b, strong{
@@ -204,13 +207,15 @@ a{
     color: rgba($txt, 0.5);
 }
 
-.intro{
-    max-width: 83.3%;
-}
-
 
 @media (max-width: $desktop){
-    .intro{
+    p.small{
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 860px){
+    p.small{
         max-width: 100%;
     }
 }
