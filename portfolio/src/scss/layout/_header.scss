@@ -16,22 +16,21 @@
             transform: translate3d(0, -30px, 0);
         }
     }
-    // nav{
-    //     display: flex;
-    //     justify-content: space-between;
-    // }
+    > nav{
+        display: flex;
+        justify-content: space-between;
+    }
     ul{
-        display: inline-block;
+        display: flex;
         width: $col;
         padding: 0;
         position: relative;
-        vertical-align: middle;
-        margin: 0 0 0 $col*3;
+        align-items: center;
         &:before{
             width: 1px;
             position: absolute;
-            top: -19px;
-            bottom: -19px;
+            top: -15px;
+            bottom: -15px;
             left: 0;
             background: $border;
         }
@@ -64,7 +63,6 @@
         }
     }
     li{
-        display: inline-block;
         width: 50%;
         &:before{
             display: none;
@@ -139,7 +137,7 @@
 .eye{
     fill: #fff;
     transform: scale(0);
-    transform-origin: 50% 100%;
+    transform-origin: 50% 50%;
     .ff &{
         opacity: 0;
         transform: scale(1);
@@ -204,7 +202,6 @@
         pointer-events: auto;
         ul{
             width: $col*1.5;
-            margin: 0 0 0 50%;
             text-align: center;
             &:before{
                 content: '';
@@ -217,22 +214,7 @@
                     }
                 }
             }
-            // a{
-            //     width: 30px;
-            //     padding: 6px 5px 0;
-            //     margin: 0 auto;
-            //     line-height: 1;
-            //     text-indent: -99em;
-            //     overflow: hidden;
-            //     &:hover, &:focus{
-            //         color: $secondary;
-            //         transform: scale(1.2);
-            //     }
-            // }
         }
-        // .icon{
-        //     display: block;
-        // }
     }
 }
 
@@ -240,7 +222,6 @@
     .header{
         ul{
             width: $col*2;
-            margin: 0 0 0 $col*2;
         }
     }
 }
@@ -249,7 +230,6 @@
     .header{
         ul{
             width: $col*2.5;
-            margin: 0 0 0 $col*1.5;
         }
     }
 }

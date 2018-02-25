@@ -23,6 +23,7 @@ form{
 }
 
 .field{
+    padding: 5px 0 0;
     position: relative;
     margin: 0 0 3em;
     > label{
@@ -40,6 +41,9 @@ label{
     cursor: pointer;
     transition: color $transition, transform 0.1s ease-in-out;
     transform-origin: 0 0;
+    &.subtitle{
+        font-size: 1.6rem;
+    }
     sup{
         transition: opacity $transition;
     }
@@ -77,18 +81,16 @@ input, textarea{
         &:-ms-input-placeholder{
             color: rgba($txt, 0.2);
         }
+    }
+    &:focus, .form-error &, &.filled{
         + label{
             cursor: default;
-            transform: translate3d(0, -25px, 0) scale(0.9);
+            transform: translate3d(0, -20px, 0) scale(0.95);
         }
     }
     &.filled{
         &:not(:focus){
             color: $txt;
-            + label{
-                cursor: default;
-                transform: translate3d(0, -25px, 0) scale(0.9);
-            }
             &:valid{
                 border-color: $primary;
                 + label{
@@ -125,21 +127,23 @@ input, textarea{
 
 textarea{
     height: 26px;
-    max-width: 600px;
+    max-width: 83.333%;
+    overflow: hidden;
     &:focus, &.filled:valid{
         height: 200px;
+        overflow: visible;
     }
 }
 
 input{
     &[type=text]{
-        max-width: 350px;
+        max-width: 50%;
     }
     &[type=tel]{
-        max-width: 250px;
+        max-width: 33.333%;
     }
     &[type=email]{
-        max-width: 450px;
+        max-width: 66.666%;
     }
     &[type=search]{
         &::-webkit-search-cancel-button, &::-webkit-search-decoration{
@@ -148,17 +152,64 @@ input{
     }
 }
 
-button{
-    &.btn{
-        &:hover, &:focus{
-            color: $primary;
-        }
-    }
-}
+// button{
+//     &.btn{
+//         &:hover, &:focus{
+//             color: $primary;
+//         }
+//     }
+// }
 
 select{
     // hide the arrow on edge + ie
     &::-ms-expand{
         display: none;
+    }
+}
+
+
+@media (max-width: 1080px){
+    input{
+        &[type=tel]{
+            max-width: 50%;
+        }
+    }
+}
+
+@media (max-width: 860px){
+    textarea{
+        max-width: 87.5%;
+    }
+
+    input{
+        &[type=email]{
+            max-width: 62.5%;
+        }
+    }
+}
+
+@media (max-width: 560px){
+    textarea{
+        max-width: 100%;
+    }
+
+    input{
+        &[type=text]{
+            max-width: 61%;
+        }
+        &[type=tel]{
+            max-width: 61%;
+        }
+        &[type=email]{
+            max-width: 83%;
+        }
+    }
+}
+
+@media (max-width: 400px){
+    input{
+        &[type=text], &[type=tel], &[type=email]{
+            max-width: 100%;
+        }
     }
 }

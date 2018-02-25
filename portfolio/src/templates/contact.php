@@ -1,12 +1,90 @@
-<!DOCTYPE html>
-<html lang='fr-FR' class='no-js'>
+<?php
+
+$error = false;
+$success = false;
+$errorName = false;
+$errorMail = false;
+$errorPhone = false;
+$errorMsg = false;
+$errorSend = false;
+
+$name = isset($_POST['name']) ? strip_tags(stripslashes($_POST['name'])) : '';
+$mail = isset($_POST['email']) ? strip_tags(stripslashes($_POST['email'])) : '';
+$phone = isset($_POST['phone']) ? strip_tags(stripslashes($_POST['phone'])) : '';
+$movie = isset($_POST['movie']) ? strip_tags(stripslashes($_POST['movie'])) : '';
+$msg = isset($_POST['message']) ? strip_tags(stripslashes($_POST['message'])) : '';
+
+$spamUrl = isset($_POST['url']) ? strip_tags(stripslashes($_POST['url'])) : '';
+
+$mailto = 'e.hamel.portfolio@gmail.com';
+
+
+if(isset($_POST['submit'])){
+
+    if(empty($name)){
+        $errorName = 'The field "Name" is mandatory';
+        $error = true;
+    }
+    if(empty($mail)){
+        $errorMail = 'The field "Email" is mandatory';
+        $error = true;
+    }else{
+        if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+            $errorMail = 'The email address is not valid';
+            $error = true;
+        }
+    }
+    if(!empty($phone)){
+        if(!(strlen($phone) < 20 && strlen($phone) > 9 && preg_match('/^\+?[^.\-][0-9\.\- ]+$/', $phone))){
+            $errorPhone = 'The phone number is not valid';
+            $error = true;
+        }
+    }
+    if(empty($msg)){
+        $errorMsg = 'The field "Message" is mandatory';
+        $error = true;
+    }
+
+
+    if(!$error){
+
+        if(empty($spamUrl)){
+            $subjectMail = 'Portfolio :' . $name;
+            $headers = 'From: "' . $name . '" <' . $mail . '>' . "\r\n" .
+                       'Reply-To: ' . $mail . "\r\n";
+
+            $content = 'De: ' . $name . "\r\n" .
+                       'Email: ' . $mail . "\r\n";
+            if(!empty($phone)){
+                $content .= 'Téléphone: ' . $phone . "\r\n";
+            }
+            if(!empty($movie)){
+                $content .= 'Film: ' . $movie . "\r\n";
+            }
+            $content .= "\r\n" . 'Message: ' . $msg;
+
+            $sent = mail($mailto, $subjectMail, $content, $headers);
+
+            if($sent){
+                $success = true;
+            }else{
+                $errorSend = "I'm sorry, an error happened! Please try again later.";
+            }
+        }else{
+            $success = true;
+        }
+    }
+}
+
+?><!DOCTYPE html>
+<html lang='en' class='no-js'>
     <head>
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-        <title>Elisabeth Hamel &bull; Front-End Developper</title>
+        <title>About - Elisabeth Hamel &bull; Front-End Developper</title>
 
-        <meta name='description' content='Elisabeth Hamel, Front-End & WordPress Developper in Nantes, France'>
+        <meta name='description' content='Learn more about me, my background and skills.'>
 
         <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
         <link rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32'>
@@ -15,7 +93,6 @@
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#00c7bf'>
         <meta name='theme-color' content='#ffffff'>
 
-        <meta name='keywords' content='développeur web, développeur front-end, développeur, intégrateur, responsive, web design, html, css, javascript, jquery, php, Elisabeth, Hamel, freelance, auto-entrepreneur'>
         <meta name='author' content='Elisabeth Hamel'>
 
         <meta property='og:title' content='Elisabeth Hamel &bull; Portfolio'>
@@ -29,9 +106,9 @@
     </head>
 
     <body>
-        
         <header role='banner' id='header' class='header'>
             <nav role='navigation'>
+                <!--<a href='./' class='logo'>Elisabeth <span>Hamel</span></a>-->
                 <div class='logo-wrapper'>
                     <a href='./' class='logo' id='logo' title='Back to home'>
                         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 109.5 98.2'><path fill='#3CB8B7' d='M.6 51.2c1.5-4.8 4.4-8.6 8.8-11.1 1.6-.9 3.9-.5 5.2.9 1.4 1.6.6 3-.3 4.4-.3.5-.8 1-1.3 1.4-5.2 5.3-4.8 12.3 1.2 16.8 3.3 2.4 7 3.2 10.9 1.4 3.8-1.8 6.5-4.4 6.8-8.9.3-3.7-.4-7.1-2.1-10.4C28.3 42.9 27 40 26 37c-4-13-.2-24.7 11-31.6C48.6-1.8 60.7-1.7 72.4 5c9.3 5.3 14 13.6 13.5 24.5-.3 6.7-3.1 12.6-7 18.1-.8 1.2-1.4 2.4-1.7 3.8-2.1 8.7 4.4 16.1 12.9 14.5 4.5-.8 7.4-3.6 8.9-7.9 1.4-4.1.2-7.7-2.9-10.7-.8-.8-1.5-1.7-2-2.7-.8-1.9-.3-3.3 1.5-4.2 1.5-.7 2.9-.7 4.4.2 4.1 2.4 6.5 6.1 8.4 10.2 3 8.3-1.5 15.3-2.6 17.1-5.2 8.6-15.1 11.4-23.7 10.5-.8-.1-1.6-.2-2.7 0 .9 1.1 1.6 2.1 2.4 2.9 3.7 3.8 7.5 7.4 13.1 7.7 1.7.1 3.4-.2 5-.1 2.9.1 4.2 2.7 2.8 5.2-1.1 2-2.8 3.2-4.9 3.6-4 .9-8.1.9-12-.6-9.5-3.6-17.3-9.6-23.6-17.5-1.8-2.3-4-3.9-7-4.4-4.2-.6-6.6 2.1-9 4.9-7.6 8.9-16.4 16-28.3 17.8-4.2.7-8.5.1-11.4-3.8-.9-1.2-1.2-2.5-.4-3.9.8-1.3 2-1.8 3.5-1.9 1.7-.1 3.3.7 5 .4 6.7-1.2 11-5.7 15.3-11.1-4 .7-7.5.7-11 .1C11.3 76.3 5.5 72.5 2 65.5c-.8-1.8-3-6.7-1.4-14.3z' class='body'/><linearGradient id='a' x1='12.713' x2='6.167' y1='59.499' y2='50.291' gradientUnits='userSpaceOnUse' gradientTransform='matrix(1 0 0 -1 0 100)'><stop offset='0' stop-color='#204656'/><stop offset='1' stop-color='#3CB8B7'/></linearGradient><path fill='url(#a)' d='M1.3 49.3s2.1-6.1 8.5-9.4c0 0 3.5-1.4 5.4 2 0 0 .8 1.3-1.2 3.9 0 0-4 3.6-4.4 7.2' class='g-path'/><linearGradient id='b' x1='95.667' x2='101.623' y1='59.168' y2='52.038' gradientUnits='userSpaceOnUse' gradientTransform='matrix(1 0 0 -1 0 100)'><stop offset='0' stop-color='#204656'/><stop offset='1' stop-color='#3CB8B7'/></linearGradient><path fill='url(#b)' d='M99.1 51.9s-.4-2.2-3.6-5.2c0 0-2.3-2.5-1.7-4.5 0 0 .8-2.5 4.4-2.3 0 0 3.8.4 8.2 7.1' class='g-path'/><linearGradient id='c' x1='9.688' x2='19.76' y1='6.267' y2='8.339' gradientUnits='userSpaceOnUse' gradientTransform='matrix(1 0 0 -1 0 100)'><stop offset='0' stop-color='#204656'/><stop offset='1' stop-color='#3CB8B7'/></linearGradient><path fill='url(#c)' d='M25 96.1s-14.7 6.4-19.1-3.2c0 0-1-3.6 3.1-4.5 0 0 .7-.4 5.1.5 0 0 4.5-.5 9.2-4' class='g-path'/><linearGradient id='d' x1='101.175' x2='87.304' y1='5.225' y2='8.111' gradientUnits='userSpaceOnUse' gradientTransform='matrix(1 0 0 -1 0 100)'><stop offset='.002' stop-color='#DC2924'/><stop offset='.182' stop-color='#CA6143'/><stop offset='.4' stop-color='#AF8C6B'/><stop offset='.599' stop-color='#8FA48C'/><stop offset='.771' stop-color='#6CB0A4'/><stop offset='.911' stop-color='#4DB6B2'/><stop offset='1' stop-color='#3CB8B7'/></linearGradient><path fill='url(#d)' d='M89.4 87.5s2.6 1.2 4.7 1.4c0 0 1.7.3 4.9-.1 0 0 3.6-.3 4.3 2.3 0 0 1.1 4-4.4 6.2 0 0-6.7 2.5-13.5-.4-6.7-2.9-7.7-4-8.4-4.2' class='g-path'/><path d='M45.8 35.7c-3 0-5.5 2.5-5.5 5.5s2.4 5.5 5.3 5.5c3.1 0 5.6-2.4 5.7-5.4 0-3-2.5-5.6-5.5-5.6z' class='eye e1'/><path d='M64.6 38.7c-2 0-4.4 2.5-4.4 4.5 0 2.2 2.2 4.4 4.5 4.3 2.3 0 4.4-2.2 4.3-4.4-.1-2.2-2.3-4.4-4.4-4.4z' class='eye e2'/></svg>
@@ -44,7 +121,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href='contact.php' title='Contact informations'>
+                        <a href='contact.php' title='Contact informations' class='active'>
                             <span class='scramble' data-text='Contact'>Contact</span>
                         </a>
                     </li>
@@ -54,171 +131,59 @@
 
         <main role='main' class='main'>
             <div class='container'>
-                <section>
-                    <h1 class='anim-elt'>Hello!</h1>
-                    <p class='small anim-elt'>I'm Elisabeth Hamel, a Front-End &amp; WordPress Developper currently working at <a href='http://stereosuper.fr' target='_blank'>Stéréosuper</a>, based in Nantes (France). <br>I enjoy working on the web and speaking the languages that make it alive.</p>
-                </section>
+                <h1 class='anim-elt'>Contact</h1>
+                <p class='small anim-elt'>You want to work with me, you have a question, you just want to say "Hi" ? Don't hesitate to drop me a message by filling this form!</p>
 
-                <section id='portfolio'>
-                    <ul class='work-list'>
-                        <li class='anim-elt'>
-                            <a href='https://ma-petite-energie.fr/' target='_blank' title='Visit Ma Petite Energie website' data-color='#3bad34'>
-                                <time>2018</time>
-                                <h2 class='subtitle scramble' data-text='Ma Petite Energie'>Ma Petite Energie</h2>
-                                <p>#HTML, #CSS <span>[SASS]</span>, #JavaScript <span>[jQuery, GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <!--<img src='layoutImg/beezup.svg' alt='BeezUP'>-->
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class='work-list'>
-                        <!--<li class='anim-elt'>
-                            <a href='https://www.beneteau-group.com/' target='_blank' title='Visit Beneteau website' data-color='#b0d3f0'>
-                                <time>2017</time>
-                                <h2 class='subtitle scramble' data-text='Groupe Beneteau'>Groupe Beneteau</h2>
-                                <p>#HTML, #CSS <span>[SASS]</span>, #JavaScript <span>[jQuery, GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>-->
-                        <li class='anim-elt'>
-                            <a href='https://www.essor.group/' target='_blank' title='Visit Essor website' data-color='#e5512c'>
-                                <time>2017</time>
-                                <h2 class='subtitle scramble' data-text='Essor'>Essor</h2>
-                                <p>#HTML, #CSS <span>[SASS]</span>, #JavaScript <span>[jQuery, GreenSock, Mapbox]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <!--<img src='layoutImg/essor.svg' alt='Essor'>-->
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='https://www.beezup.com' target='_blank' title='Visit BeezUP website' data-color='#009ae1'>
-                                <time>2017</time>
-                                <h2 class='subtitle scramble' data-text='BeezUP'>BeezUP</h2>
-                                <p>#HTML, #CSS <span>[SASS]</span>, #JavaScript <span>[jQuery, GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development], connection with BeezUP API</span></p>
-                                <!--<img src='layoutImg/beezup.svg' alt='BeezUP'>-->
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='https://thinkovery.com' target='_blank' title='Visit Thinkovery website' data-color='#02bbff'>
-                                <time>2017</time>
-                                <h2 class='subtitle scramble' data-text='Thinkovery'>Thinkovery</h2>
-                                <p>#HTML, #CSS <span>[SASS]</span>, #JavaScript <span>[jQuery, GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class='work-list'>
-                        <li class='anim-elt'>
-                            <a href='http://www.stereosuper.fr' target='_blank' title='Visit Stéréosuper website' data-color='#009be3'>
-                                <time>2016</time>
-                                <h2 class='subtitle scramble' data-text='Stéréosuper'>Stéréosuper</h2>
-                                <p>#HTML [Twig], #CSS <span>[SASS]</span>, #JavaScript <span>[jQuery, GreenSock, BarbaJS, Mapbox]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://paulinecrestot.com/' target='_blank' title='Visit Pauline Crestot website' data-color='#013e5a'>
-                                <time>2016</time>
-                                <h2 class='subtitle scramble' data-text='Pauline Crestot'>Pauline Crestot</h2>
-                                <p>#HTML, #CSS, #JavaScript <span>[jQuery]</span></p>
-                                <span>Side Project</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://leongrosse.fr' target='_blank' title='Visit Léon Grosse website' data-color='#ce0a2a'>
-                                <time>2016</time>
-                                <h2 class='subtitle scramble' data-text='Léon Grosse'>Léon Grosse</h2>
-                                <p>#HTML, #CSS <span>[SASS]</span>, #JavaScript <span>[jQuery, GreenSock, Mapbox]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='https://www.alven.co/' target='_blank' title='Visit Alven website' data-color='#fde98f'>
-                                <time>2016</time>
-                                <h2 class='subtitle scramble' data-text='Alven'>Alven</h2>
-                                <p>#HTML, #CSS <span>[SASS]</span>, #JavaScript <span>[jQuery, GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://www.labelleboite.fr' target='_blank' title='Visit La Belle Boîte website' data-color='#b5006a'>
-                                <time>2016</time>
-                                <h2 class='subtitle scramble' data-text='La Belle Boîte'>La Belle Boîte</h2>
-                                <p>#HTML, #CSS <span>[LESS]</span>, #JavaScript <span>[GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://nantesaleau.com' target='_blank' title="Visit Nantes à l'eau website" data-color='#b5ffd0'>
-                                <time>2016</time>
-                                <h2 class='subtitle scramble' data-text="Nantes à l'Eau">Nantes à l'Eau</h2>
-                                <p>#HTML, #CSS, #JavaScript <span>[jQuery]</span> <br>#WordPress</p>
-                                <span>Freelance</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://www.akeneo.com' target='_blank' title='Visit Akeneo website' data-color='#692f8d'>
-                                <time>2016</time>
-                                <h2 class='subtitle scramble' data-text='Akeneo'>Akeneo</h2>
-                                <p>#HTML, #CSS <span>[LESS]</span>, #JavaScript <span>[jQuery, GreenSock, Mapbox]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://www.encreseche.com/' target='_blank' title='Visit Encre Sèche website' data-color='#00A099'>
-                                <time>2016</time>
-                                <h2 class='subtitle scramble' data-text='Encre Sèche'>Encre Sèche</h2>
-                                <p>#HTML, #CSS <br> #WordPress</p>
-                                <span>Freelance</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class='work-list'>
-                        <li class='anim-elt'>
-                            <a href='http://institutdavignon.fr' target='_blank' title="Visit Institut d'Avignon website" data-color='#942712'>
-                                <time>2015</time>
-                                <h2 class='subtitle scramble' data-text="Institut d'Avignon">Institut d'Avignon</h2>
-                                <p>#HTML, #CSS <span>[LESS]</span>, #JavaScript <span>[jQuery, GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://success.wisembly.com/' target='_blank' title='Visit Wisembly Success Center' data-color='#07394d'>
-                                <time>2015</time>
-                                <h2 class='subtitle scramble' data-text='Wisembly Success Center'>Wisembly Success Center</h2>
-                                <p>#HTML, #CSS <span>[LESS]</span>, #JavaScript <span>[jQuery, GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development, AJAX]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://wisembly.com/' target='_blank' title='Visit Wisembly website' data-color='#0d5c7b'>
-                                <time>2015</time>
-                                <h2 class='subtitle scramble' data-text='Wisembly'>Wisembly</h2>
-                                <p>#HTML, #CSS <span>[LESS]</span>, #JavaScript <span>[jQuery, GreenSock]</span> <br>#WordPress <span>[theme&nbsp;development]</span></p>
-                                <span>Stéréosuper</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!--<ul class='work-list'>
-                        <li class='anim-elt'>
-                            <a href='http://www.rezorue.com/' target='_blank' title='Visit REZOrue website'>
-                                <time>2014</time>
-                                <h2 class='subtitle scramble' data-text='REZOrue'>REZOrue</h2>
-                                <p>#HTML, #CSS, #JavaScript <span>[jQuery]</span> <br>#WordPress</p>
-                                <span>Freelance</span>
-                            </a>
-                        </li>
-                        <li class='anim-elt'>
-                            <a href='http://serenpedia.com/' target='_blank' title='Visit Serenpedia website'>
-                                <time>2014</time>
-                                <h2 class='subtitle scramble' data-text='Serenpedia'>Serenpedia</h2>
-                                <p>#WordPress</p>
-                                <span>Intuiti</span>
-                            </a>
-                        </li>
-                    </ul>-->
-                </section>
+                <?php if( $success ){ ?>
 
+                    <p class='anim-elt text-success'>
+                        Thanks, your message was successfully send!<br>
+                        I'll get back to you soon :)
+                    </p>
+
+                <?php }else{
+
+                    if( $errorSend ){
+                        echo '<p class="text-error anim-elt">' . $errorSend . '</p>';
+                    }else if( $error ){ ?>
+                        <p class='text-error anim-elt'>The form contains some errors. Please check the highlighted fields:</p>
+                    <?php }
+
+                } ?>
+
+                <form action='#' method='POST' id='contactForm' <?php if( $error ) echo 'class="form-error"'; ?>>
+                    <div class='field <?php if( $errorName ) echo "error"; ?>'>
+                        <input type='text' name='name' id='name' placeholder='Peter Griffin' class='anim-elt' value='<?php if( !$success ) echo $name; ?>' required>
+                        <label for='name' class='subtitle anim-elt'>Your name<sup>*</sup></label>
+                        <?php if( $errorName ) echo '<span class="anim-elt">' . $errorName . '</span>'; ?>
+                    </div>
+                    <div class='field <?php if($errorMail) echo "error"; ?>'>
+                        <input type='email' name='email' id='email' placeholder='ekiekiekipateng@knights.ni' class='anim-elt' value='<?php if( !$success ) echo $mail; ?>' required>
+                        <label for='email' class='subtitle anim-elt'>Your email<sup>*</sup></label>
+                        <?php if( $errorMail ) echo '<span class="anim-elt">' . $errorMail . '</span>'; ?>
+                    </div>
+                    <div class='field <?php if( $errorPhone ) echo "error"; ?>'>
+                        <input type='tel' name='phone' id='phone' placeholder='06 06 66 66 66' class='anim-elt' value='<?php if( !$success ) echo $phone; ?>'>
+                        <label for='phone' class='subtitle anim-elt'>Your phone number <span>(optionnal)</span></label>
+                        <?php if( $errorPhone ) echo '<span class="anim-elt">' . $errorPhone . '</span>'; ?>
+                    </div>
+                    <div class='field'>
+                        <input type='text' name='movie' id='movie' placeholder='Mars Attack' class='anim-elt' value='<?php if( !$success ) echo $movie; ?>'>
+                        <label for='movie' class='subtitle anim-elt'>Your favourite movie <span>(optionnal)</span></label>
+                    </div>
+                    <div class='field <?php if( $errorMsg ) echo "error"; ?>'>
+                        <textarea name='message' id='message' placeholder="What is the answer to the ultimate question, of life, the universe, and everything?" class='anim-elt' required><?php if( !$success ) echo $msg; ?></textarea>
+                        <label for='message' class='subtitle anim-elt'>Your message<sup>*</sup></label>
+                        <?php if($errorMsg) echo '<span class="anim-elt">' . $errorMsg . '</span>'; ?>
+                    </div>
+                    <div class='hidden'>
+                        <input type='url' name='url' id='url' value='<?php echo $spamUrl; ?>'>
+                        <label for='url'>Please leave this field empty</label>
+                    </div>
+                    <button type='submit' for='contactForm' class='btn anim-elt' name='submit'>Send</button>
+                </form>
+
+                <p class='tiny anim-elt'>Believe it or not, I kind of enjoy styling forms! But if you don't feel comfortable using it, you can reach me on <a href='mailto:elisabethhamel@outlook.com' title='Send me a message'>elisabethhamel@outlook.com</a>.</p>
             </div>
         </main>
 
@@ -290,7 +255,7 @@
             </defs>
         </svg>
 
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB1uPQvRPQP9tOgEnK1HOB5JqGza8i7DiQ' defer></script>
         <script src='js/main.js' defer></script>
-
     </body>
 </html>

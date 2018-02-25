@@ -14,6 +14,7 @@ $(function(){
     const throttle = require('./throttle.js');
 
     const body = $('body');
+    const forms = $('form');
     // window.outerWidth returns the window width including the scroll, but it's not working with $(window).outerWidth
     // let windowWidth = window.outerWidth, windowHeight = $(window).height();
 
@@ -58,6 +59,23 @@ $(function(){
         if( $('#map').length ) mapInit();
 
         if( chart.length ) animChart( chart );
+    }
+
+    const checkEmptyInput = ( input ) => {
+        input.val() !== '' ? input.addClass('filled') : input.removeClass('filled');
+    }
+
+    // Form inputs
+    if( forms.length ){
+        forms.on('change input', 'input, textarea', function(){
+            checkEmptyInput($(this));
+        }).find('input, textarea').each(function( i ){
+            if( $(this).is(':hidden') ) return;
+            checkEmptyInput($(this));
+
+            if( i !== 0 || $(this).parents('form').hasClass('form-error') ) return;
+            $(this).focus();
+        });
     }
 
 

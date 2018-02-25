@@ -58,24 +58,6 @@
             }
         }
     }
-    h2{
-        display: block;
-        position: relative;
-        margin: 0 0 10px;
-        font-family: $unica;
-        font-size: 2rem;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        &:after{
-            content: '+';
-            position: absolute;
-            left: -4px;
-            bottom: -10px;
-            font-size: 1.6rem;
-            opacity: 0.7;
-            transition: $transition;
-        }
-    }
     // img{
     //     width: calc(40% - #{$gutter});
     //     position: fixed;

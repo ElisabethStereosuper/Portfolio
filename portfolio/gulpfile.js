@@ -84,10 +84,10 @@ gulp.task('js', function () {
 
 gulp.task('templates', function() {
     
-    return gulp.src('src/templates/*.html')
+    return gulp.src('src/templates/**')
     
         .pipe($.prettify({ indent_size: 4 }))
-        .pipe($.htmlmin({collapseWhitespace: true}))
+        //.pipe($.htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dest'))
         .pipe($.size({title: 'template'}));
 });

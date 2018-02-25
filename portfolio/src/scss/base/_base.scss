@@ -71,6 +71,10 @@ p{
     &.small{
         max-width: 83.3%;
     }
+    &.tiny{
+        max-width: 83.3%;
+        font-size: 1.3rem;
+    }
 }
 
 b, strong{
@@ -202,21 +206,39 @@ a{
     fill: currentColor;
 }
 
-.small-text{
-    font-size: 1.4rem;
-    color: rgba($txt, 0.5);
+.subtitle{
+    display: block;
+    position: relative;
+    margin: 0 0 10px;
+    font-family: $unica;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    &:after{
+        content: '+';
+        position: absolute;
+        left: -4px;
+        bottom: -10px;
+        font-size: 1.6rem;
+        opacity: 0.7;
+        transition: $transition;
+    }
 }
 
 
 @media (max-width: $desktop){
-    p.small{
-        max-width: 95%;
+    p{
+        &.small, &.tiny{
+            max-width: 95%;
+        }
     }
 }
 
 @media (max-width: 860px){
-    p.small{
-        max-width: 100%;
+    p{
+        &.small, &.tiny{
+            max-width: 100%;
+        }
     }
 }
 
