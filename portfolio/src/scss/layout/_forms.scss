@@ -41,6 +41,7 @@ label{
     cursor: pointer;
     transition: color $transition, transform 0.1s ease-in-out;
     transform-origin: 0 0;
+    transform: translate3d(0, 0, 0);
     &.subtitle{
         font-size: 1.6rem;
     }
@@ -71,7 +72,7 @@ input, textarea{
     &:-webkit-autofill{
       	box-shadow: 0 0 0 1000px $background inset;
   	}
-    &:focus, .form-error &{
+    &:focus, .form-error &, .no-js &{
         &::-webkit-input-placeholder{
             color: rgba($txt, 0.2);
         }
@@ -82,7 +83,7 @@ input, textarea{
             color: rgba($txt, 0.2);
         }
     }
-    &:focus, .form-error &, &.filled{
+    &:focus, &.filled, .form-error &, .no-js &{
         + label{
             cursor: default;
             transform: translate3d(0, -20px, 0) scale(0.95);
@@ -129,7 +130,7 @@ textarea{
     height: 26px;
     max-width: 83.333%;
     overflow: hidden;
-    &:focus, &.filled:valid{
+    &:focus, &.filled:valid, .no-js &{
         height: 200px;
         overflow: visible;
     }
