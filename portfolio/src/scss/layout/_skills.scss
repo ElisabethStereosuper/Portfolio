@@ -58,7 +58,7 @@
         .js &{
             transform: scale(0);
             transition: 0.4s ease-in-out;
-            transform-origin: 48% 42%;
+            transform-origin: 48% 48%;
             &.on{
                 transform: scale(1);
             }
