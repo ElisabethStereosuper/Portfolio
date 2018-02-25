@@ -3,10 +3,14 @@
 .btn{
     display: inline-block;
     //margin: 0 0 0 -4px;
-    padding: 10px 35px 8px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    z-index: 1;
     font-family: $unica;
     text-transform: uppercase;
     box-shadow: none;
+    border-radius: 50%;
     background: rgba($txt, 0.9);
     color: $white;
     transition: $transition;
@@ -23,8 +27,28 @@
     // &:after{
     //     margin: 0 0 0 5px;
     // }
-    &:hover, &:focus{
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: -1;
+        border-radius: 50%;
+        opacity: 0;
         background: $primary;
+        transform: scale3d(0.6, 0.6, 1);
+        transition: opacity 0.3s ease-in, 0s transform 0.3s;
+    }
+    &:hover, &:focus{
+        &:after{
+            opacity: 1;
+            transform: scale3d(1, 1, 1);
+            transition: 0.3s ease-out;
+        }
+        //background: $primary;
         //color: $white;
         // box-shadow: none;
         // &:before, &:after{
