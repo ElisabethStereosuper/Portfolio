@@ -87,7 +87,12 @@ gulp.task('templates', function() {
     return gulp.src('src/templates/**')
     
         .pipe($.prettify({ indent_size: 4 }))
-        .pipe($.htmlmin({collapseWhitespace: true}))
+        .pipe($.htmlmin({
+            collapseWhitespace: true,
+            collapseInlineTagWhitespace: true,
+            removeAttributeQuotes: true,
+            removeComments: true
+        }))
         .pipe(gulp.dest('dest'))
         .pipe($.size({title: 'template'}));
 });

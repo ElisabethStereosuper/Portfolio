@@ -129,7 +129,7 @@ if( isset($_POST['submit']) ){
         <main role='main' class='main'>
             <div class='container'>
                 <h1 class='anim-elt'>Contact</h1>
-                <p class='small anim-elt'>You want to work with me, you have a question, you just want to say "Hi" ? Don't hesitate to drop me a message by filling this form!</p>
+                <p class='small anim-elt' id='form'>You want to work with me, you have a question, you just want to say "Hi" ? Don't hesitate to drop me a message by filling this form!</p>
 
                 <?php if( $success ){ ?>
 
@@ -146,7 +146,7 @@ if( isset($_POST['submit']) ){
                         <p class='text-error anim-elt'>The form contains some errors. Please check the highlighted fields:</p>
                     <?php } ?>
 
-                    <form action='#' method='POST' id='contactForm' <?php if( $error ) echo 'class="form-error"'; ?>>
+                    <form action='#form' method='POST' id='contactForm' <?php if( $error ) echo 'class="form-error"'; ?>>
                         <div class='field anim-elt <?php if( $errorName ) echo "error"; ?>'>
                             <input type='text' name='name' id='name' placeholder='Peter Griffin' value='<?php if( !$success ) echo $name; ?>' required>
                             <label for='name' class='subtitle'>Your name<sup>*</sup></label>
