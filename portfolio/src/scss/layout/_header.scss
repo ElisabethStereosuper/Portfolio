@@ -9,12 +9,9 @@
     z-index: 2;
     backface-visibility: hidden;
     pointer-events: none;
-    transition: 0.5s ease-in-out;
     .js &{
-        &.off{
-            opacity: 0;
-            transform: translate3d(0, -30px, 0);
-        }
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
     }
     > nav{
         display: flex;

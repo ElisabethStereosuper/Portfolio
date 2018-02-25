@@ -147,29 +147,29 @@ if( isset($_POST['submit']) ){
                     <?php } ?>
 
                     <form action='#' method='POST' id='contactForm' <?php if( $error ) echo 'class="form-error"'; ?>>
-                        <div class='field <?php if( $errorName ) echo "error"; ?>'>
-                            <input type='text' name='name' id='name' placeholder='Peter Griffin' class='anim-elt' value='<?php if( !$success ) echo $name; ?>' required>
-                            <label for='name' class='subtitle anim-elt'>Your name<sup>*</sup></label>
-                            <?php if( $errorName ) echo '<span class="anim-elt">' . $errorName . '</span>'; ?>
+                        <div class='field anim-elt <?php if( $errorName ) echo "error"; ?>'>
+                            <input type='text' name='name' id='name' placeholder='Peter Griffin' value='<?php if( !$success ) echo $name; ?>' required>
+                            <label for='name' class='subtitle'>Your name<sup>*</sup></label>
+                            <?php if( $errorName ) echo '<span>' . $errorName . '</span>'; ?>
                         </div>
-                        <div class='field <?php if( $errorMail ) echo "error"; ?>'>
-                            <input type='email' name='email' id='email' placeholder='ekiekiekipateng@knights.ni' class='anim-elt' value='<?php if( !$success ) echo $mail; ?>' required>
-                            <label for='email' class='subtitle anim-elt'>Your email<sup>*</sup></label>
-                            <?php if( $errorMail ) echo '<span class="anim-elt">' . $errorMail . '</span>'; ?>
+                        <div class='field anim-elt <?php if( $errorMail ) echo "error"; ?>'>
+                            <input type='email' name='email' id='email' placeholder='ekiekiekipateng@knights.ni' value='<?php if( !$success ) echo $mail; ?>' required>
+                            <label for='email' class='subtitle'>Your email<sup>*</sup></label>
+                            <?php if( $errorMail ) echo '<span>' . $errorMail . '</span>'; ?>
                         </div>
-                        <div class='field <?php if( $errorPhone ) echo "error"; ?>'>
-                            <input type='tel' name='phone' id='phone' placeholder='06 06 66 66 66' class='anim-elt' value='<?php if( !$success ) echo $phone; ?>'>
-                            <label for='phone' class='subtitle anim-elt'>Your phone number <span>(optionnal)</span></label>
-                            <?php if( $errorPhone ) echo '<span class="anim-elt">' . $errorPhone . '</span>'; ?>
+                        <div class='field anim-elt <?php if( $errorPhone ) echo "error"; ?>'>
+                            <input type='tel' name='phone' id='phone' placeholder='06 06 66 66 66' value='<?php if( !$success ) echo $phone; ?>'>
+                            <label for='phone' class='subtitle'>Your phone number <span>(optionnal)</span></label>
+                            <?php if( $errorPhone ) echo '<span>' . $errorPhone . '</span>'; ?>
                         </div>
-                        <div class='field'>
-                            <input type='text' name='movie' id='movie' placeholder='Mars Attack' class='anim-elt' value='<?php if( !$success ) echo $movie; ?>'>
-                            <label for='movie' class='subtitle anim-elt'>Your favourite movie <span>(optionnal)</span></label>
+                        <div class='field anim-elt'>
+                            <input type='text' name='movie' id='movie' placeholder='Mars Attack' value='<?php if( !$success ) echo $movie; ?>'>
+                            <label for='movie' class='subtitle'>Your favourite movie <span>(optionnal)</span></label>
                         </div>
-                        <div class='field <?php if( $errorMsg ) echo "error"; ?>'>
-                            <textarea name='message' id='message' placeholder="What is the answer to the ultimate question, of life, the universe, and everything?" class='anim-elt' required><?php if( !$success ) echo $msg; ?></textarea>
-                            <label for='message' class='subtitle anim-elt'>Your message<sup>*</sup></label>
-                            <?php if($errorMsg) echo '<span class="anim-elt">' . $errorMsg . '</span>'; ?>
+                        <div class='field anim-elt <?php if( $errorMsg ) echo "error"; ?>'>
+                            <textarea name='message' id='message' placeholder="What is the answer to the ultimate question, of life, the universe, and everything?" required><?php if( !$success ) echo $msg; ?></textarea>
+                            <label for='message' class='subtitle'>Your message<sup>*</sup></label>
+                            <?php if($errorMsg) echo '<span>' . $errorMsg . '</span>'; ?>
                         </div>
                         <div class='hidden'>
                             <input type='url' name='url' id='url' value='<?php echo $spamUrl; ?>'>

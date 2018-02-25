@@ -225,6 +225,13 @@ a{
     }
 }
 
+.anim-elt{
+    .js &{
+        opacity: 0;
+        transform: translate3d(0, 10px, 0);
+    }
+}
+
 
 @media (max-width: $desktop){
     p{

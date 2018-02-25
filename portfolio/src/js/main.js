@@ -28,9 +28,16 @@ $(function(){
         const animChart = require('./chart.js');
         const mapInit = require('./map.js');
 
+        const eltsToAnim = $('.anim-elt');
         const chart = $('#chart');
         const grid = $('#gridPlus');
         const logo = $('#logo');
+
+        
+        TweenLite.to(eltsToAnim, 0.4, {opacity: 1, y: 0, onComplete: function(){
+            TweenLite.to($('#header'), 0.4, {opacity: 1, y: 0});
+        }});
+
 
         $('#header').on('mouseenter', 'a', function(){
             TweenLite.to($(this).find('.scramble'), 0.5, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}}); 
