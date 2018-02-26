@@ -29,17 +29,17 @@ $(function(){
         const mapInit = require('./map.js');
 
         const eltsToAnim = $('.anim-elt');
-        const chart = $('#chart');
         const grid = $('#gridPlus');
         const logo = $('#logo');
+        const header = $('#header');
 
         
         TweenLite.to(eltsToAnim, 0.4, {opacity: 1, y: 0, onComplete: function(){
-            TweenLite.to($('#header'), 0.4, {opacity: 1, y: 0});
+            TweenLite.to(header, 0.4, {opacity: 1, y: 0});
         }});
 
 
-        $('#header').on('mouseenter', 'a', function(){
+        header.on('mouseenter', 'a', function(){
             TweenLite.to($(this).find('.scramble'), 0.5, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}}); 
         });
 
@@ -63,9 +63,8 @@ $(function(){
 
         });
 
-        if( $('#map').length ) mapInit();
-
-        if( chart.length ) animChart( chart );
+        mapInit( $('#map') );
+        animChart( $('#chart') );
     }
 
     const checkEmptyInput = ( input ) => {

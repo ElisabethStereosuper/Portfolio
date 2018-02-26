@@ -221,6 +221,7 @@ a{
         bottom: -10px;
         font-size: 1.6rem;
         opacity: 0.7;
+        transform: rotate3d(0, 0, 1, 0deg);
         transition: $transition;
     }
 }

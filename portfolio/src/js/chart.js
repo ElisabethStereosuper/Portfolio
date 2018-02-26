@@ -7,6 +7,9 @@ const throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function( chart ){
+
+    if( !chart.length ) return;
+
     let myScroll, windowHeight = $(window).height(), siblingPath;
     const chartPath = chart.find('path');
 

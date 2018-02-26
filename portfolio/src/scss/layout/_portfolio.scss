@@ -20,7 +20,7 @@
             color: $txt;
             h2{
                 &:after{
-                    transform: rotate(90deg);
+                    transform: rotate3d(0, 0, 1, 90deg);
                 }
             }
             // img{

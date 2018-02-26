@@ -1,6 +1,9 @@
 const $ = require('jquery-slim');
 
-module.exports = function(){
+module.exports = function( mapElt ){
+
+    if( !mapElt.length ) return;
+
     const mapOptions = {
         center: new google.maps.LatLng(52, -25),
         zoom: 2,
@@ -182,7 +185,7 @@ module.exports = function(){
             }
         ]
     },
-    mapElement = $('#map')[0],
+    mapElement = mapElt[0],
     map = new google.maps.Map(mapElement, mapOptions),
     icon = {
         url: 'layoutImg/pin.svg',

@@ -47,11 +47,12 @@
                 content: '+';
                 display: inline-block;
                 margin: 0 2px 0 -9px;
+                transform: rotate3d(0, 0, 1, 0deg);
                 transition: $transition;
             }
             &:hover, &:focus{
                 &:before{
-                    transform: rotate(90deg);
+                    transform: rotate3d(0, 0, 1, 90deg);
                 }
             }
             &.active{
@@ -93,9 +94,6 @@
     transition: 0.15s ease-in-out;
     .eye{
         transform: scale(1);
-        .ff &{
-            opacity: 1;
-        }
     }
     .body, .g-path{
         transition: $transition;
@@ -116,15 +114,9 @@
         }
         .e1{
             animation: clign 0.35s ease-in-out;
-            .ff &{
-                animation: clign-ff 0.35s ease-in-out;
-            }
         }
         .e2{
             animation: clign 0.25s ease-in-out 0.15s;
-            .ff &{
-                animation: clign-ff 0.25s ease-in-out 0.15s;
-            }
         }
     }
     &:active{
@@ -134,24 +126,14 @@
 .eye{
     fill: #fff;
     transform: scale(0);
-    transform-origin: 50% 50%;
-    .ff &{
-        opacity: 0;
-        transform: scale(1);
-    }
 }
 .e1{
+    transform-origin: 42% 48%;
     transition: 0.5s ease-in-out;
-    .ff &{
-        transition: opacity 0.5s ease-in-out;
-    }
 }
 .e2{
-    transition: 0.35s ease-in-out;
-    transition-delay: 0.2s;
-    .ff &{
-        transition: opacity 0.35s ease-in-out;
-    }
+    transform-origin: 56% 48%;
+    transition: 0.35s all 0.2s ease-in-out;
 }
 
 @keyframes clign{
@@ -163,18 +145,6 @@
     }
     100%{
         transform: scale(1);
-    }
-}
-
-@keyframes clign-ff{
-    0%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
     }
 }
 
