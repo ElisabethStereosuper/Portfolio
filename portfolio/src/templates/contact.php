@@ -1,5 +1,7 @@
 <?php
 
+iconv_set_encoding('internal_encoding', 'UTF-8');
+
 $error = false;
 $success = false;
 $errorName = false;
@@ -63,7 +65,7 @@ if( isset($_POST['submit']) ){
                         'Film: ' . $movie . "\r\n\r\n" .
                         'Message: ' . $msg;
 
-            $sent = mail($mailto, $subjectMail, $content, $headers);
+            $sent = mail(utf8_decode($mailto), utf8_decode($subjectMail), utf8_decode($content), utf8_decode($headers) . '\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\n');
 
             $sent ? $success = true : $errorSend = "I'm sorry, an error happened! Please try again later.";
 
