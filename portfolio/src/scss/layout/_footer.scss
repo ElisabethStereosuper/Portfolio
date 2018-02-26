@@ -75,7 +75,6 @@
 
 @media (max-width: 490px){
     .footer{
-        margin-top: 170px;
         > span{
             width: calc(#{$col*2.5} - #{$gutter});
         }
