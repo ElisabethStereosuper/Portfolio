@@ -89,7 +89,7 @@ gulp.task('templates', function() {
         .pipe($.prettify({ indent_size: 4 }))
         .pipe($.htmlmin({
             collapseWhitespace: true,
-            collapseInlineTagWhitespace: true,
+            //collapseInlineTagWhitespace: true,
             removeAttributeQuotes: true,
             removeComments: true
         }))
