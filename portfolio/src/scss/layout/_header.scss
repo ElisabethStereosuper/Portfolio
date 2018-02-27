@@ -36,13 +36,11 @@
             padding: 2px 5px 1px;
             position: relative;
             font-family: $unica;
-            font-size: 1.6rem;
             text-transform: uppercase;
             letter-spacing: 0.02em;
             box-shadow: none;
-            -webkit-font-smoothing: antialiased;
+            //-webkit-font-smoothing: antialiased;
             color: $txt;
-            transition: $transition;
             &:before{
                 content: '+';
                 display: inline-block;
@@ -63,20 +61,11 @@
     li{
         width: 50%;
         &:before{
-            display: none;
+            content: none;
         }
     }
     a{
         pointer-events: auto;
-    }
-    .icon{
-        display: none;
-        float: left;
-        text-indent: 0;
-        pointer-events: none;
-    }
-    .icon-contact{
-        height: 1.15em;
     }
 }
 
@@ -124,7 +113,7 @@
     }
 }
 .eye{
-    fill: #fff;
+    fill: $white;
     transform: scale(0);
 }
 .e1{
@@ -135,6 +124,7 @@
     transform-origin: 56% 48%;
     transition: 0.35s all 0.2s ease-in-out;
 }
+
 
 @keyframes clign{
     0%{
@@ -148,18 +138,6 @@
     }
 }
 
-
-// @media (max-width: 1200px){
-//     #header{
-//         padding-right: 18px;
-//         li{
-//             margin: 0;
-//             a{
-//                 margin: 0 7px;
-//             }
-//         }
-//     }
-// }
 
 @media (max-width: 860px){
     .header{

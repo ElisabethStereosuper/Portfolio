@@ -1,31 +1,29 @@
 /******* GÉNÉRAL *******/
 
 ::-moz-selection{
-    background: $black;
+    background: rgba($black, 0.8);
     color: $white;
     text-shadow: none;
 }
 ::selection{
-    background: $black;
+    background: rgba($black, 0.8);
     color: $white;
     text-shadow: none;
 }
 
 html{
     font-size: 62.5%; /* sets the base font to 10px for easier math */
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
 }
 
 body{
-    font-family: $inconsolata;
-    font-size: 1.6em;
-    line-height: 1.4;
+    font: 1.6em / 1.4 $inconsolata;
     background: $background;
     color: $txt;
-    //-webkit-font-smoothing: antialiased;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    // -webkit-font-smoothing: antialiased;
+    // -webkit-font-smoothing: subpixel-antialiased;
+    // -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -102,7 +100,7 @@ ul{
             width: 4px;
             vertical-align: middle;
             margin: 0 10px 0 0;
-            background: #000;
+            background: $txt;
         }
     }
 }
@@ -143,16 +141,9 @@ hr{
 a{
     position: relative;
     text-decoration: none;
-    transition: $transition;
     box-shadow: 0 1px 0 rgba($black, 0.4);
     color: currentColor;
-    // &:before{
-    //     content: '+';
-    //     display: inline-block;
-    //     vertical-align: middle;
-    //     margin: 0 5px 0 0;
-    //     font-size: 1.2rem;
-    // }
+    transition: $transition;
     &:focus, &:hover{
         color: $primary;
         box-shadow: 0 1px 0 rgba($primary, 0.5);
@@ -209,9 +200,9 @@ a{
 .subtitle{
     display: block;
     position: relative;
-    margin: 0 0 10px;
+    margin: 0 0 10px -1px;
     font-family: $unica;
-    font-size: 2rem;
+    font-size: 2.15rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     &:after{

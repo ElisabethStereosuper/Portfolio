@@ -68,25 +68,28 @@ input, textarea, select, button{
 input, textarea{
     width: 100%;
     border-bottom: 1px solid $border;
-    color: rgba($txt, 0.5);
+    color: rgba($black, 0.55);
     &:-webkit-autofill{
       	box-shadow: 0 0 0 1000px $background inset;
   	}
     &:focus, .form-error &, .no-js &{
         &::-webkit-input-placeholder{
-            color: rgba($txt, 0.2);
+            color: rgba($black, 0.4);
         }
         &::-moz-placeholder{
-            color: rgba($txt, 0.2);
+            color: rgba($black, 0.4);
         }
         &:-ms-input-placeholder{
-            color: rgba($txt, 0.2);
+            color: rgba($black, 0.4);
         }
     }
     &:focus, &.filled, .form-error &, .no-js &{
         + label{
             cursor: default;
             transform: translate3d(0, -20px, 0) scale(0.95);
+            &:after{
+                transform: rotate3d(0, 0, 1, 90deg);
+            }
         }
     }
     &.filled{
@@ -152,14 +155,6 @@ input{
         }
     }
 }
-
-// button{
-//     &.btn{
-//         &:hover, &:focus{
-//             color: $primary;
-//         }
-//     }
-// }
 
 select{
     // hide the arrow on edge + ie

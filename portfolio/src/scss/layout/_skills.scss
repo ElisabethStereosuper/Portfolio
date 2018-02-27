@@ -17,8 +17,8 @@
             fill: $secondary;
             + g{
                 .title{
-                    background: #000;
-                    color: #fff;
+                    background: $black;
+                    color: $white;
                 }
                 .text{
                     transform: translate3d(0, 0, 0);

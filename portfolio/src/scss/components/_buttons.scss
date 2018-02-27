@@ -2,7 +2,6 @@
 
 .btn{
     display: inline-block;
-    //margin: 0 0 0 -4px;
     width: 100px;
     height: 100px;
     position: relative;
@@ -11,22 +10,9 @@
     text-transform: uppercase;
     box-shadow: none;
     border-radius: 50%;
-    background: rgba($txt, 0.9);
+    background: $txt;
     color: $white;
     transition: $transition;
-    //color: $primary;
-    // &:before, &:after{
-    //     content: '+';
-    //     display: inline-block;
-    //     vertical-align: middle;
-    //     transition: transform $transition;
-    // }
-    // &:before{
-    //     margin: 0 5px 0 0;
-    // }
-    // &:after{
-    //     margin: 0 0 0 5px;
-    // }
     &:after{
         content: '';
         position: absolute;
@@ -48,11 +34,5 @@
             transform: scale3d(1, 1, 1);
             transition: 0.3s ease-out;
         }
-        //background: $primary;
-        //color: $white;
-        // box-shadow: none;
-        // &:before, &:after{
-        //     transform: scale(0.7);
-        // }
     }
 }

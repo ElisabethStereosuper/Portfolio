@@ -29,7 +29,7 @@ $(function(){
         const mapInit = require('./map.js');
 
         const eltsToAnim = $('.anim-elt');
-        const grid = $('#gridPlus');
+        //const grid = $('#gridPlus');
         const logo = $('#logo');
         const header = $('#header');
 
@@ -51,7 +51,7 @@ $(function(){
 
             TweenLite.set(logo.find('.body'), {fill: $(this).data('color')});
 
-            grid.css('color', $(this).data('color')).addClass('on');
+            //grid.css('color', $(this).data('color')).addClass('on');
 
         }).on('mouseleave', 'a', function(){
 
@@ -59,7 +59,7 @@ $(function(){
 
             logo.find('.body').attr('style', '');
 
-            grid.attr('style', '').removeClass('on');
+            //grid.attr('style', '').removeClass('on');
 
         });
 

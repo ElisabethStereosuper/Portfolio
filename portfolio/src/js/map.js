@@ -16,6 +16,13 @@ module.exports = function( mapElt ){
         streetViewControl: false,
         styles: [
             {
+                featureType: "administrative",
+                elementType: "geometry",
+                stylers: [
+                    { visibility: "off" }
+                ]
+            },
+            {
                 "featureType": "all",
                 "elementType": "geometry.fill",
                 "stylers": [
@@ -161,7 +168,7 @@ module.exports = function( mapElt ){
                 "elementType": "geometry.fill",
                 "stylers": [
                     {
-                        "color": "#c8d7d4"
+                        "color": "#dddddd"
                     }
                 ]
             },
