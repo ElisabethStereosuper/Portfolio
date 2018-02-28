@@ -14,6 +14,8 @@ module.exports = function( chart, isIE ){
     const chartPath = chart.find('path');
 
     function animChart(){
+        chart.addClass('done');
+
         TweenLite.set( chart.find('.puce'), {css: {className: '+=on'}, onComplete: function(){
             TweenLite.set( chart.find('.puce'), {css: {className: '+=final'}, delay: 0.34, onComplete: function(){
                 TweenLite.set( chart.find('.paths'), {css: {className: '+=on'}, delay: 0.25, onComplete: function(){
@@ -27,7 +29,7 @@ module.exports = function( chart, isIE ){
                             }).delay(100).queue(function(){
                                 thisPath.find('.title').addClass('on').end().dequeue();
                             });
-                        }).end().addClass('done').dequeue();
+                        }).end().dequeue();
                     });
                 }} );
             }} );
