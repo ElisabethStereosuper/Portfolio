@@ -1,12 +1,15 @@
 const $ = require('jquery-slim');
 
+const throttle = require('./throttle.js');
+
+
 module.exports = function( mapElt ){
 
     if( !mapElt.length ) return;
 
     const mapOptions = {
         center: new google.maps.LatLng(52, -25),
-        zoom: 2,
+        zoom: 3,
         minZoom: 1,
         scrollwheel: false,
         //zoomControl: true,
@@ -168,7 +171,7 @@ module.exports = function( mapElt ){
                 "elementType": "geometry.fill",
                 "stylers": [
                     {
-                        "color": "#dddddd"
+                        "color": "#cec8c3"
                     }
                 ]
             },
@@ -230,6 +233,12 @@ module.exports = function( mapElt ){
 
     let marker, i = 0;
 
+
+    function setMapZoom(){
+        mapElt.width() < 620 ? map.setZoom(2) : map.setZoom(3);
+    }
+
+
     for(i; i<nbLocs; i++){
         marker = new google.maps.Marker({
             icon: loc[i][3],
@@ -239,4 +248,11 @@ module.exports = function( mapElt ){
             cursor: 'crosshair'
         });
     }
+
+    setMapZoom();
+
+
+    $(window).on('resize', throttle(function(){
+        setMapZoom();
+    }, 60));
 }

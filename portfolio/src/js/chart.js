@@ -10,7 +10,7 @@ module.exports = function( chart, isIE ){
 
     if( !chart.length ) return;
 
-    let myScroll, windowHeight = $(window).height(), siblingPath;
+    let myScroll, windowHeight = $(window).height();
     const chartPath = chart.find('path');
 
     function animChart(){

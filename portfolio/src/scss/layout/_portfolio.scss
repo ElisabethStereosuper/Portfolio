@@ -27,6 +27,9 @@
                 }
             }
         }
+        &:active{
+            filter: none;
+        }
         > span, > time, > p{
             display: block;
             font-size: 1.45rem;
