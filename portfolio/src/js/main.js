@@ -13,6 +13,8 @@ $(function(){
     window.requestAnimFrame = require('./requestAnimFrame.js');
     const throttle = require('./throttle.js');
 
+    const isIE = navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1;
+
     const body = $('body');
     const forms = $('form');
     // window.outerWidth returns the window width including the scroll, but it's not working with $(window).outerWidth
@@ -63,13 +65,17 @@ $(function(){
 
         });
 
+        animChart( $('#chart'), isIE );
         mapInit( $('#map') );
-        animChart( $('#chart') );
     }
 
     const checkEmptyInput = ( input ) => {
         input.val() !== '' ? input.addClass('filled') : input.removeClass('filled');
     }
+
+
+    // IE
+    if( isIE ) body.addClass('ie');
 
     // Form inputs
     if( forms.length ){

@@ -38,12 +38,16 @@ label, input, textarea{
 }
 
 label{
+    margin: 0 0 10px -1px;
     cursor: pointer;
     transition: color $transition, transform 0.1s ease-in-out;
     transform-origin: 0 0;
     transform: translate3d(0, 0, 0);
     &.subtitle{
         font-size: 1.6rem;
+        > .icon{
+            bottom: -2px;
+        }
     }
     sup{
         transition: opacity $transition;
@@ -86,8 +90,8 @@ input, textarea{
     &:focus, &.filled, .form-error &, .no-js &{
         + label{
             cursor: default;
-            transform: translate3d(0, -20px, 0) scale(0.95);
-            &:after{
+            transform: translate3d(0, -20px, 0);
+            > .icon{
                 transform: rotate3d(0, 0, 1, 90deg);
             }
         }

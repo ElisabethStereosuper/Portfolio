@@ -117,11 +117,13 @@ if( isset($_POST['submit']) ){
                     <li>
                         <a href='about.html' title='About Elisabeth Hamel'>
                             <span class='scramble' data-text='About'>About</span>
+                            <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
                         </a>
                     </li>
                     <li>
                         <a href='contact.php' title='Contact informations' class='active'>
                             <span class='scramble' data-text='Contact'>Contact</span>
+                            <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
                         </a>
                     </li>
                 </ul>
@@ -151,26 +153,41 @@ if( isset($_POST['submit']) ){
                     <form action='#form' method='POST' id='contactForm' <?php if( $error ) echo 'class="form-error"'; ?>>
                         <div class='field anim-elt <?php if( $errorName ) echo "error"; ?>'>
                             <input type='text' name='name' id='name' placeholder='Peter Griffin' value='<?php if( !$success ) echo $name; ?>' required>
-                            <label for='name' class='subtitle'>Your name<sup>*</sup></label>
+                            <label for='name' class='subtitle'>
+                                Your name<sup>*</sup>
+                                <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
+                            </label>
                             <?php if( $errorName ) echo '<span>' . $errorName . '</span>'; ?>
                         </div>
                         <div class='field anim-elt <?php if( $errorMail ) echo "error"; ?>'>
                             <input type='email' name='email' id='email' placeholder='ekiekiekipateng@knights.ni' value='<?php if( !$success ) echo $mail; ?>' required>
-                            <label for='email' class='subtitle'>Your email<sup>*</sup></label>
+                            <label for='email' class='subtitle'>
+                                Your email<sup>*</sup>
+                                <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
+                            </label>
                             <?php if( $errorMail ) echo '<span>' . $errorMail . '</span>'; ?>
                         </div>
                         <div class='field anim-elt <?php if( $errorPhone ) echo "error"; ?>'>
                             <input type='tel' name='phone' id='phone' placeholder='06 06 66 66 66' value='<?php if( !$success ) echo $phone; ?>'>
-                            <label for='phone' class='subtitle'>Your phone number <span>(optionnal)</span></label>
+                            <label for='phone' class='subtitle'>
+                                Your phone number <span>(optionnal)</span>
+                                <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
+                            </label>
                             <?php if( $errorPhone ) echo '<span>' . $errorPhone . '</span>'; ?>
                         </div>
                         <div class='field anim-elt'>
                             <input type='text' name='movie' id='movie' placeholder='Mars Attack' value='<?php if( !$success ) echo $movie; ?>'>
-                            <label for='movie' class='subtitle'>Your favourite movie <span>(optionnal)</span></label>
+                            <label for='movie' class='subtitle'>
+                                Your favourite movie <span>(optionnal)</span>
+                                <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
+                            </label>
                         </div>
                         <div class='field anim-elt <?php if( $errorMsg ) echo "error"; ?>'>
                             <textarea name='message' id='message' placeholder="What is the answer to the ultimate question, of life, the universe, and everything?" required><?php if( !$success ) echo $msg; ?></textarea>
-                            <label for='message' class='subtitle'>Your message<sup>*</sup></label>
+                            <label for='message' class='subtitle'>
+                                Your message<sup>*</sup>
+                                <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
+                            </label>
                             <?php if($errorMsg) echo '<span>' . $errorMsg . '</span>'; ?>
                         </div>
                         <div class='hidden'>
@@ -190,12 +207,15 @@ if( isset($_POST['submit']) ){
             <span>&copy;2018 Elisabeth Hamel</span>
             <!--<a href='#'>Legal notice</a>-->
 
-            <ul class='social'>
-                <li><a href='https://github.com/ElisabethStereosuper' target='_blank'><svg class='icon'><use xlink:href='#icon-github'/></svg>GitHub</a></li>
-                <li><a href='https://codepen.io/elisabeth_hamel/' target='_blank'><svg class='icon'><use xlink:href='#icon-codepen'/></svg>Codepen</a></li>
-                <li><a href='https://twitter.com/Elisabeth_Hamel' target='_blank'><svg class='icon'><use xlink:href='#icon-twitter'/></svg>Twitter</a></li>
-                <li><a href='https://www.linkedin.com/in/elisabeth-hamel-7757b85a' target='_blank'><svg class='icon'><use xlink:href='#icon-linkedin'/></svg>LinkedIn</a></li>
-            </ul>
+            <div class='social'>
+                <ul>
+                    <li><a href='https://github.com/ElisabethStereosuper' target='_blank'><svg class='icon'><use xlink:href='#icon-github'/></svg>GitHub</a></li>
+                    <li><a href='https://codepen.io/elisabeth_hamel/' target='_blank'><svg class='icon'><use xlink:href='#icon-codepen'/></svg>Codepen</a></li>
+                    <li><a href='https://twitter.com/Elisabeth_Hamel' target='_blank'><svg class='icon'><use xlink:href='#icon-twitter'/></svg>Twitter</a></li>
+                    <li><a href='https://www.linkedin.com/in/elisabeth-hamel-7757b85a' target='_blank'><svg class='icon'><use xlink:href='#icon-linkedin'/></svg>LinkedIn</a></li>
+                </ul>
+                <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
+            </div>
         </footer>
 
         <div class='grid-plus' id='gridPlus'>
@@ -250,6 +270,9 @@ if( isset($_POST['submit']) ){
                 <symbol id='icon-twitter' viewBox='0 0 32 32'>
                     <title>Twitter</title>
                     <path d='M31.275 5.924c-0.503 0.223-1.020 0.411-1.548 0.564 0.625-0.707 1.102-1.539 1.393-2.45 0.065-0.204-0.002-0.427-0.17-0.561s-0.4-0.15-0.585-0.040c-1.122 0.665-2.332 1.143-3.6 1.423-1.278-1.249-3.014-1.96-4.808-1.96-3.788 0-6.87 3.082-6.87 6.869 0 0.298 0.019 0.595 0.056 0.888-4.7-0.413-9.070-2.723-12.071-6.404-0.107-0.131-0.272-0.202-0.44-0.188s-0.32 0.108-0.406 0.255c-0.609 1.044-0.93 2.239-0.93 3.454 0 1.655 0.591 3.226 1.635 4.453-0.317-0.11-0.625-0.247-0.919-0.411-0.158-0.088-0.35-0.086-0.507 0.003s-0.255 0.255-0.259 0.436c-0.001 0.030-0.001 0.061-0.001 0.092 0 2.471 1.33 4.695 3.363 5.908-0.175-0.017-0.349-0.043-0.523-0.076-0.179-0.034-0.363 0.029-0.483 0.165s-0.161 0.326-0.105 0.5c0.753 2.349 2.69 4.078 5.032 4.604-1.943 1.217-4.164 1.854-6.496 1.854-0.487 0-0.976-0.029-1.455-0.085-0.238-0.028-0.465 0.112-0.546 0.338s0.005 0.479 0.207 0.609c2.996 1.921 6.46 2.936 10.018 2.936 6.994 0 11.369-3.298 13.808-6.065 3.041-3.45 4.785-8.016 4.785-12.528 0-0.188-0.003-0.379-0.009-0.569 1.2-0.904 2.233-1.998 3.073-3.255 0.128-0.191 0.114-0.443-0.034-0.619s-0.394-0.233-0.604-0.14z'/>
+                </symbol>
+                <symbol id='icon-cross' viewBox='0 0 32 32'>
+                    <path d='M32 14.222h-14.222v-14.222h-3.556v14.222h-14.222v3.556h14.222v14.222h3.556v-14.222h14.222v-3.556z'/>
                 </symbol>
             </defs>
         </svg>

@@ -22,7 +22,7 @@
         &:hover, &:focus{
             color: $txt;
             .subtitle{
-                &:after{
+                > .icon{
                     transform: rotate3d(0, 0, 1, 90deg);
                 }
             }

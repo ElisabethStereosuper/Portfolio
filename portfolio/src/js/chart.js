@@ -6,7 +6,7 @@ const TweenLite = require('gsap/TweenLite');
 const throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
-module.exports = function( chart ){
+module.exports = function( chart, isIE ){
 
     if( !chart.length ) return;
 
@@ -32,25 +32,6 @@ module.exports = function( chart ){
                 }} );
             }} );
         }} );
-
-        // chart.queue(function(){
-        //     $(this).find('.puce').addClass('on').end().dequeue();
-        // }).delay(340).queue(function(){
-        //     $(this).find('.puce').addClass('final').end().dequeue();
-        // }).delay(250).queue(function(){
-        //     $(this).find('.paths').addClass('on').end().dequeue();
-        // }).delay(350).queue(function(){
-        //     $(this).find('.paths > g').each(function(i){
-        //         var thisPath = $(this);
-        //         thisPath.delay(i*150).queue(function(){
-        //             thisPath.find('line + circle').addClass('on').end().dequeue();
-        //         }).delay(100).queue(function(){
-        //             thisPath.find('line').addClass('on').end().dequeue();
-        //         }).delay(100).queue(function(){
-        //             thisPath.find('.title').addClass('on').end().dequeue();
-        //         });;
-        //     }).end().addClass('done').dequeue();
-        // });
     }
 
     function launchAnimChart(){
@@ -61,8 +42,6 @@ module.exports = function( chart ){
         }
     }
 
-
-    launchAnimChart();
 
     chart.data('top', chart.offset().top).on('click', '.puce', function(){
 
@@ -75,6 +54,10 @@ module.exports = function( chart ){
         }
 
     });
+
+    if( isIE ) return;
+
+    launchAnimChart();
 
     $(document).on('scroll', throttle(function(){
         requestAnimFrame(launchAnimChart);

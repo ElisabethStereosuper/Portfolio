@@ -33,7 +33,7 @@
         }
         a{
             display: inline-block;
-            padding: 2px 5px 1px;
+            padding: 2px 5px 1px 10px;
             position: relative;
             font-family: $unica;
             text-transform: uppercase;
@@ -41,15 +41,8 @@
             box-shadow: none;
             //-webkit-font-smoothing: antialiased;
             color: $txt;
-            &:before{
-                content: '+';
-                display: inline-block;
-                margin: 0 2px 0 -9px;
-                transform: rotate3d(0, 0, 1, 0deg);
-                transition: $transition;
-            }
             &:hover, &:focus{
-                &:before{
+                > .icon{
                     transform: rotate3d(0, 0, 1, 90deg);
                 }
             }
@@ -66,6 +59,19 @@
     }
     a{
         pointer-events: auto;
+    }
+    .icon{
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -4px;
+        margin: auto;
+        opacity: 0.9;
+        filter: blur(0.5px);
+        transform: rotate3d(0, 0, 1, 0deg);
+        transition: $transition;
     }
 }
 
