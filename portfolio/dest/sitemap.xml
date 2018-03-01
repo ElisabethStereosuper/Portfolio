@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://e-hamel.com/about.html</loc>
-        <lastmod>2018-02-26T11:27:27.951Z</lastmod>
+        <loc>http://e-hamel.com/</loc>
+        <lastmod>2018-02-28T21:16:32.496Z</lastmod>
     </url>
     <url>
-        <loc>http://e-hamel.com/</loc>
-        <lastmod>2018-02-26T11:27:28.114Z</lastmod>
+        <loc>http://e-hamel.com/about.html</loc>
+        <lastmod>2018-02-28T21:16:32.374Z</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/contact.php</loc>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/m83/</loc>
+      <lastmod>2014-08-07T21:27:38+00:00</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/m83/news.html</loc>
+      <lastmod>2014-08-07T21:27:38+00:00</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/m83/discography.html</loc>
+      <lastmod>2014-08-07T21:27:38+00:00</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/m83/tour.html</loc>
+      <lastmod>2014-08-07T21:27:39+00:00</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/m83/index.html</loc>
+      <lastmod>2014-08-07T21:27:38+00:00</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/pic/</loc>
+      <lastmod>2014-08-07T14:25:25+00:00</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/barbievador/</loc>
+      <lastmod>2014-08-07T19:53:02+00:00</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/content/creas/birds.swf</loc>
+      <lastmod>2014-09-12T17:09:24+00:00</lastmod>
+    </url>
+    <url>
+      <loc>http://www.e-hamel.com/content/creas/robot.swf</loc>
+      <lastmod>2014-09-12T17:09:24+00:00</lastmod>
     </url>
 </urlset>
