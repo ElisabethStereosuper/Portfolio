@@ -81,9 +81,9 @@ if( isset($_POST['submit']) ){
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-        <title>About - Elisabeth Hamel &bull; Front-End Developper</title>
+        <title>Contact - Elisabeth Hamel &bull; Front-End Developper</title>
 
-        <meta name='description' content='Learn more about me, my background and skills.'>
+        <meta name='description' content='Contact informations. I am based in Nantes, France.'>
 
         <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png'>
         <link rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32'>
@@ -94,9 +94,9 @@ if( isset($_POST['submit']) ){
 
         <meta name='author' content='Elisabeth Hamel'>
 
-        <meta property='og:title' content='Elisabeth Hamel &bull; Portfolio'>
+        <meta property='og:title' content='Elisabeth Hamel &bull; Contact'>
         <meta property='og:type' content='website'>
-        <meta property='og:url' content='http://www.e-hamel.com'>
+        <meta property='og:url' content='http://www.e-hamel.com/contact.php'>
         <meta property='og:image' content='http://www.e-hamel.com/img/logo.svg'>
 
         <link rel='stylesheet' href='css/main.css'>
