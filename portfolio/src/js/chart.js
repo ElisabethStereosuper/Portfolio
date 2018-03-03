@@ -4,7 +4,7 @@ require('gsap/CSSPlugin');
 const TweenLite = require('gsap/TweenLite');
 
 const throttle = require('./throttle.js');
-window.requestAnimFrame = require('./requestAnimFrame.js');
+require('./requestAnimFrame.js');
 
 module.exports = function( chart, isIE ){
 

@@ -55,7 +55,7 @@ if( isset($_POST['submit']) ){
 
         if( empty($spamUrl) ){
 
-            $subjectMail = 'Portfolio :' . $name;
+            $subjectMail = 'Portfolio: ' . $name;
             $headers = 'From: "' . $name . '" <' . $mail . '>' . "\r\n" .
                        'Reply-To: ' . $mail . "\r\n";
 
@@ -209,10 +209,10 @@ if( isset($_POST['submit']) ){
 
             <div class='social'>
                 <ul>
-                    <li><a href='https://github.com/ElisabethStereosuper' target='_blank'><svg class='icon'><use xlink:href='#icon-github'/></svg>GitHub</a></li>
-                    <li><a href='https://codepen.io/elisabeth_hamel/' target='_blank'><svg class='icon'><use xlink:href='#icon-codepen'/></svg>Codepen</a></li>
-                    <li><a href='https://twitter.com/Elisabeth_Hamel' target='_blank'><svg class='icon'><use xlink:href='#icon-twitter'/></svg>Twitter</a></li>
-                    <li><a href='https://www.linkedin.com/in/elisabeth-hamel-7757b85a' target='_blank'><svg class='icon'><use xlink:href='#icon-linkedin'/></svg>LinkedIn</a></li>
+                    <li><a href='https://github.com/ElisabethStereosuper' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-github'/></svg>GitHub</a></li>
+                    <li><a href='https://codepen.io/elisabeth_hamel/' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-codepen'/></svg>Codepen</a></li>
+                    <li><a href='https://twitter.com/Elisabeth_Hamel' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-twitter'/></svg>Twitter</a></li>
+                    <li><a href='https://www.linkedin.com/in/elisabeth-hamel-7757b85a' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-linkedin'/></svg>LinkedIn</a></li>
                 </ul>
                 <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
             </div>
@@ -279,5 +279,13 @@ if( isset($_POST['submit']) ){
 
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB1uPQvRPQP9tOgEnK1HOB5JqGza8i7DiQ' defer></script>
         <script src='js/main.js' defer></script>
+
+        <script async src='https://www.googletagmanager.com/gtag/js?id=UA-37415171-1'></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-37415171-1');
+        </script>
     </body>
 </html>

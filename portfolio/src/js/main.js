@@ -3,7 +3,8 @@
 const $ = require('jquery-slim');
 
 // require('gsap');
-require('gsap/CSSPlugin');
+//require('gsap/CSSPlugin');
+require('gsap/AttrPlugin');
 require('gsap/ScrambleTextPlugin');
 const TweenLite = require('gsap/TweenLite');
 
@@ -11,9 +12,9 @@ const TweenLite = require('gsap/TweenLite');
 $(function(){
 
     window.requestAnimFrame = require('./requestAnimFrame.js');
-    const throttle = require('./throttle.js');
+    //const throttle = require('./throttle.js');
 
-    const isIE = navigator.userAgent.indexOf("Edge") > -1 || navigator.userAgent.indexOf("Trident/7.0") > -1;
+    const isIE = navigator.userAgent.indexOf('Edge') > -1 || navigator.userAgent.indexOf('Trident/7.0') > -1;
 
     const body = $('body');
     const forms = $('form');
@@ -34,6 +35,9 @@ $(function(){
         //const grid = $('#gridPlus');
         const logo = $('#logo');
         const header = $('#header');
+        const tentacles = $('#octopus').find('.tentacle'), matrix = $('#octopusMatrix');
+
+        let rgb, matrixRgb;
 
         
         TweenLite.to(eltsToAnim, 0.4, {opacity: 1, y: 0, onComplete: function(){
@@ -51,7 +55,12 @@ $(function(){
 
             TweenLite.to($(this).find('.scramble'), 0.7, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}});
 
-            TweenLite.set(logo.find('.body'), {fill: $(this).data('color')});
+            TweenLite.set(logo.find('.body'), {fill: 'rgb(' + $(this).data('color') + ')'});
+
+            rgb = $(this).data('color').split(',');
+            matrixRgb = rgb.map(x => (parseInt(x)/250));
+            tentacles.toggleClass('on');
+            TweenLite.to(matrix, 0.5, {attr: {'values': (1 - matrixRgb[0]) + ' 0 0 0 ' + matrixRgb[0] + ' ' + (1 - matrixRgb[1]) + ' 0 0 0 ' + matrixRgb[1] + ' ' + (1 - matrixRgb[2]) + ' 0 0 0 ' + matrixRgb[2] + ' 0 0 0 1 0'}});
 
             //grid.css('color', $(this).data('color')).addClass('on');
 
@@ -60,6 +69,8 @@ $(function(){
             TweenLite.to([$(this).parents('li').siblings(), $(this).parents('ul').siblings().find('li')], 0.25, {opacity: 1});
 
             logo.find('.body').attr('style', '');
+
+            tentacles.toggleClass('on');
 
             //grid.attr('style', '').removeClass('on');
 
@@ -71,7 +82,7 @@ $(function(){
 
     const checkEmptyInput = ( input ) => {
         input.val() !== '' ? input.addClass('filled') : input.removeClass('filled');
-    }
+    };
 
 
     // IE
