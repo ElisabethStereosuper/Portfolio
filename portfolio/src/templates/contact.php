@@ -81,7 +81,7 @@ if( isset($_POST['submit']) ){
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-        <title>Contact - Elisabeth Hamel &bull; Front-End Developper</title>
+        <title>Contact - Elisabeth Hamel &bull; Web Front-End Developer</title>
 
         <meta name='description' content='Contact informations. I am based in Nantes, France.'>
 

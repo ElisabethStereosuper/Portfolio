@@ -93,19 +93,11 @@ gulp.task('templates', function() {
             removeAttributeQuotes: true,
             removeComments: true
         }))
+        .pipe(sitemap({
+            siteUrl: 'http://www.e-hamel.com'
+        }))
         .pipe(gulp.dest('dest'))
         .pipe($.size({title: 'template'}));
-});
-
-
-gulp.task('sitemap', function () {
-    gulp.src('dest/**/*.html', {
-            read: false
-        })
-        .pipe(sitemap({
-            siteUrl: 'http://e-hamel.com'
-        }))
-        .pipe(gulp.dest('dest'));
 });
 
 gulp.task('root', function() {
@@ -157,5 +149,5 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('start', ['styles', 'templates', 'fonts', 'img', 'layoutImg', 'js', 'root', 'sitemap']);
+gulp.task('start', ['styles', 'templates', 'fonts', 'img', 'layoutImg', 'js', 'root']);
 
