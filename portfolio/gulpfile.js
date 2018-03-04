@@ -93,6 +93,7 @@ gulp.task('templates', function() {
             removeAttributeQuotes: true,
             removeComments: true
         }))
+        .pipe(gulp.dest('dest'))
         .pipe(sitemap({
             siteUrl: 'http://www.e-hamel.com'
         }))
