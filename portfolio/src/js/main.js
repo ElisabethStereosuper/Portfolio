@@ -30,6 +30,10 @@ $(function(){
             TweenLite.to(header, 0.4, {opacity: 1, y: 0});
         }});
 
+        if( tentacles.length ){
+            tentacles.eq(0).addClass('on');
+        }
+
 
         header.on('mouseenter', 'a', function(){
             TweenLite.to($(this).find('.scramble'), 0.5, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}}); 

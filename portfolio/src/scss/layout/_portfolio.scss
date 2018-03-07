@@ -61,7 +61,7 @@
     opacity: 0;
     pointer-events: none;
     background: url(../layoutImg/tentacle-small.png) no-repeat 0 100% / 100%;
-    filter: grayscale(0.5) sepia(0.1) brightness(0.9);
+    filter: grayscale(0.4) sepia(0.1) brightness(0.93);
     transition: opacity 0.5s ease-in-out;
     &.hover{
         filter: url(#octopusFilter) brightness(0.95);
