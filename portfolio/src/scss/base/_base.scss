@@ -229,6 +229,22 @@ a{
     }
 }
 
+.text-404{
+    > h1{
+        margin: 0;
+        font-size: 7.5rem;
+        line-height: 1;
+    }
+    > p{
+        background: none;
+    }
+}
+.img-404{
+    min-width: 666px;
+    margin: 3em 0 0 -18%;
+    opacity: 0.85;
+}
+
 
 @media (max-width: $desktop){
     p{
@@ -243,6 +259,11 @@ a{
         &.small, &.tiny{
             max-width: 100%;
         }
+    }
+
+    .img-404{
+        min-width: 0;
+        margin-left: 0;
     }
 }
 

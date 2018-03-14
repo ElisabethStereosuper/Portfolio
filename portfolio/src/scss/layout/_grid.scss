@@ -2,6 +2,9 @@
 .main{
     margin: 25vh 0 0;
     overflow: hidden;
+    &.e-404{
+        margin-top: 20vh;
+    }
 }
 
 .container{

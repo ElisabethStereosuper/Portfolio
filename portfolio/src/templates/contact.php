@@ -97,7 +97,7 @@ if( isset($_POST['submit']) ){
         <meta property='og:title' content='Elisabeth Hamel &bull; Contact'>
         <meta property='og:type' content='website'>
         <meta property='og:url' content='http://www.e-hamel.com/contact.php'>
-        <meta property='og:image' content='http://www.e-hamel.com/img/logo.svg'>
+        <meta property='og:image' content='http://www.e-hamel.com/layoutImg/dead-octopus.png'>
 
         <link rel='stylesheet' href='css/main.css'>
 
