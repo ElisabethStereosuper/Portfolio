@@ -34,6 +34,8 @@ $(function(){
             tentacles.eq(0).addClass('on');
         }
 
+        $('#img404').addClass('on');
+
 
         header.on('mouseenter', 'a', function(){
             TweenLite.to($(this).find('.scramble'), 0.5, {scrambleText: {text: $(this).find('.scramble').data('text'), speed: 0.4}}); 
