@@ -94,10 +94,12 @@ if( isset($_POST['submit']) ){
 
         <meta name='author' content='Elisabeth Hamel'>
 
-        <meta property='og:title' content='Elisabeth Hamel &bull; Contact'>
+        <meta property='og:title' content='Contact - Elisabeth Hamel &bull; Web Front-End Developer'>
         <meta property='og:type' content='website'>
         <meta property='og:url' content='http://www.e-hamel.com/contact.php'>
-        <meta property='og:image' content='http://www.e-hamel.com/layoutImg/dead-octopus.png'>
+        <meta property='og:image' content='http://www.e-hamel.com/layoutImg/dead-octopus.jpg'>
+        <meta property='og:description' content="Contact informations. I am based in Nantes, France.">
+        <meta name='twitter:card' content='summary_large_image'>
 
         <link rel='stylesheet' href='css/main.css'>
 
