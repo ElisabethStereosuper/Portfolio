@@ -52,6 +52,7 @@ $(function(){
             rgb = $(this).data('color').split(',');
             matrixRgb = rgb.map(x => (parseInt(x)/250));
             tentacles.toggleClass('on');
+            
             TweenLite.to(matrix, 0.5, {attr: {'values': (1 - matrixRgb[0]) + ' 0 0 0 ' + matrixRgb[0] + ' ' + (1 - matrixRgb[1]) + ' 0 0 0 ' + matrixRgb[1] + ' ' + (1 - matrixRgb[2]) + ' 0 0 0 ' + matrixRgb[2] + ' 0 0 0 1 0'}});
 
         }).on('mouseleave', 'a', function(){

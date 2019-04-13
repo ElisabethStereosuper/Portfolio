@@ -207,9 +207,14 @@ module.exports = function( mapElt ){
     },
     loc = [
         ['Montreal', 45.5086699, -73.55399249999999, icon],
-        //['Ottawa', 45.4215296, -75.69719309999999, icon],
+        ['Vancouver', 49.282730, -123.120735, icon],
+        ['Toronto', 43.653225, -79.383186, icon],
+        ['Banff', 51.178509, -115.574280, icon],
         ['Québec', 46.8032826, -71.242796, icon],
+        ['Gaspé', 48.830070, -64.481773, icon],
         ['Gatineau', 45.4765446, -75.7012723, icon2],
+        ['St John\'s', 47.555011, -52.722660, icon],
+        ['San Francisco', 37.774929, -122.419418, icon],
         ['Madrid', 40.4167754, -3.7037902, icon],
         ['Toledo', 39.8628471, -4.0378849, icon],
         ['Lisboa', 38.7222524, -9.1393366, icon],
@@ -227,7 +232,14 @@ module.exports = function( mapElt ){
         ['Bergen', 60.3896719, 5.2876997, icon],
         ['Stavanger', 58.9665138, 5.7040474, icon],
         ['Berlin', 52.5001056, 13.3409657, icon],
-        ['Bruxelles', 50.8550625, 4.3053498, icon]
+        ['Bruxelles', 50.8550625, 4.3053498, icon],
+        ['Sri Lanka', 7.873054, 80.771797, icon],
+        ['Iceland', 64.963051, -19.020836, icon],
+        ['Split', 43.508133, 16.440193, icon],
+        ['Sarajevo', 43.856258, 18.413076, icon],
+        ['Budapest', 47.497913, 19.040236, icon],
+        ['Vienna', 48.208176, 16.373819, icon],
+        ['Munich', 48.135124, 11.581981, icon]
     ],
     nbLocs = loc.length;
 
@@ -235,7 +247,7 @@ module.exports = function( mapElt ){
 
 
     function setMapZoom(){
-        mapElt.width() < 620 ? map.setZoom(2) : map.setZoom(3);
+        mapElt.width() < 620 ? map.setZoom(1) : map.setZoom(2);
     }
 
 
