@@ -134,7 +134,7 @@ if( isset($_POST['submit']) ){
 
         <main role='main' class='main'>
             <div class='container'>
-                <h1 class='anim-elt'>Contact</h1>
+                <h1 class='h1 anim-elt'>Contact</h1>
                 <p class='small anim-elt' id='form'>You want to work with me, you have a question, you just want to say "Hi" ? Don't hesitate to drop me a message by filling this form!</p>
 
                 <?php if( $success ){ ?>
@@ -206,7 +206,7 @@ if( isset($_POST['submit']) ){
         </main>
 
         <footer role='contentinfo' class='footer'>
-            <span>&copy;2018 Elisabeth Hamel</span>
+            <span>&copy;2020 Elisabeth Hamel</span>
             <!--<a href='#'>Legal notice</a>-->
 
             <div class='social'>

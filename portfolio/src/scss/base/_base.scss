@@ -1,23 +1,23 @@
 /******* GÉNÉRAL *******/
 
-::-moz-selection{
+::-moz-selection {
     background: rgba($black, 0.8);
     color: $white;
     text-shadow: none;
 }
-::selection{
+::selection {
     background: rgba($black, 0.8);
     color: $white;
     text-shadow: none;
 }
 
-html{
+html {
     font-size: 62.5%; /* sets the base font to 10px for easier math */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
 }
 
-body{
+body {
     font: 1.6em / 1.4 $inconsolata;
     background: $background;
     color: $txt;
@@ -26,74 +26,87 @@ body{
     // -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6{
+.h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $abril;
     font-size: 6rem;
     font-weight: 400;
 }
 
-h1{
-    margin: 0 0 0.3em;
-    letter-spacing: -0.01em;
+h1 {
+    font-weight: 400;
 }
 
-h2{
+.h1 {
+    padding: 0;
+    margin: 0 0 0.3em;
+    letter-spacing: -0.01em;
+    background: none;
+}
+
+h2 {
     font-size: 3.4rem;
     margin: 3em 0 1.5em;
 }
 
-h3{
+h3 {
     font-size: 2.4em;
     margin: 1em 0;
 }
 
-h4{
+h4 {
     font-size: 2.2rem;
     margin: 1.33em 0;
 }
 
-h5{
+h5 {
     font-size: 2rem;
     margin: 1.67em 0;
 }
 
-h6{
+h6 {
     font-size: 1.8rem;
     margin: 2.33em 0;
 }
 
-p{
+p {
     padding: 1em 0;
     margin: 0;
     background: $background;
-    &.small{
+    &.small {
         max-width: 83.3%;
     }
-    &.tiny{
+    &.tiny {
         max-width: 83.3%;
         font-size: 1.3rem;
     }
 }
 
-b, strong{
+b,
+strong {
     font-family: $inconsolataBold;
     font-weight: 400;
 }
 
-blockquote{
+blockquote {
     margin: 1em 40px;
 }
 
-ol, ul{
+ol,
+ul {
     padding: 1em 0 1.5em;
     margin: 0;
     list-style: none;
 }
 
-ul{
-    > li{
+ul {
+    > li {
         margin: 0 0 5px;
-        &:before{
+        &:before {
             content: '';
             display: inline-block;
             height: 4px;
@@ -105,29 +118,30 @@ ul{
     }
 }
 
-ol{
+ol {
     counter-reset: ol-counter;
-    > li{
+    > li {
         counter-increment: ol-counter;
-        &:before{
-            content: counter(ol-counter)'.';
+        &:before {
+            content: counter(ol-counter) '.';
         }
     }
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
 
-code, pre{
+code,
+pre {
     display: block;
     padding: 10px 15px;
     margin: 1em 0;
     background: grey;
 }
 
-hr{
+hr {
     height: 1px;
     max-width: 250px;
     border: 0;
@@ -135,34 +149,33 @@ hr{
     background: $txt;
 }
 
-
 /******* LIENS / BOUTONS *******/
 
-a{
+a {
     position: relative;
     text-decoration: none;
     box-shadow: 0 1px 0 rgba($black, 0.4);
     color: currentColor;
     transition: $transition;
-    &:focus, &:hover{
+    &:focus,
+    &:hover {
         color: $primary;
         box-shadow: 0 1px 0 rgba($primary, 0.5);
     }
-    &:focus{
+    &:focus {
         outline: 0;
     }
-    &:active{
+    &:active {
         filter: saturate(300%);
     }
 }
 
-
 /******* CLASSES GENERALES  *******/
 
-.hidden{
+.hidden {
     display: none !important;
 }
-.visually-hidden{
+.visually-hidden {
     width: 1px;
     height: 1px;
     padding: 0;
@@ -173,43 +186,43 @@ a{
     overflow: hidden;
 }
 
-.clearfix{
+.clearfix {
     @include clearfix;
 }
 
-.pos-relative{
+.pos-relative {
     position: relative;
 }
 
-.align-center{
+.align-center {
     text-align: center;
 }
-.align-left{
+.align-left {
     text-align: left;
 }
-.align-right{
+.align-right {
     text-align: right;
 }
 
-.icon{
+.icon {
     width: 1.2em;
     height: 1.2em;
     fill: currentColor;
 }
 
-.subtitle{
+.subtitle {
     display: block;
     position: relative;
     font-family: $unica;
     font-size: 2.15rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    > h2{
+    > h2 {
         margin: 0 0 10px -1px;
         font-family: inherit;
         font-size: inherit;
     }
-    > .icon{
+    > .icon {
         width: 7px;
         height: 7px;
         position: absolute;
@@ -222,61 +235,63 @@ a{
     }
 }
 
-.anim-elt{
-    .js &{
+.anim-elt {
+    .js & {
         opacity: 0;
         transform: translate3d(0, 10px, 0);
     }
 }
 
-.text-404{
-    > h1{
+.text-404 {
+    > .h1 {
         margin: 0;
         font-size: 7.5rem;
         line-height: 1;
     }
-    > p{
+    > p {
         background: none;
     }
 }
-.img-404{
+.img-404 {
     min-width: 666px;
     margin: 3em 0 0 -18%;
     opacity: 0;
     transition: 0.4s ease-in-out;
-    &.on, .no-js &{
+    &.on,
+    .no-js & {
         opacity: 0.85;
     }
 }
 
-
-@media (max-width: $desktop){
-    p{
-        &.small, &.tiny{
+@media (max-width: $desktop) {
+    p {
+        &.small,
+        &.tiny {
             max-width: 95%;
         }
     }
 }
 
-@media (max-width: 860px){
-    p{
-        &.small, &.tiny{
+@media (max-width: 860px) {
+    p {
+        &.small,
+        &.tiny {
             max-width: 100%;
         }
     }
 
-    .img-404{
+    .img-404 {
         min-width: 0;
         margin-left: 0;
     }
 }
 
-@media (max-width: 560px){
-    body{
+@media (max-width: 560px) {
+    body {
         font-size: 1.6rem;
     }
 
-    h1{
+    .h1 {
         font-size: 5rem;
     }
 }
