@@ -263,6 +263,29 @@ a {
     }
 }
 
+.list-simple {
+    display: flex;
+    padding: 0;
+    > li {
+        &:before {
+            display: none;
+        }
+        &:after {
+            content: ', ';
+            margin: 0 5px 0 0;
+        }
+        &:last-child {
+            &:after {
+                content: '...';
+            }
+        }
+    }
+}
+
+.more {
+    padding: 50px 0;
+}
+
 @media (max-width: $desktop) {
     p {
         &.small,
