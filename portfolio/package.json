@@ -9,7 +9,7 @@
     "browser-sync": "^2.26.7",
     "browserify": "^16.2.3",
     "del": "^3.0.0",
-    "gsap": "^1.20.2",
+    "gsap": "^3.6.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-htmlmin": "^3.0.0",
