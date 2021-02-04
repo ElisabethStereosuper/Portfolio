@@ -214,7 +214,7 @@ if( isset($_POST['submit']) ){
                     <li><a href='https://github.com/ElisabethStereosuper' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-github'/></svg>GitHub</a></li>
                     <li><a href='https://codepen.io/elisabeth_hamel/' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-codepen'/></svg>Codepen</a></li>
                     <li><a href='https://twitter.com/Elisabeth_Hamel' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-twitter'/></svg>Twitter</a></li>
-                    <li><a href='https://www.linkedin.com/in/elisabeth-hamel-7757b85a' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-linkedin'/></svg>LinkedIn</a></li>
+                    <li><a href='https://www.linkedin.com/in/elisabeth-hamel' target='_blank' rel='noopener noreferrer'><svg class='icon'><use xlink:href='#icon-linkedin'/></svg>LinkedIn</a></li>
                 </ul>
                 <svg class='icon'><use xlink:href='#icon-cross'></use></svg>
             </div>
