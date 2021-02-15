@@ -81,7 +81,7 @@ if( isset($_POST['submit']) ){
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-        <title>Contact - Elisabeth Hamel &bull; Web Front-End Developer</title>
+        <title>Contact - Elisabeth Hamel &bull; Creative Web Front-End Developer</title>
 
         <meta name='description' content='Contact informations. I am based in Nantes, France.'>
 
@@ -94,7 +94,7 @@ if( isset($_POST['submit']) ){
 
         <meta name='author' content='Elisabeth Hamel'>
 
-        <meta property='og:title' content='Contact - Elisabeth Hamel &bull; Web Front-End Developer'>
+        <meta property='og:title' content='Contact - Elisabeth Hamel &bull; Creative Web Front-End Developer'>
         <meta property='og:type' content='website'>
         <meta property='og:url' content='http://www.e-hamel.com/contact.php'>
         <meta property='og:image' content='http://www.e-hamel.com/layoutImg/dead-octopus.jpg'>
