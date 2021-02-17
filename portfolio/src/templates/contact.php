@@ -96,8 +96,8 @@ if( isset($_POST['submit']) ){
 
         <meta property='og:title' content='Contact - Elisabeth Hamel &bull; Creative Web Front-End Developer'>
         <meta property='og:type' content='website'>
-        <meta property='og:url' content='http://www.e-hamel.com/contact.php'>
-        <meta property='og:image' content='http://www.e-hamel.com/layoutImg/dead-octopus.jpg'>
+        <meta property='og:url' content='https://www.e-hamel.com/contact.php'>
+        <meta property='og:image' content='https://www.e-hamel.com/layoutImg/dead-octopus.jpg'>
         <meta property='og:description' content="Contact informations. I am based in Nantes, France.">
         <meta name='twitter:card' content='summary_large_image'>
 
