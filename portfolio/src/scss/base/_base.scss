@@ -211,7 +211,7 @@ a {
 }
 
 .subtitle {
-    display: block;
+    display: inline-block;
     position: relative;
     font-family: $unica;
     font-size: 2.15rem;
@@ -227,7 +227,7 @@ a {
         height: 7px;
         position: absolute;
         left: -4px;
-        bottom: -3px;
+        bottom: 7px;
         font-size: 1.6rem;
         opacity: 0.9;
         transform: rotate3d(0, 0, 1, 0deg);
@@ -284,6 +284,34 @@ a {
 
 .more {
     padding: 50px 0;
+}
+
+.link-ext {
+    display: inline-block;
+    line-height: 1;
+    .icon-link {
+        top: -5px;
+        right: -10px;
+        fill: $primary;
+    }
+    &:hover,
+    &:focus {
+        .icon-link {
+            opacity: 1;
+            transform: rotate(-35deg) translate3d(0, 0, 0);
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
+.icon-link {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    opacity: 0;
+    transform: rotate(-35deg) translate3d(-10px, 0, 0);
+    transition: opacity 0.15s ease-in-out, transform 0s linear 0.15s;
 }
 
 @media (max-width: $desktop) {

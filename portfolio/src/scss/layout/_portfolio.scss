@@ -1,58 +1,87 @@
-.work-list{
+.work-list {
     display: flex;
     flex-wrap: wrap;
     margin: 15vh 0 0;
-    &:last-child{
+    .lab & {
+        > li {
+            width: 100%;
+        }
+        a {
+            padding-right: 0;
+        }
+    }
+    &:last-child {
         padding-bottom: 0;
     }
-    + .work-list{
+    + .work-list {
         margin: 4vh 0 0;
     }
-    > li{
+    > li {
         width: 50%;
-        &:before{
+        padding: 0 0 50px;
+        &:before {
             content: none;
         }
     }
-    a{
+    .main-link {
         display: inline-block;
-        padding: 0 50px 8vh 0;
+        padding: 0 8vh 0 0;
         box-shadow: none;
         background: rgba($background, 0.8);
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             color: $txt;
-            .subtitle{
-                > .icon{
+            .subtitle {
+                > .icon {
                     transform: rotate3d(0, 0, 1, 90deg);
                 }
             }
+            .icon-link {
+                opacity: 1;
+                transform: rotate(-35deg) translate3d(0, 0, 0);
+                transition: 0.15s ease-in-out 0.5s;
+            }
         }
-        &:active{
+        &:active {
             filter: none;
         }
-        > span, > time, > p{
+        > span,
+        > time,
+        > p {
             display: block;
             font-size: 1.45rem;
             color: rgba($black, 0.7);
         }
-        > span, > p{
+        > span,
+        > p {
             color: rgba($black, 0.55);
-            &:last-child{
+            &:last-child {
                 margin: 10px 0 0;
                 font-size: 1.3rem;
                 color: rgba($black, 0.7);
             }
         }
-        > p{
+        > p {
             padding: 0;
-            span{
+            span {
                 font-size: 1.1rem;
             }
         }
     }
+    iframe {
+        display: block;
+        width: 100%;
+        height: 410px;
+        border: 0;
+        margin: 20px 0 0;
+    }
+    img {
+        display: block;
+        margin: 20px 0 0;
+    }
 }
 
-.tentacle{
+.tentacle {
     width: 36%;
     height: 100vh;
     position: fixed;
@@ -63,47 +92,51 @@
     background: url(../layoutImg/tentacle-small.png) no-repeat 0 100% / 100%;
     filter: grayscale(0.8) sepia(0.05) brightness(0.965);
     transition: opacity 0.5s ease-in-out;
-    &.hover{
+    &.hover {
         filter: url(#octopusFilter) brightness(0.98);
     }
-    &.on{
+    &.on {
         opacity: 0.95;
     }
 }
 
-
-@media (max-height: 600px){
-    .tentacle{
-        &.on{
+@media (max-height: 600px) {
+    .tentacle {
+        &.on {
             opacity: 0.3;
         }
     }
 }
 
-
-@media (max-width: $desktop){
-    .work-list{
-        > li{
+@media (max-width: $desktop) {
+    .work-list {
+        > li {
             width: 100%;
         }
-        a{
+        .main-link {
             padding-right: 0;
         }
     }
 }
 
-@media (max-width: $desktop-small){
-    .tentacle{
+@media (max-width: $desktop-small) {
+    .tentacle {
         right: -5%;
     }
 }
 
-@media (max-width: $tablet){
-    .tentacle{
+@media (max-width: $tablet) {
+    .tentacle {
         width: 50%;
         right: -10%;
-        &.on{
+        &.on {
             opacity: 0.3;
+        }
+    }
+
+    .work-list {
+        iframe {
+            height: 250px;
         }
     }
 }

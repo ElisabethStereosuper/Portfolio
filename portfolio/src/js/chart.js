@@ -13,7 +13,7 @@ module.exports = function( chart, isIE ){
     let myScroll, windowHeight = $(window).height();
     const chartPath = chart.find('path');
 
-    function animChart(){
+    const animChart = () => {
         chart.addClass('done');
 
         TweenLite.set( chart.find('.puce'), {css: {className: '+=on'}, onComplete: function(){
@@ -36,13 +36,13 @@ module.exports = function( chart, isIE ){
         }} );
     }
 
-    function launchAnimChart(){
+    const launchAnimChart = () => {
         myScroll = $(document).scrollTop();
 
         if( !chart.hasClass('done') && myScroll > chart.data('top') - windowHeight/1.7 ){
             animChart();
         }
-    }
+    };
 
 
     chart.data('top', chart.offset().top).on('click', '.puce', function(){

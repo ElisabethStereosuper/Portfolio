@@ -58,7 +58,7 @@
     </head>
 
     <body>
-        <header role="banner" id="header" class="header">
+        <header role="banner" id="header" class="header loading">
             <nav role="navigation">
                 <!--<a href='./' class='logo'>Elisabeth <span>Hamel</span></a>-->
                 <div class="logo-wrapper">
@@ -156,7 +156,7 @@
                         </svg>
                     </a>
                 </div>
-                <ul>
+                <ul class="menu">
                     <li>
                         <a
                             href="about.html"
@@ -166,6 +166,14 @@
                             <span class="scramble" data-text="About"
                                 >About</span
                             >
+                            <svg class="icon">
+                                <use xlink:href="#icon-cross"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lab.html" title="Web experiments">
+                            <span class="scramble" data-text="Lab">Lab</span>
                             <svg class="icon">
                                 <use xlink:href="#icon-cross"></use>
                             </svg>
@@ -193,11 +201,16 @@
                         I am Elisabeth Hamel, and I've been a
                         <strong>Creative Front-End Developer</strong> for 6 years at
                         <a
+                            class="link-ext"
                             href="http://stereosuper.fr"
                             target="_blank"
                             rel="noopener noreferrer"
-                            >Stéréosuper</a
-                        >, in Nantes.
+                            >
+                            Stéréosuper
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>, in Nantes.
                     </h1>
                     <p class="small anim-elt">
                         <strong
@@ -211,9 +224,19 @@
                         projects.
                     </p>
                     <p class="small anim-elt">
-                        <a href="resume.pdf" download>Download my resume (pdf, 2Mo)</a>
-                        /
-                        <a href="CV.pdf" download>Télécharger mon CV (pdf, 2Mo)</a>
+                        <a class="link-ext" href="resume.pdf" target="_blank" rel="noreferrer noopener">
+                            Download my resume (pdf, 2Mo)
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>
+                        &nbsp;/
+                        <a class="link-ext" href="CV.pdf"  target="_blank" rel="noreferrer noopener">
+                            Télécharger mon CV (pdf, 2Mo)
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>
                     </p>
                 </section>
 
@@ -272,7 +295,7 @@
                                         </text>
                                         <text x="520" y="50" class="text">
                                             <tspan>
-                                                Vanilla JS, GreenSock, jQuery
+                                                Vanilla JS, GSAP, jQuery
                                             </tspan>
                                         </text>
                                     </g>
@@ -349,11 +372,16 @@
                         <strong>GitHub</strong>, <strong>NPM</strong>,
                         <strong>Webpack</strong>, <strong>Netlify</strong> ara
                         some of the tools I use everyday. <br /><a
+                            class="link-ext"
                             href="https://github.com/stereosuper/generator-stereobase"
                             target="_blank"
                             rel="noopener noreferrer"
-                            >Here is the project generator</a
-                        >
+                            >
+                            Here is the project generator
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>&nbsp;
                         we built, improve and use all the time with my
                         workmates.
                     </p>
@@ -361,11 +389,16 @@
                     back-end, but we're evolving everyday and I'm more and more
                     into
                     <a
+                        class="link-ext"
                         href="https://jamstack.wtf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >JAMstack</a
-                    >. And excited to see what's next!
+                        >
+                        JAMstack
+                        <svg class="icon-link">
+                            <use xlink:href="#icon-right-arrow"></use>
+                        </svg>
+                    </a>. And excited to see what's next!
                     <p class="small anim-elt">
                         I'm also concerned about <strong>SEO</strong>,
                         <strong>accessibility</strong>, <strong>UX</strong>, and everything in general
@@ -380,34 +413,54 @@
                     <p class="small anim-elt">
                         I'm passionate about the web, but I'm also a big fan of
                         <a
+                            class="link-ext"
                             href="https://www.senscritique.com/shwarp"
                             target="_blank"
                             rel="noopener noreferrer"
-                            >movies</a
-                        >. <br />
+                            >
+                            movies
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>. <br />
                         Sometimes I organize short film events with friends,
                         <a
+                            class="link-ext"
                             href="https://www.facebook.com/lakinaille/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            >check if one is coming!</a
-                        >
+                            >
+                            check if one is coming!
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>
                     </p>
                     <p class="small anim-elt">
                         I especially love traveling, discovering new cultures,
                         landscapes,
                         <a
+                            class="link-ext"
                             href="https://www.atlasobscura.com/users/shwarp"
                             target="_blank"
                             rel="noopener noreferrer"
-                            >unexpected and strange places</a
-                        >,
+                            >
+                            unexpected and strange places
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>,
                         <a
+                            class="link-ext"
                             href="https://www.couchsurfing.com/people/elisabethsupertramp"
                             target="_blank"
                             rel="noopener noreferrer"
-                            >meeting people</a
-                        >. <br />
+                            >
+                            meeting people
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>. <br />
                         Here's a map of the trips I have taken so far:
                     </p>
                     <div class="map-wrapper">
@@ -558,6 +611,9 @@
                     <path
                         d="M32 14.222h-14.222v-14.222h-3.556v14.222h-14.222v3.556h14.222v14.222h3.556v-14.222h14.222v-3.556z"
                     />
+                </symbol>
+                <symbol id="icon-right-arrow" viewBox="0 0 32 32">
+                    <path d="M23.224 7.224l-1.425 1.425 6.343 6.343h-28.141v2.016h28.141l-6.343 6.343 1.425 1.425 8.776-8.776z"></path>
                 </symbol>
             </defs>
         </svg>

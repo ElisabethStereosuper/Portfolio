@@ -264,7 +264,5 @@ module.exports = function( mapElt ){
     setMapZoom();
 
 
-    $(window).on('resize', throttle(function(){
-        setMapZoom();
-    }, 60));
+    $(window).on('resize', throttle(setMapZoom, 60));
 }

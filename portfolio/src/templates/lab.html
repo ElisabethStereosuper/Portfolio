@@ -1,50 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="fr-FR" class="no-js">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>404 - Elisabeth Hamel &bull; Creative Front-End Web Developer</title>
+        <title>Lab - Elisabeth Hamel &bull; Creative Front-End Web Developer</title>
 
-        <meta name="description" content="Sorry, page not found!" />
+        <meta
+            name="description"
+            content="Some JavaScript experiments!"
+        />
 
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="https://www.e-hamel.com/apple-touch-icon.png"
+            href="/apple-touch-icon.png"
         />
         <link
             rel="icon"
             type="image/png"
-            href="https://www.e-hamel.com/favicon-32x32.png"
+            href="/favicon-32x32.png"
             sizes="32x32"
         />
         <link
             rel="icon"
             type="image/png"
-            href="https://www.e-hamel.com/favicon-16x16.png"
+            href="/favicon-16x16.png"
             sizes="16x16"
         />
-        <link rel="manifest" href="https://www.e-hamel.com/manifest.json" />
-        <link rel="mask-icon" href="https://www.e-hamel.com/safari-pinned-tab.svg" color="#00c7bf" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00c7bf" />
         <meta name="theme-color" content="#ffffff" />
 
+        <meta
+            name="keywords"
+            content="développeur créatif, développeur web, développeur front-end, développeur, intégrateur, html, css, javascript, Elisabeth, Hamel, freelance, auto-entrepreneur"
+        />
         <meta name="author" content="Elisabeth Hamel" />
 
         <meta
             property="og:title"
-            content="404 - Elisabeth Hamel &bull; Creative Front-End Web Developer"
+            content="Lab - Elisabeth Hamel &bull; Creative Web Front-End Developer"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.e-hamel.com/404.html" />
+        <meta property="og:url" content="https://www.e-hamel.com/lab.html" />
         <meta
             property="og:image"
             content="https://www.e-hamel.com/layoutImg/dead-octopus.jpg"
         />
-        <meta property="og:description" content="Dead end." />
+        <meta
+            property="og:description"
+            content="Some JavaScript experiments!"
+        />
         <meta name="twitter:card" content="summary_large_image" />
 
-        <link rel="stylesheet" href="https://www.e-hamel.com/css/main.css" />
+        <link rel="stylesheet" href="css/main.css" />
 
         <script>
             document.getElementsByTagName('html')[0].className = 'js';
@@ -54,9 +64,8 @@
     <body>
         <header role="banner" id="header" class="header loading">
             <nav role="navigation">
-                <!--<a href='./' class='logo'>Elisabeth <span>Hamel</span></a>-->
                 <div class="logo-wrapper">
-                    <a href="https://www.e-hamel.com/" class="logo" id="logo" title="Back to home">
+                    <a href="./" class="logo" id="logo" title="Back to home">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 109.5 98.2"
@@ -152,7 +161,7 @@
                 </div>
                 <ul class="menu">
                     <li>
-                        <a href="https://www.e-hamel.com/about.html" title="About Elisabeth Hamel">
+                        <a href="about.html" title="About Elisabeth Hamel">
                             <span class="scramble" data-text="About"
                                 >About</span
                             >
@@ -162,7 +171,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="lab.html" title="Web experiments">
+                        <a href="lab.html" title="Web experiments" class="active">
                             <span class="scramble" data-text="Lab">Lab</span>
                             <svg class="icon">
                                 <use xlink:href="#icon-cross"></use>
@@ -170,7 +179,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.e-hamel.com/contact.php" title="Contact informations">
+                        <a href="contact.php" title="Contact informations">
                             <span class="scramble" data-text="Contact"
                                 >Contact</span
                             >
@@ -183,30 +192,126 @@
             </nav>
         </header>
 
-        <main role="main" class="main e-404">
+        <main role="main" class="main">
             <div class="container">
                 <section>
-                    <div class="text-404">
-                        <h1 class="h1 anim-elt">404</h1>
-                        <p class="small anim-elt">
-                            Oops, it looks like that you reached a dead end...
-                            <br>
-                            <a href="https://www.e-hamel.com/">Go back home</a>
-                        </p>
-                    </div>
-                    <img
-                        src="/layoutImg/dead-octopus.png"
-                        alt="Octopus is dead in terrible suffering..."
-                        class="img-404"
-                        id="img404"
-                    />
+                    <p class="h1 anim-elt">Lab</p>
+                    <h1 class="small anim-elt">
+                        Here are some <strong>JavaScript experiments</strong>, games, stuff…
+                    </h1>
+                    <p class="small anim-elt">
+                        I am currently learning how to use tools like <strong>p5.js, Three.js, WebGL</strong> and working on more small things to add here soon!
+                    </p>
+                    <p class="small anim-elt">
+                        Find more unfinished and/or useless tests on my
+                        <a class="link-ext" href="https://codepen.io/elisabeth_hamel/" target="_blank" rel="noopener noreferrer">
+                            Codepen
+                            <svg class="icon-link"><use xlink:href="#icon-right-arrow"></use></svg>
+                        </a>&nbsp;and
+                        <a class="link-ext" href="https://editor.p5js.org/ElisabethStereosuper/sketches" target="_blank" rel="noopener noreferrer">
+                            p5.js
+                            <svg class="icon-link">
+                                <use xlink:href="#icon-right-arrow"></use>
+                            </svg>
+                        </a>&nbsp;accounts.
+                    </p>
+                </section>
+
+                <section id="portfolio" class="lab">
+                    <ul class="work-list">
+                        <li class="anim-elt">
+                            <a class="main-link" href="https://editor.p5js.org/ElisabethStereosuper/sketches/-BMdILVas" target="_blank" title="Play the Pong game" data-color="34, 6, 80" rel="noopener noreferrer">
+                                <time>2021</time>
+                                <div class="subtitle">
+                                    <h2 class="scramble" data-text="Pong Game">
+                                        Pong Game
+                                    </h2>
+                                    <svg class="icon-link">
+                                        <use xlink:href="#icon-right-arrow"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="#icon-cross"></use>
+                                    </svg>
+                                </div>
+                                <p>
+                                    #JavaScript<span>[p5.js]</span>
+                                </p>
+                            </a>
+                            <iframe src="https://editor.p5js.org/ElisabethStereosuper/embed/-BMdILVas"></iframe>
+                        </li>
+                        <li class="anim-elt">
+                            <a class="main-link" href="https://codepen.io/elisabeth_hamel/pen/oRpYVV" target="_blank" title="Check out the animated sky" data-color="20, 35, 62" rel="noopener noreferrer">
+                                <time>2019</time>
+                                <div class="subtitle">
+                                    <h2 class="scramble" data-text="Animated sky at night">
+                                        Animated sky at night
+                                    </h2>
+                                    <svg class="icon-link">
+                                        <use xlink:href="#icon-right-arrow"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="#icon-cross"></use>
+                                    </svg>
+                                </div>
+                                <p>
+                                    #JavaScript<span>[Canvas]</span>
+                                </p>
+                            </a>
+                            <iframe scrolling="no" title="Generated flashing stars in a canvas" src="https://codepen.io/elisabeth_hamel/embed/preview/WLeGwQ?height=341&theme-id=dark&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+                            <p>
+                                <a href="https://lacapsule.co/" target="_blank" rel="noopener noreferrer">Real life application</a>
+                            </p>
+                        </li>
+                        <li class="anim-elt">
+                            <a class="main-link" href="https://codepen.io/elisabeth_hamel/pen/oRpYVV" target="_blank" title="Play the Memory game" data-color="30, 94, 50" rel="noopener noreferrer">
+                                <time>2019</time>
+                                <div class="subtitle">
+                                    <h2 class="scramble" data-text="Memory Game">
+                                        Memory Game
+                                    </h2>
+                                    <svg class="icon-link">
+                                        <use xlink:href="#icon-right-arrow"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="#icon-cross"></use>
+                                    </svg>
+                                </div>
+                                <p>
+                                    #HTML, #CSS, #JavaScript
+                                </p>
+                            </a>
+                            <iframe scrolling="no" title="Memory Game" src="https://codepen.io/elisabeth_hamel/embed/preview/oRpYVV?height=404&theme-id=dark&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+                            <p>
+                                <a href="https://thinkovery.com/en/404" target="_blank" rel="noopener noreferrer">Real life application</a>
+                            </p>
+                        </li>
+                        <li class="anim-elt">
+                            <a class="main-link" href="https://www.stereosuper.fr/404-error.html" target="_blank" title="Play the gloves game" data-color="0, 155, 227" rel="noopener noreferrer">
+                                <time>2016</time>
+                                <div class="subtitle">
+                                    <h2 class="scramble" data-text="404 Gloves Game">
+                                        404 Gloves Game
+                                    </h2>
+                                    <svg class="icon-link">
+                                        <use xlink:href="#icon-right-arrow"></use>
+                                    </svg>
+                                    <svg class="icon">
+                                        <use xlink:href="#icon-cross"></use>
+                                    </svg>
+                                </div>
+                                <p>
+                                    #HTML, #CSS, #JavaScript
+                                </p>
+                                <img src="/img/gloves.png" alt=""/>
+                            </a>
+                        </li>
+                    </ul>
                 </section>
             </div>
         </main>
 
         <footer role="contentinfo" class="footer">
             <span>&copy;2021 Elisabeth Hamel</span>
-            <!--<a href='#'>Legal notice</a>-->
 
             <div class="social">
                 <ul>
@@ -272,10 +377,9 @@
         </div>
 
         <svg
-            style="position: absolute; width: 0; height: 0; overflow: hidden"
+            style="position: absolute; width: 0; height: 0; overflow: hidden;"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
         >
             <defs>
                 <!--<symbol id='icon-about' viewBox='0 0 32 32'>
@@ -338,10 +442,13 @@
                         d="M32 14.222h-14.222v-14.222h-3.556v14.222h-14.222v3.556h14.222v14.222h3.556v-14.222h14.222v-3.556z"
                     />
                 </symbol>
+                <symbol id="icon-right-arrow" viewBox="0 0 32 32">
+                    <path d="M23.224 7.224l-1.425 1.425 6.343 6.343h-28.141v2.016h28.141l-6.343 6.343 1.425 1.425 8.776-8.776z"></path>
+                </symbol>
             </defs>
         </svg>
 
-        <script src="https://www.e-hamel.com/js/main.js" defer></script>
+        <script src="js/main.js" defer></script>
 
         <script
             async
