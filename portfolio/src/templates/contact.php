@@ -214,7 +214,7 @@ if( isset($_POST['submit']) ){
         </main>
 
         <footer role='contentinfo' class='footer'>
-            <span>&copy;2021 Elisabeth Hamel</span>
+            <span>&copy;2025 Elisabeth Hamel</span>
             <!--<a href='#'>Legal notice</a>-->
 
             <div class='social'>
@@ -290,12 +290,13 @@ if( isset($_POST['submit']) ){
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB1uPQvRPQP9tOgEnK1HOB5JqGza8i7DiQ' defer></script>
         <script src='js/main.js' defer></script>
 
-        <script async src='https://www.googletagmanager.com/gtag/js?id=UA-37415171-1'></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKGC1JXYQ5"></script>
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-37415171-1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-JKGC1JXYQ5');
         </script>
     </body>
 </html>

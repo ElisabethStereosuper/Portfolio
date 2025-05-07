@@ -239,7 +239,15 @@ module.exports = function( mapElt ){
         ['Sarajevo', 43.856258, 18.413076, icon],
         ['Budapest', 47.497913, 19.040236, icon],
         ['Vienna', 48.208176, 16.373819, icon],
-        ['Munich', 48.135124, 11.581981, icon]
+        ['Munich', 48.135124, 11.581981, icon],
+        ['Melbourne', -37.970726, 144.3937267, icon2],
+        ['Margaret River', -34.0484187, 114.756039, icon],
+        ['Exmouth', -21.9533985, 114.0320631, icon],
+        ['Seisia', -11.3724861, 142.5924854, icon],
+        ['Hobart', -42.8330558, 146.7496888, icon],
+        ['Kuala Lumour', 3.1385027, 101.6045874, icon],
+        ['Hanoi', 21.0227346, 105.7957639, icon],
+        ['Singapore', 1.3139946, 103.6794366, icon]
     ],
     nbLocs = loc.length;
 
